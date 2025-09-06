@@ -18,10 +18,10 @@ class LoginController extends Controller
 
     public function index()
     {
-        // If user is already logged in, redirect to dashboard or home
+      
         if ($this->session->get('isLoggedIn')) {
             $role = $this->session->get('role');
-            if ($role === 'Hospital Administrator') {
+            if ($role === 'admin') {
                 return redirect()->to('/admin/dashboard');
             } else {
                 return redirect()->to('/home');
@@ -55,11 +55,15 @@ class LoginController extends Controller
             return redirect()->back()->withInput()->with('error', $validation->getErrors());
         }
 
+        $role = strtolower($this->request->getPost('role'));
+
         $data = [
             'name' => $this->request->getPost('name'),
             'email' => $this->request->getPost('email'),
-            'role' => $this->request->getPost('role'),
+            'role' => $role,
             'password_hash' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
         ];
 
         try {
@@ -70,14 +74,18 @@ class LoginController extends Controller
             $this->session->set([
                 'user_id' => $user['id'],
                 'email' => $user['email'],
-                'role' => $user['role'],
+                'role' => strtolower($user['role']),
                 'name' => $user['name'],
                 'isLoggedIn' => true,
             ]);
-            if ($user['role'] === 'admin') {
+            if ($user['role'] === 'admin' || strtolower($user['role']) === 'hospital administrator') {
                 return redirect()->to('/admin/dashboard');
+            } elseif (strtolower($user['role']) === 'doctor') {
+                return redirect()->to('/doctor/dashboard');
+            } elseif (strtolower($user['role']) === 'nurse') {
+                return redirect()->to('/nurse/dashboard');
             } else {
-                return redirect()->to('/login');
+                return redirect()->to('/login')->with('error', 'Dashboard not available for your role.');
             }
         } catch (\Exception $e) {
             return redirect()->back()->withInput()->with('error', 'Registration failed: ' . $e->getMessage());
@@ -93,22 +101,26 @@ class LoginController extends Controller
         $user = $this->userModel->findByEmail($email);
 
         if ($user) {
-            if ($user['role'] !== $role) {
+            if (strtolower($user['role']) !== strtolower($role)) {
                 return redirect()->back()->with('error', 'Selected role does not match user role');
             }
             if (password_verify($password, $user['password_hash'])) {
                 $this->session->set([
                     'user_id' => $user['id'],
                     'email' => $user['email'],
-                    'role' => $user['role'],
+                    'role' => strtolower($user['role']),
                     'name' => $user['name'],
                     'isLoggedIn' => true,
                 ]);
-                if ($user['role'] === 'Hospital Administrator') {
-                    return redirect()->to('/admin/dashboard');
-                } else {
-                    return redirect()->to('/home');
-                }
+            if (strtolower($user['role']) === 'admin' || strtolower($user['role']) === 'hospital administrator') {
+                return redirect()->to('/admin/dashboard');
+            } elseif (strtolower($user['role']) === 'doctor') {
+                return redirect()->to('/doctor/dashboard');
+            } elseif (strtolower($user['role']) === 'nurse') {
+                return redirect()->to('/nurse/dashboard');
+            } else {
+                return redirect()->to('/login')->with('error', 'Dashboard not available for your role.');
+            }
             } else {
                 return redirect()->back()->with('error', 'Invalid password');
             }

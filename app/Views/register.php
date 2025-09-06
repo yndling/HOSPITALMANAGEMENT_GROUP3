@@ -29,14 +29,14 @@
                     <label for="role" class="form-label">Role</label>
                     <select class="form-select" id="role" name="role" required>
                         <option value="" disabled selected>Select your role</option>
-                        <option value="Hospital Administrator">Hospital Administrator</option>
-                        <option value="Doctor">Doctor</option>
-                        <option value="Nurse">Nurse</option>
-                        <option value="Receptionist">Receptionist</option>
-                        <option value="Laboratory Staff">Laboratory Staff</option>
-                        <option value="Pharmacist">Pharmacist</option>
-                        <option value="Accountant">Accountant</option>
-                        <option value="IT Staff">IT Staff</option>
+                        <option value="admin">Hospital Administrator</option>
+                        <option value="doctor">Doctor</option>
+                        <option value="nurse">Nurse</option>
+                        <option value="receptionist">Receptionist</option>
+                        <option value="laboratory staff">Laboratory Staff</option>
+                        <option value="pharmacist">Pharmacist</option>
+                        <option value="accountant">Accountant</option>
+                        <option value="it staff">IT Staff</option>
                     </select>
                 </div>
                 <div class="mb-3">

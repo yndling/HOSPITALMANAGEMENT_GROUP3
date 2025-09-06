@@ -288,3 +288,408 @@ in APPPATH\Views\register.php on line 16.
 10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 21:40:06 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 21:48:35 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 21:48:43 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 21:48:53 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 21:50:35 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 21:51:32 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 22:03:05 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 22:03:22 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 22:04:30 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 22:04:52 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 22:05:44 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 22:10:27 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 22:18:48 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 22:19:00 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 22:21:05 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 22:27:27 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 22:30:17 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 22:33:36 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 22:34:02 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 22:35:18 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 22:35:47 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 22:37:08 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 22:38:08 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 22:38:31 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 22:38:56 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 22:39:21 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+CRITICAL - 2025-09-06 22:41:25 --> ErrorException: Array to string conversion
+[Method: GET, Route: register]
+in APPPATH\Views\register.php on line 16.
+ 1 APPPATH\Views\register.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php', 16)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\register.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 5 APPPATH\Controllers\LoginController.php(39): view('register')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
