@@ -2,77 +2,76 @@
 
 namespace App\Controllers;
 
+use CodeIgniter\HTTP\RedirectResponse;
+
 class AdminController extends BaseController
 {
-    public function dashboard()
+    /**
+     * Simple role guard. Tawagin sa simula ng bawat method.
+     */
+    private function guard(): ?RedirectResponse
     {
-        if (!$this->session->get('isLoggedIn') || (strtolower($this->session->get('role')) !== 'admin' && strtolower($this->session->get('role')) !== 'hospital administrator')) {
-            return redirect()->to('/login')->with('error', 'Not your role');
+        $session = session();
+        $isLoggedIn = (bool) $session->get('isLoggedIn');
+        $role = strtolower((string) $session->get('role'));
+
+        if (!$isLoggedIn) {
+            return redirect()->to('/login')->with('error', 'Please log in first.');
         }
 
+        // Payagan lang: admin o hospital administrator
+        if (!in_array($role, ['admin', 'hospital administrator'], true)) {
+            return redirect()->to('/home')->with('error', 'Not your role.');
+        }
+
+        return null; // OK
+    }
+
+    public function dashboard()
+    {
+        if ($r = $this->guard()) return $r;
         return view('admin/dashboard');
     }
 
     public function users()
     {
-        if (!$this->session->get('isLoggedIn') || (strtolower($this->session->get('role')) !== 'admin' && strtolower($this->session->get('role')) !== 'hospital administrator')) {
-            return redirect()->to('/login')->with('error', 'Not your role');
-        }
-
+        if ($r = $this->guard()) return $r;
         return view('admin/users');
     }
 
     public function patients()
     {
-        if (!$this->session->get('isLoggedIn') || (strtolower($this->session->get('role')) !== 'admin' && strtolower($this->session->get('role')) !== 'hospital administrator')) {
-            return redirect()->to('/login')->with('error', 'Not your role');
-        }
-
+        if ($r = $this->guard()) return $r;
         return view('admin/patients');
     }
 
     public function appointments()
     {
-        if (!$this->session->get('isLoggedIn') || (strtolower($this->session->get('role')) !== 'admin' && strtolower($this->session->get('role')) !== 'hospital administrator')) {
-            return redirect()->to('/login')->with('error', 'Not your role');
-        }
-
+        if ($r = $this->guard()) return $r;
         return view('admin/appointments');
     }
 
     public function billing()
     {
-        if (!$this->session->get('isLoggedIn') || (strtolower($this->session->get('role')) !== 'admin' && strtolower($this->session->get('role')) !== 'hospital administrator')) {
-            return redirect()->to('/login')->with('error', 'Not your role');
-        }
-
+        if ($r = $this->guard()) return $r;
         return view('admin/billing');
     }
 
     public function pharmacy()
     {
-        if (!$this->session->get('isLoggedIn') || (strtolower($this->session->get('role')) !== 'admin' && strtolower($this->session->get('role')) !== 'hospital administrator')) {
-            return redirect()->to('/login')->with('error', 'Not your role');
-        }
-
+        if ($r = $this->guard()) return $r;
         return view('admin/pharmacy');
     }
 
     public function reports()
     {
-        if (!$this->session->get('isLoggedIn') || (strtolower($this->session->get('role')) !== 'admin' && strtolower($this->session->get('role')) !== 'hospital administrator')) {
-            return redirect()->to('/login')->with('error', 'Not your role');
-        }
-
+        if ($r = $this->guard()) return $r;
         return view('admin/reports');
     }
 
     public function settings()
     {
-        if (!$this->session->get('isLoggedIn') || (strtolower($this->session->get('role')) !== 'admin' && strtolower($this->session->get('role')) !== 'hospital administrator')) {
-            return redirect()->to('/login')->with('error', 'Not your role');
-        }
-
+        if ($r = $this->guard()) return $r;
         return view('admin/settings');
     }
 }
