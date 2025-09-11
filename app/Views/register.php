@@ -72,10 +72,10 @@
                         <option value="doctor" <?= old('role') === 'doctor' ? 'selected' : '' ?>>Doctor</option>
                         <option value="nurse" <?= old('role') === 'nurse' ? 'selected' : '' ?>>Nurse</option>
                         <option value="receptionist" <?= old('role') === 'receptionist' ? 'selected' : '' ?>>Receptionist</option>
-                        <option value="laboratory staff" <?= old('role') === 'laboratory staff' ? 'selected' : '' ?>>Laboratory Staff</option>
+                        <option value="laboratory_staff" <?= old('role') === 'laboratory_staff' ? 'selected' : '' ?>>Laboratory Staff</option>
                         <option value="pharmacist" <?= old('role') === 'pharmacist' ? 'selected' : '' ?>>Pharmacist</option>
                         <option value="accountant" <?= old('role') === 'accountant' ? 'selected' : '' ?>>Accountant</option>
-                        <option value="it staff" <?= old('role') === 'it staff' ? 'selected' : '' ?>>IT Staff</option>
+                        <option value="it_staff" <?= old('role') === 'it_staff' ? 'selected' : '' ?>>IT Staff</option>
                     </select>
                 </div>
 

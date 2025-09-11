@@ -1,4 +1,4 @@
-<?= $this->extend('layouts/main') ?>
+<?= $this->extend('layouts/lab_main') ?>
 <?= $this->section('content') ?>
 
 <div class="container mt-4">
@@ -36,7 +36,7 @@
                         <td><?= esc($r['patient']) ?></td>
                         <td><?= esc($r['test']) ?></td>
                         <td><?= esc($r['result']) ?></td>
-                        <td><?= esc($r['date']) ?></td>
+                        <td><?= esc($r['created_at']) ?></td>
                     </tr>
                 <?php endforeach; ?>
             <?php else: ?>

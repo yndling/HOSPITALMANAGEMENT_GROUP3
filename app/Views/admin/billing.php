@@ -79,7 +79,8 @@
         <a href="/admin/reports" class="nav-link">Reports</a>
         <a href="/admin/users" class="nav-link">Users</a>
         <a href="/admin/settings" class="nav-link">Settings</a>
-        <a href="/login/logout" class="btn btn-danger logout-btn mt-auto">Log Out</a>
+         <a href="/logout" class="btn btn-danger logout-btn mt-auto">Log Out</a>
+    </nav>
     </nav>
     <main class="content">
         <h2>Payment Process</h2>

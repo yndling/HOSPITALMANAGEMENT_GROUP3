@@ -37,10 +37,10 @@
                         <option value="doctor">Doctor</option>
                         <option value="nurse">Nurse</option>
                         <option value="receptionist">Receptionist</option>
-                        <option value="laboratory staff">Laboratory Staff</option>
+                        <option value="laboratory_staff">Laboratory Staff</option>
                         <option value="pharmacist">Pharmacist</option>
                         <option value="accountant">Accountant</option>
-                        <option value="it staff">IT Staff</option>
+                        <option value="it_staff">IT Staff</option>
                     </select>
                 </div>
 

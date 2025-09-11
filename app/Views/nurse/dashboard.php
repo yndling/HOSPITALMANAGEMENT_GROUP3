@@ -90,7 +90,7 @@
         <a href="/nurse/patients" class="nav-link">Patients</a>
         <a href="/nurse/appointments" class="nav-link">Appointments</a>
         <a href="/nurse/medications" class="nav-link">Medications</a>
-        <a href="/login/logout" class="btn btn-danger logout-btn" style="margin-top:auto;">Log Out</a>
+        <a href="/logout" class="btn btn-danger logout-btn" style="margin-top:auto;">Log Out</a>
     </nav>
     <main class="content">
         <h2>Nurse Dashboard</h2>

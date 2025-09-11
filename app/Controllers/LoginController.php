@@ -12,6 +12,41 @@ class LoginController extends BaseController
         return view('login');
     }
 
+    public function register()
+    {
+        return view('register');
+    }
+
+    public function store()
+    {
+        $validation = \Config\Services::validation();
+
+        $validation->setRules([
+            'name' => 'required|min_length[3]|max_length[255]',
+            'email' => 'required|valid_email|is_unique[users.email]',
+            'role' => 'required',
+            'password' => 'required|min_length[6]',
+            'password_confirm' => 'required|matches[password]',
+        ]);
+
+        if (! $validation->withRequest($this->request)->run()) {
+            return redirect()->back()->withInput()->with('error', $validation->getErrors());
+        }
+
+        $userModel = new UserModel();
+
+        $data = [
+            'name' => $this->request->getPost('name'),
+            'email' => $this->request->getPost('email'),
+            'role' => $this->request->getPost('role'),
+            'password_hash' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
+        ];
+
+        $userModel->insert($data);
+
+        return redirect()->to('/login')->with('success', 'Registration successful. Please login.');
+    }
+
     public function authenticate()
     {
         $session   = session();
@@ -27,16 +62,17 @@ class LoginController extends BaseController
             return redirect()->back()->with('error', 'Email not found');
         }
 
-        // ✅ Plain password check (replace with password_hash in production)
-        if ($password !== $user['password']) {
+        // Use password_verify to check hashed password
+        if (!password_verify($password, $user['password_hash'])) {
             return redirect()->back()->with('error', 'Invalid password');
         }
 
-        if ($role !== $user['role']) {
+        // Normalize role to lowercase for comparison
+        if (strtolower($role) !== strtolower($user['role'])) {
             return redirect()->back()->with('error', 'Invalid role selected');
         }
 
-        // ✅ Save to session
+        // Save to session
         $session->set([
             'id'         => $user['id'],
             'name'       => $user['name'],
@@ -45,23 +81,23 @@ class LoginController extends BaseController
             'isLoggedIn' => true,
         ]);
 
-        // ✅ Redirect depende sa role
-        switch ($user['role']) {
+        // Redirect based on role (normalize to lowercase)
+        switch (strtolower($user['role'])) {
             case 'admin':
                 return redirect()->to('/admin/dashboard');
             case 'doctor':
                 return redirect()->to('/doctor/dashboard');
             case 'nurse':
                 return redirect()->to('/nurse/dashboard');
-            case 'laboratory_staff': // use underscore para consistent
+            case 'laboratory_staff': // use underscore to match registration form
                 return redirect()->to('/lab/dashboard');
-            case 'receptionist': // FIXED
+            case 'receptionist':
                 return redirect()->to('/receptionist/dashboard');
-            case 'pharmacy':
+            case 'pharmacist':
                 return redirect()->to('/pharmacy/dashboard');
-            case 'accounting':
+            case 'accountant':
                 return redirect()->to('/accounting/dashboard');
-            case 'it':
+            case 'it_staff':
                 return redirect()->to('/it/dashboard');
             default:
                 return redirect()->to('/login')->with('error', 'Unknown role');

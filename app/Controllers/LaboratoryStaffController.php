@@ -21,7 +21,7 @@ class LaboratoryStaffController extends BaseController
 
     private function checkAuth()
     {
-        if (!$this->session->get('isLoggedIn') || $this->session->get('role') !== 'labstaff') {
+        if (!$this->session->get('isLoggedIn') || $this->session->get('role') !== 'laboratory_staff') {
             return false;
         }
         return true;

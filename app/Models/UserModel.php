@@ -10,7 +10,7 @@ class UserModel extends Model
     protected $primaryKey    = 'id';
 
     // Dapat tugma ito sa columns ng DB mo
-    protected $allowedFields = ['name', 'email', 'password', 'role'];
+    protected $allowedFields = ['name', 'email', 'password_hash', 'role'];
 
     // Timestamps
     protected $useTimestamps = true;

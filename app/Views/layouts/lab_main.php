@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Appointments - Healthcare Dashboard</title>
+    <title>Laboratory Staff Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <style>
         body {
@@ -19,6 +19,8 @@
             background-color: #2c3e50;
             padding: 1rem;
             color: #ecf0f1;
+            display: flex;
+            flex-direction: column;
         }
         .sidebar .logo {
             font-weight: bold;
@@ -52,53 +54,20 @@
             margin: 1rem;
             max-width: 900px;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 0.75rem;
-            text-align: left;
-        }
-        th {
-            background-color: #f4f4f4;
-            font-style: italic;
-        }
     </style>
 </head>
 <body>
-    <nav class="sidebar d-flex flex-column">
-        <div class="logo">LOGO NAME</div>
-        <a href="/admin/dashboard" class="nav-link">Dashboard</a>
-        <a href="/admin/patients" class="nav-link">Patients</a>
-        <a href="/admin/appointments" class="nav-link active">Appointments</a>
-        <a href="/admin/billing" class="nav-link">Billing</a>
-        <a href="/admin/pharmacy" class="nav-link">Pharmacy</a>
-        <a href="/admin/reports" class="nav-link">Reports</a>
-        <a href="/admin/users" class="nav-link">Users</a>
-        <a href="/admin/settings" class="nav-link">Settings</a>
-         <a href="/logout" class="btn btn-danger logout-btn mt-auto">Log Out</a>
-    </nav>
-    </nav>
+    <nav class="sidebar">
+        <div class="logo">LABORATORY STAFF</div>
+        <a href="<?= base_url('/lab/dashboard') ?>" class="nav-link <?= uri_string() === 'lab/dashboard' ? 'active' : '' ?>">Dashboard</a>
+        <a href="<?= base_url('/lab/testing-requests') ?>" class="nav-link <?= uri_string() === 'lab/testing-requests' ? 'active' : '' ?>">Testing Requests</a>
+        <a href="<?= base_url('/lab/results') ?>" class="nav-link <?= uri_string() === 'lab/results' ? 'active' : '' ?>">Results</a>
+        <a href="<?= base_url('/lab/records') ?>" class="nav-link <?= uri_string() === 'lab/records' ? 'active' : '' ?>">Records</a>
+        <a href="<?= base_url('/logout') ?>" class="btn btn-danger mt-auto">Log Out</a>
     </nav>
     <main class="content">
-        <h2>Appointment Schedule</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>PATIENT NAME</th>
-                    <th>DOCTOR</th>
-                    <th>STATUS</th>
-                    <th>TIME</th>
-                    <th>DATE</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Appointment rows will be dynamically added here -->
-            </tbody>
-        </table>
+        <?= $this->renderSection('content') ?>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

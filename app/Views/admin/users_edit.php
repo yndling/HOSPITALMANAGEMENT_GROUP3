@@ -71,7 +71,8 @@
         <a href="/admin/reports" class="nav-link">Reports</a>
         <a href="/admin/users" class="nav-link active">Users</a>
         <a href="/admin/settings" class="nav-link">Settings</a>
-        <button class="btn btn-outline-secondary logout-btn mt-auto">Log Out</button>
+         <a href="/logout" class="btn btn-danger logout-btn mt-auto">Log Out</a>
+    </nav>
     </nav>
     <main class="content">
         <h2>Edit User</h2>

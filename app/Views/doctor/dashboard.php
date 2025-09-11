@@ -68,7 +68,7 @@
         <a href="/doctor/appointments" class="nav-link">Appointments</a>
         <a href="/doctor/prescriptions" class="nav-link">Prescriptions</a>
         <a href="/doctor/lab" class="nav-link">Lab</a>
-        <a href="/login/logout" class="btn btn-danger logout-btn" style="margin-top:auto;">Log Out</a>
+      <a href="/logout" class="btn btn-danger logout-btn" style="margin-top:auto;">Log Out</a>
     </nav>
     <main class="content">
         <h2>Doctor Dashboard</h2>

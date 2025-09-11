@@ -15,7 +15,7 @@
                 <li class="nav-item"><a class="nav-link" href="<?= base_url('/lab/testing-requests') ?>">Testing Requests</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= base_url('/lab/results') ?>">Results</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= base_url('/lab/records') ?>">Records</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?= base_url('/login/logout') ?>">Logout</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url('/logout') ?>">Logout</a></li>
             </ul>
         </div>
     </div>

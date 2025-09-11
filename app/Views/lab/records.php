@@ -1,4 +1,4 @@
-<?= $this->extend('layouts/main') ?>
+<?= $this->extend('layouts/lab_main') ?>
 <?= $this->section('content') ?>
 
 <div class="container mt-4">
@@ -24,12 +24,14 @@
                         <td><?= esc($r['test']) ?></td>
                         <td><?= esc($r['date']) ?></td>
                         <td>
-                            <?php if ($r['status'] === 'Completed'): ?>
+                            <?php if (isset($r['status']) && $r['status'] === 'Completed'): ?>
                                 <span class="badge bg-success"><?= esc($r['status']) ?></span>
-                            <?php elseif ($r['status'] === 'Pending'): ?>
+                            <?php elseif (isset($r['status']) && $r['status'] === 'Pending'): ?>
                                 <span class="badge bg-warning text-dark"><?= esc($r['status']) ?></span>
-                            <?php else: ?>
+                            <?php elseif (isset($r['status'])): ?>
                                 <span class="badge bg-secondary"><?= esc($r['status']) ?></span>
+                            <?php else: ?>
+                                <span class="badge bg-secondary">Unknown</span>
                             <?php endif; ?>
                         </td>
                     </tr>
