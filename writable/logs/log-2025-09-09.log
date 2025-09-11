@@ -1,0 +1,93 @@
+CRITICAL - 2025-09-09 08:43:35 --> ErrorException: Undefined array key "contact"
+[Method: GET, Route: receptionist/patients]
+in APPPATH\Views\receptionist\patients.php on line 14.
+ 1 APPPATH\Views\receptionist\patients.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "contact"', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\receptionist\\patients.php', 14)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\receptionist\\patients.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('receptionist/patients', [], true)
+ 5 APPPATH\Controllers\ReceptionistController.php(29): view('receptionist/patients', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ReceptionistController->patients()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReceptionistController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\public\\index.php')
+ERROR - 2025-09-09 09:19:40 --> mysqli_sql_exception: Table 'hmsdb.appointments' doesn't exist in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `appoint...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `appoint...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `appoint...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `appoint...', Array, false)
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Models\ReceptionistModel.php(75): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Controllers\ReceptionistController.php(88): App\Models\ReceptionistModel->getAppointments()
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(933): App\Controllers\ReceptionistController->appointments()
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReceptionistController))
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-09-09 09:19:40 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.appointments' doesn't exist
+[Method: GET, Route: receptionist/appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `appointments`.*, `patients`.`name` as `patient_name`
+FROM `appointments`
+LEFT JOIN `patients` ON `patients`.`id` = `appointments`.`patient_id`
+ORDER BY `appointments`.`date` DESC', [], false)
+ 2 APPPATH\Models\ReceptionistModel.php(75): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\ReceptionistController.php(88): App\Models\ReceptionistModel->getAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ReceptionistController->appointments()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReceptionistController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-09 09:19:40 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.appointments' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `appointments`.*, `patients`.`name` as `patient_name`
+FROM `appointments`
+LEFT JOIN `patients` ON `patients`.`id` = `appointments`.`patient_id`
+ORDER BY `appointments`.`date` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `appointments`.*, `patients`.`name` as `patient_name`
+FROM `appointments`
+LEFT JOIN `patients` ON `patients`.`id` = `appointments`.`patient_id`
+ORDER BY `appointments`.`date` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `appointments`.*, `patients`.`name` as `patient_name`
+FROM `appointments`
+LEFT JOIN `patients` ON `patients`.`id` = `appointments`.`patient_id`
+ORDER BY `appointments`.`date` DESC', [], false)
+ 4 APPPATH\Models\ReceptionistModel.php(75): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\ReceptionistController.php(88): App\Models\ReceptionistModel->getAppointments()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ReceptionistController->appointments()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReceptionistController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-09 09:19:40 --> [Caused by] mysqli_sql_exception: Table 'hmsdb.appointments' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `appointments`.*, `patients`.`name` as `patient_name`
+FROM `appointments`
+LEFT JOIN `patients` ON `patients`.`id` = `appointments`.`patient_id`
+ORDER BY `appointments`.`date` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `appointments`.*, `patients`.`name` as `patient_name`
+FROM `appointments`
+LEFT JOIN `patients` ON `patients`.`id` = `appointments`.`patient_id`
+ORDER BY `appointments`.`date` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `appointments`.*, `patients`.`name` as `patient_name`
+FROM `appointments`
+LEFT JOIN `patients` ON `patients`.`id` = `appointments`.`patient_id`
+ORDER BY `appointments`.`date` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `appointments`.*, `patients`.`name` as `patient_name`
+FROM `appointments`
+LEFT JOIN `patients` ON `patients`.`id` = `appointments`.`patient_id`
+ORDER BY `appointments`.`date` DESC', [], false)
+ 5 APPPATH\Models\ReceptionistModel.php(75): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\ReceptionistController.php(88): App\Models\ReceptionistModel->getAppointments()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ReceptionistController->appointments()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReceptionistController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

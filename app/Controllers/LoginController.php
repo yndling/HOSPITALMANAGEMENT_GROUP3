@@ -27,7 +27,7 @@ class LoginController extends BaseController
             return redirect()->back()->with('error', 'Email not found');
         }
 
-        // ✅ Plain password checking
+        // ✅ Plain password check (replace with password_hash in production)
         if ($password !== $user['password']) {
             return redirect()->back()->with('error', 'Invalid password');
         }
@@ -53,10 +53,10 @@ class LoginController extends BaseController
                 return redirect()->to('/doctor/dashboard');
             case 'nurse':
                 return redirect()->to('/nurse/dashboard');
-            case 'laboratory staff':
+            case 'laboratory_staff': // use underscore para consistent
                 return redirect()->to('/lab/dashboard');
-            case 'reception':
-                return redirect()->to('/reception/dashboard');
+            case 'receptionist': // FIXED
+                return redirect()->to('/receptionist/dashboard');
             case 'pharmacy':
                 return redirect()->to('/pharmacy/dashboard');
             case 'accounting':
