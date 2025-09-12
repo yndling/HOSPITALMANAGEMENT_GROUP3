@@ -98,7 +98,7 @@ $routes->group('lab', static function ($routes) {
 // --------------------
 // Pharmacist Routes
 // --------------------
-$routes->group('pharmacist', static function ($routes) {
+$routes->group('pharmacy', static function ($routes) {
     $routes->get('dashboard', 'PharmacistController::dashboard');
 
     // Medicines
@@ -112,4 +112,25 @@ $routes->group('pharmacist', static function ($routes) {
     // Prescriptions
     $routes->get('prescriptions', 'PharmacistController::prescriptions');
     $routes->post('prescriptions/dispense/(:num)', 'PharmacistController::dispensePrescription/$1');
+});
+
+// --------------------
+// Accountant Routes
+// --------------------
+$routes->group('accountant', static function ($routes) {
+    $routes->get('dashboard', 'AccountantController::dashboard');
+    $routes->get('bills', 'AccountantController::bills');
+    $routes->get('reports', 'AccountantController::reports');
+    $routes->get('payments', 'AccountantController::payments');
+});
+
+// --------------------
+// IT Staff Routes
+// --------------------
+$routes->group('itstaff', static function ($routes) {
+    $routes->get('dashboard', 'ITStaffController::dashboard');
+    $routes->get('userAccounts', 'ITStaffController::userAccounts');
+    $routes->get('logs', 'ITStaffController::logs');
+    $routes->get('backups', 'ITStaffController::backups');
+    $routes->get('settings', 'ITStaffController::settings');
 });

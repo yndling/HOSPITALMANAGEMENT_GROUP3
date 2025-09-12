@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IT Staff Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        .sidebar {
+            width: 220px;
+            background-color: #2c3e50;
+            padding: 1rem;
+            color: #ecf0f1;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar .logo {
+            font-weight: bold;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: #ecf0f1;
+            letter-spacing: 2px;
+        }
+        .sidebar .nav-link {
+            color: #bdc3c7;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+        .sidebar .nav-link:hover {
+            background-color: #34495e;
+            color: #ecf0f1;
+        }
+        .sidebar .nav-link.active {
+            font-weight: bold;
+            background-color: #1abc9c;
+            color: white;
+            border-radius: 0.25rem;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 2rem 3rem;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            margin: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="logo">LOGO NAME</div>
+        <a href="<?= base_url('/itstaff/dashboard') ?>" class="nav-link active">Dashboard</a>
+        <a href="<?= base_url('/itstaff/userAccounts') ?>" class="nav-link">User Accounts</a>
+        <a href="<?= base_url('/itstaff/logs') ?>" class="nav-link">Logs</a>
+        <a href="<?= base_url('/itstaff/backups') ?>" class="nav-link">Backups</a>
+        <a href="<?= base_url('/itstaff/settings') ?>" class="nav-link">Settings</a>
+        <a href="<?= base_url('/logout') ?>" class="btn btn-danger mt-auto">Logout</a>
+    </nav>
+    <main class="content">
+        <h1>IT Staff Dashboard</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Tickets</h5>
+                        <p class="card-text"><?= $totalTickets ?></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Open Tickets</h5>
+                        <p class="card-text"><?= $openTickets ?></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Resolved Tickets</h5>
+                        <p class="card-text"><?= $resolvedTickets ?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -56,6 +56,9 @@ class LoginController extends BaseController
         $password = $this->request->getPost('password');
         $role     = $this->request->getPost('role');
 
+        // Normalize role input: lowercase and replace spaces with underscores
+        $normalizedRole = str_replace(' ', '_', strtolower($role));
+
         $user = $userModel->where('email', $email)->first();
 
         if (! $user) {
@@ -68,7 +71,7 @@ class LoginController extends BaseController
         }
 
         // Normalize role to lowercase for comparison
-        if (strtolower($role) !== strtolower($user['role'])) {
+        if ($normalizedRole !== strtolower($user['role'])) {
             return redirect()->back()->with('error', 'Invalid role selected');
         }
 
@@ -96,9 +99,10 @@ class LoginController extends BaseController
             case 'pharmacist':
                 return redirect()->to('/pharmacy/dashboard');
             case 'accountant':
-                return redirect()->to('/accounting/dashboard');
+                return redirect()->to('/accountant/dashboard');
             case 'it_staff':
-                return redirect()->to('/it/dashboard');
+            case 'itstaff':
+                return redirect()->to('/itstaff/dashboard');
             default:
                 return redirect()->to('/login')->with('error', 'Unknown role');
         }
