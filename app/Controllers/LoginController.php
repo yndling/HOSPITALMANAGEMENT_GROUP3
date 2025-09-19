@@ -56,7 +56,7 @@ class LoginController extends BaseController
         $password = $this->request->getPost('password');
         $role     = $this->request->getPost('role');
 
-        // Normalize role input: lowercase and replace spaces with underscores
+    
         $normalizedRole = str_replace(' ', '_', strtolower($role));
 
         $user = $userModel->where('email', $email)->first();
@@ -70,7 +70,7 @@ class LoginController extends BaseController
             return redirect()->back()->with('error', 'Invalid password');
         }
 
-        // Normalize role to lowercase for comparison
+       
         if ($normalizedRole !== strtolower($user['role'])) {
             return redirect()->back()->with('error', 'Invalid role selected');
         }
