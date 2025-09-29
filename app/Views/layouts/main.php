@@ -1,30 +1,42 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Hospital Lab System</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hospital Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 2rem 3rem;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            margin: 1rem;
+        }
+        .chart-container {
+            max-width: 900px;
+            margin: 1rem auto 0 auto;
+        }
+    </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="<?= base_url('/lab/dashboard') ?>">Lab Staff</a>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="<?= base_url('/lab/testing-requests') ?>">Testing Requests</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?= base_url('/lab/results') ?>">Results</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?= base_url('/lab/records') ?>">Records</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?= base_url('/logout') ?>">Logout</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<?= view('templates/header') ?>
 
-<main>
+<main class="content">
     <?= $this->renderSection('content') ?>
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>

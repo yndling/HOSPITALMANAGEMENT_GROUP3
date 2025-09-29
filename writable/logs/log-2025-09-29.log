@@ -1,0 +1,159 @@
+CRITICAL - 2025-09-29 15:20:56 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "register.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('register.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 3 APPPATH\Controllers\AuthController.php(17): view('register')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-09-29 15:21:01 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "register.php"
+[Method: GET, Route: register]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('register.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('register', [], true)
+ 3 APPPATH\Controllers\AuthController.php(17): view('register')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-09-29 15:21:43 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/dashboard.php"
+[Method: GET, Route: dashboard]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/dashboard.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 3 APPPATH\Controllers\AuthController.php(99): view('auth/dashboard')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->dashboard()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-09-29 16:31:55 --> ErrorException: Undefined variable $totalMedicines
+[Method: GET, Route: dashboard]
+in APPPATH\Views\templates\dashboard.php on line 319.
+ 1 APPPATH\Views\templates\dashboard.php(319): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalMedicines', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\templates\\dashboard.php', 319)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\templates\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('templates/dashboard', [], true)
+ 5 APPPATH\Controllers\AuthController.php(99): view('templates/dashboard')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-09-29 16:32:06 --> ErrorException: Undefined variable $totalMedicines
+[Method: GET, Route: dashboard]
+in APPPATH\Views\templates\dashboard.php on line 319.
+ 1 APPPATH\Views\templates\dashboard.php(319): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalMedicines', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\templates\\dashboard.php', 319)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\templates\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('templates/dashboard', [], true)
+ 5 APPPATH\Controllers\AuthController.php(99): view('templates/dashboard')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-09-29 16:38:52 --> ErrorException: Undefined variable $totalMedicines
+[Method: GET, Route: dashboard]
+in APPPATH\Views\templates\dashboard.php on line 414.
+ 1 APPPATH\Views\templates\dashboard.php(414): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalMedicines', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\templates\\dashboard.php', 414)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\templates\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('templates/dashboard', [], true)
+ 5 APPPATH\Controllers\AuthController.php(158): view('templates/dashboard', [])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-09-29 16:44:31 --> ErrorException: Undefined variable $totalMedicines
+[Method: GET, Route: dashboard]
+in APPPATH\Views\templates\dashboard.php on line 414.
+ 1 APPPATH\Views\templates\dashboard.php(414): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalMedicines', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\templates\\dashboard.php', 414)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\templates\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('templates/dashboard', [], true)
+ 5 APPPATH\Controllers\AuthController.php(158): view('templates/dashboard', [])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-09-29 16:45:58 --> ErrorException: Undefined variable $totalMedicines
+[Method: GET, Route: dashboard]
+in APPPATH\Views\templates\dashboard.php on line 414.
+ 1 APPPATH\Views\templates\dashboard.php(414): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalMedicines', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\templates\\dashboard.php', 414)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\templates\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('templates/dashboard', [], true)
+ 5 APPPATH\Controllers\AuthController.php(158): view('templates/dashboard', [])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-09-29 16:45:59 --> ErrorException: Undefined variable $totalMedicines
+[Method: GET, Route: dashboard]
+in APPPATH\Views\templates\dashboard.php on line 414.
+ 1 APPPATH\Views\templates\dashboard.php(414): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalMedicines', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\templates\\dashboard.php', 414)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\templates\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('templates/dashboard', [], true)
+ 5 APPPATH\Controllers\AuthController.php(158): view('templates/dashboard', [])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-09-29 16:46:04 --> ErrorException: Undefined variable $totalMedicines
+[Method: GET, Route: dashboard]
+in APPPATH\Views\templates\dashboard.php on line 414.
+ 1 APPPATH\Views\templates\dashboard.php(414): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalMedicines', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\templates\\dashboard.php', 414)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\templates\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('templates/dashboard', [], true)
+ 5 APPPATH\Controllers\AuthController.php(158): view('templates/dashboard', [])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-09-29 16:49:58 --> ErrorException: Undefined variable $totalBills
+[Method: GET, Route: dashboard]
+in APPPATH\Views\templates\dashboard.php on line 344.
+ 1 APPPATH\Views\templates\dashboard.php(344): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalBills', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\templates\\dashboard.php', 344)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\templates\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('templates/dashboard', [], true)
+ 5 APPPATH\Controllers\AuthController.php(158): view('templates/dashboard', [])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
