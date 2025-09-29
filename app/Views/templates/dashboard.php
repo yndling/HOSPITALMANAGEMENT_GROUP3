@@ -183,19 +183,20 @@
         </div>
     </div>
 
-<?php elseif ($role === 'lab_staff'): ?>
-    <?= $this->extend('layouts/lab_main') ?>
+<?php elseif ($role === 'laboratory_staff'): ?>
+    <?= $this->extend('layouts/main') ?>
     <?= $this->section('content') ?>
 
     <div class="container mt-4">
         <h2>Laboratory Dashboard</h2>
+        <p>Welcome to the Laboratory Staff Dashboard. Here you can monitor lab requests and test statuses.</p>
 
-        <div class="row mt-3">
+        <div class="row mt-4">
             <div class="col-md-3">
                 <div class="card text-white bg-primary mb-3">
                     <div class="card-body text-center">
                         <h5>Total Requests</h5>
-                        <h3><?= esc($totalRequests) ?></h3>
+                        <h3><?= isset($totalRequests) ? esc($totalRequests) : '0' ?></h3>
                     </div>
                 </div>
             </div>
@@ -203,7 +204,7 @@
                 <div class="card text-white bg-warning mb-3">
                     <div class="card-body text-center">
                         <h5>Pending Tests</h5>
-                        <h3><?= esc($pendingTests) ?></h3>
+                        <h3><?= isset($pendingTests) ? esc($pendingTests) : '0' ?></h3>
                     </div>
                 </div>
             </div>
@@ -211,7 +212,7 @@
                 <div class="card text-white bg-success mb-3">
                     <div class="card-body text-center">
                         <h5>Completed Tests</h5>
-                        <h3><?= esc($completedTests) ?></h3>
+                        <h3><?= isset($completedTests) ? esc($completedTests) : '0' ?></h3>
                     </div>
                 </div>
             </div>
@@ -219,7 +220,7 @@
                 <div class="card text-white bg-danger mb-3">
                     <div class="card-body text-center">
                         <h5>Critical Alerts</h5>
-                        <h3><?= esc($criticalAlerts) ?></h3>
+                        <h3><?= isset($criticalAlerts) ? esc($criticalAlerts) : '0' ?></h3>
                     </div>
                 </div>
             </div>

@@ -116,7 +116,7 @@ class AuthController extends BaseController
                     'dispensedPrescriptions' => 50,
                 ];
                 break;
-            case 'lab_staff':
+            case 'laboratory_staff':
                 $data = [
                     'totalRequests' => 100,
                     'pendingTests' => 20,
