@@ -37,7 +37,7 @@
 
             <!-- Registration form -->
             <form action="<?= site_url('register') ?>" method="post">
-                <?= csrf_field() ?> <!-- CSRF protection -->
+                <?= csrf_field() ?> <!-- ✅ CSRF protection -->
 
                 <div class="mb-3">
                     <label for="name" class="form-label">Full Name</label>
