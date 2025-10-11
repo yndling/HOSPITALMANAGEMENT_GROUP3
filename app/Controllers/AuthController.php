@@ -157,6 +157,6 @@ class AuthController extends BaseController
                 break;
         }
 
-        return view('templates/dashboard', $data);
+        return view('auth/dashboard', $data);
     }
 }

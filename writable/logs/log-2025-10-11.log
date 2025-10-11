@@ -1,0 +1,61 @@
+ERROR - 2025-10-11 12:34:37 --> mysqli_sql_exception: Table 'appointments' already exists in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `a...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `a...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `a...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `a...')
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Database\Migrations\2025-09-11-135520_CreateAppointmentsTable.php(47): CodeIgniter\Database\Forge->createTable('appointments')
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreateAppointmentsTable->up()
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-10-11 12:35:19 --> mysqli_sql_exception: Table 'appointments' already exists in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `a...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `a...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `a...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `a...')
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Database\Migrations\2025-09-11-135520_CreateAppointmentsTable.php(47): CodeIgniter\Database\Forge->createTable('appointments')
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreateAppointmentsTable->up()
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-10-11 12:38:34 --> mysqli_sql_exception: Table 'patients' already exists in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `p...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `p...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `p...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `p...')
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Database\Migrations\2025-09-11-135520_CreatePatientsTable.php(51): CodeIgniter\Database\Forge->createTable('patients')
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreatePatientsTable->up()
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-10-11 12:59:01 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/users.php"
+[Method: GET, Route: admin/users]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/users.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/users', [], true)
+ 3 APPPATH\Controllers\AdminController.php(51): view('auth/admin/users')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->users()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
