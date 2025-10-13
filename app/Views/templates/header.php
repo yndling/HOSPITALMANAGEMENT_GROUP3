@@ -82,10 +82,9 @@
         <a href="/pharmacy/prescriptions" class="nav-link <?= (uri_string() == 'pharmacy/prescriptions') ? 'active' : '' ?>">Prescriptions</a>
     <?php elseif ($session->get('role') === 'accountant'): ?>
         <div class="logo">LOGO NAME</div>
-        <a href="/dashboard" class="nav-link <?= (uri_string() == 'dashboard') ? 'active' : '' ?>">Dashboard</a>
-        <a href="/accountant/bills" class="nav-link <?= (uri_string() == 'accountant/bills') ? 'active' : '' ?>">Bills</a>
+        <a href="/accountant/billing" class="nav-link <?= (uri_string() == 'accountant/billing') ? 'active' : '' ?>">Dashboard</a>
+        <a href="/accountant/manage-bills" class="nav-link <?= (uri_string() == 'accountant/manage-bills') ? 'active' : '' ?>">Manage Bills</a>
         <a href="/accountant/reports" class="nav-link <?= (uri_string() == 'accountant/reports') ? 'active' : '' ?>">Reports</a>
-        <a href="/accountant/payments" class="nav-link <?= (uri_string() == 'accountant/payments') ? 'active' : '' ?>">Payments</a>
     <?php elseif ($session->get('role') === 'it_staff' || $session->get('role') === 'itstaff'): ?>
         <div class="logo">LOGO NAME</div>
         <a href="/dashboard" class="nav-link <?= (uri_string() == 'dashboard') ? 'active' : '' ?>">Dashboard</a>

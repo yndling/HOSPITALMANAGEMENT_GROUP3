@@ -50,7 +50,7 @@ class AdminController extends BaseController
         $data['pendingPayments'] = $this->billModel->getPendingPaymentsCount();
         $data['totalRevenue'] = $this->billModel->getTotalRevenue();
 
-        return view('auth/admin/dashboard', $data);
+        return view('auth/dashboard', $data);
     }
 
     // ==================== STAFF MANAGEMENT ====================
@@ -264,26 +264,15 @@ class AdminController extends BaseController
      */
     public function createInvoice($bill_id)
     {
-        $bill = $this->billModel->getBill($bill_id);
-        if (!$bill) {
+        $data['bill'] = $this->billModel->getBill($bill_id);
+        if (!$data['bill']) {
             $this->session->setFlashdata('error', 'Bill not found');
             return redirect()->to('/admin/bills');
         }
 
-        $invoiceData = [
-            'bill_id' => $bill_id,
-            'issued_date' => date('Y-m-d H:i:s'),
-            'due_date' => $bill['due_date'],
-            'status' => 'unpaid'
-        ];
+        $data['payments'] = $this->paymentModel->getPaymentsByBill($bill_id);
 
-        if ($this->invoiceModel->createInvoice($invoiceData)) {
-            $this->session->setFlashdata('success', 'Invoice generated successfully!');
-        } else {
-            $this->session->setFlashdata('errors', $this->invoiceModel->errors());
-        }
-
-        return redirect()->to('/admin/billing');
+        return view('auth/admin/invoice', $data);
     }
 
     /**

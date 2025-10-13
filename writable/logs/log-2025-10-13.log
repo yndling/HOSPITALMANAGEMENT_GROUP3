@@ -770,3 +770,524 @@ in APPPATH\Controllers\ReceptionistController.php on line 40.
  5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
  7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 15:30:17 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/dashboard.php"
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/dashboard.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/dashboard', [], true)
+ 3 APPPATH\Controllers\AdminController.php(53): view('auth/admin/dashboard', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->dashboard()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 15:30:22 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/dashboard.php"
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/dashboard.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/dashboard', [], true)
+ 3 APPPATH\Controllers\AdminController.php(53): view('auth/admin/dashboard', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->dashboard()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 15:30:23 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/dashboard.php"
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/dashboard.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/dashboard', [], true)
+ 3 APPPATH\Controllers\AdminController.php(53): view('auth/admin/dashboard', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->dashboard()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 15:31:23 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/dashboard.php"
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/dashboard.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/dashboard', [], true)
+ 3 APPPATH\Controllers\AdminController.php(53): view('auth/admin/dashboard', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->dashboard()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 15:31:27 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/dashboard.php"
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/dashboard.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/dashboard', [], true)
+ 3 APPPATH\Controllers\AdminController.php(53): view('auth/admin/dashboard', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->dashboard()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 15:31:28 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/dashboard.php"
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/dashboard.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/dashboard', [], true)
+ 3 APPPATH\Controllers\AdminController.php(53): view('auth/admin/dashboard', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->dashboard()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 15:31:28 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/dashboard.php"
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/dashboard.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/dashboard', [], true)
+ 3 APPPATH\Controllers\AdminController.php(53): view('auth/admin/dashboard', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->dashboard()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 15:31:29 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/dashboard.php"
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/dashboard.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/dashboard', [], true)
+ 3 APPPATH\Controllers\AdminController.php(53): view('auth/admin/dashboard', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->dashboard()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 15:31:53 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/dashboard.php"
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/dashboard.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/dashboard', [], true)
+ 3 APPPATH\Controllers\AdminController.php(53): view('auth/admin/dashboard', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->dashboard()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 15:31:53 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/dashboard.php"
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/dashboard.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/dashboard', [], true)
+ 3 APPPATH\Controllers\AdminController.php(53): view('auth/admin/dashboard', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->dashboard()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 15:31:54 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/dashboard.php"
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/dashboard.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/dashboard', [], true)
+ 3 APPPATH\Controllers\AdminController.php(53): view('auth/admin/dashboard', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->dashboard()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 15:53:59 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/accountant/bill_form.php"
+[Method: GET, Route: accountant/bills/create]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/accountant/bill_form.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/accountant/bill_form', [], true)
+ 3 APPPATH\Controllers\AccountantController.php(72): view('auth/accountant/bill_form', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountantController->createBill()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountantController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 15:54:00 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/accountant/bill_form.php"
+[Method: GET, Route: accountant/bills/create]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/accountant/bill_form.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/accountant/bill_form', [], true)
+ 3 APPPATH\Controllers\AccountantController.php(72): view('auth/accountant/bill_form', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountantController->createBill()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountantController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 15:56:19 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/accountant/invoice.php"
+[Method: GET, Route: accountant/bills/invoice/5]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/accountant/invoice.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/accountant/invoice', [], true)
+ 3 APPPATH\Controllers\AccountantController.php(143): view('auth/accountant/invoice', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountantController->createInvoice('5')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountantController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 15:56:22 --> ErrorException: Undefined array key "patient_name"
+[Method: GET, Route: accountant/bills/payment/5]
+in APPPATH\Views\auth\accountant\payment_form.php on line 8.
+ 1 APPPATH\Views\auth\accountant\payment_form.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "patient_name"', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\payment_form.php', 8)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\payment_form.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/accountant/payment_form', [], true)
+ 5 APPPATH\Controllers\AccountantController.php(154): view('auth/accountant/payment_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountantController->recordPayment('5')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountantController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 15:56:29 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/accountant/invoice.php"
+[Method: GET, Route: accountant/bills/invoice/4]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/accountant/invoice.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/accountant/invoice', [], true)
+ 3 APPPATH\Controllers\AccountantController.php(143): view('auth/accountant/invoice', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountantController->createInvoice('4')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountantController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 15:57:33 --> ErrorException: Undefined array key "patient_name"
+[Method: GET, Route: accountant/bills/invoice/4]
+in APPPATH\Views\auth\accountant\invoice.php on line 49.
+ 1 APPPATH\Views\auth\accountant\invoice.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "patient_name"', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\invoice.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\invoice.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/accountant/invoice', [], true)
+ 5 APPPATH\Controllers\AccountantController.php(143): view('auth/accountant/invoice', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountantController->createInvoice('4')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountantController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 15:57:34 --> ErrorException: Undefined array key "patient_name"
+[Method: GET, Route: accountant/bills/invoice/4]
+in APPPATH\Views\auth\accountant\invoice.php on line 49.
+ 1 APPPATH\Views\auth\accountant\invoice.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "patient_name"', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\invoice.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\invoice.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/accountant/invoice', [], true)
+ 5 APPPATH\Controllers\AccountantController.php(143): view('auth/accountant/invoice', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountantController->createInvoice('4')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountantController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 15:57:36 --> ErrorException: Undefined array key "patient_name"
+[Method: GET, Route: accountant/bills/invoice/4]
+in APPPATH\Views\auth\accountant\invoice.php on line 49.
+ 1 APPPATH\Views\auth\accountant\invoice.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "patient_name"', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\invoice.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\invoice.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/accountant/invoice', [], true)
+ 5 APPPATH\Controllers\AccountantController.php(143): view('auth/accountant/invoice', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountantController->createInvoice('4')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountantController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 15:59:53 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/accountant/invoice.php"
+[Method: GET, Route: accountant/bills/invoice/4]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/accountant/invoice.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/accountant/invoice', [], true)
+ 3 APPPATH\Controllers\AccountantController.php(143): view('auth/accountant/invoice', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountantController->createInvoice('4')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountantController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 16:00:05 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/accountant/invoice.php"
+[Method: GET, Route: accountant/bills/invoice/4]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/accountant/invoice.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/accountant/invoice', [], true)
+ 3 APPPATH\Controllers\AccountantController.php(143): view('auth/accountant/invoice', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountantController->createInvoice('4')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountantController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 16:01:41 --> ErrorException: Undefined array key "patient_name"
+[Method: GET, Route: accountant/bills/invoice/4]
+in APPPATH\Views\auth\accountant\invoice.php on line 49.
+ 1 APPPATH\Views\auth\accountant\invoice.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "patient_name"', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\invoice.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\invoice.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/accountant/invoice', [], true)
+ 5 APPPATH\Controllers\AccountantController.php(143): view('auth/accountant/invoice', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountantController->createInvoice('4')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountantController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 16:01:41 --> ErrorException: Undefined array key "patient_name"
+[Method: GET, Route: accountant/bills/invoice/4]
+in APPPATH\Views\auth\accountant\invoice.php on line 49.
+ 1 APPPATH\Views\auth\accountant\invoice.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "patient_name"', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\invoice.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\invoice.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/accountant/invoice', [], true)
+ 5 APPPATH\Controllers\AccountantController.php(143): view('auth/accountant/invoice', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountantController->createInvoice('4')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountantController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 16:01:42 --> ErrorException: Undefined array key "patient_name"
+[Method: GET, Route: accountant/bills/invoice/4]
+in APPPATH\Views\auth\accountant\invoice.php on line 49.
+ 1 APPPATH\Views\auth\accountant\invoice.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "patient_name"', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\invoice.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\invoice.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/accountant/invoice', [], true)
+ 5 APPPATH\Controllers\AccountantController.php(143): view('auth/accountant/invoice', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountantController->createInvoice('4')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountantController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 16:01:42 --> ErrorException: Undefined array key "patient_name"
+[Method: GET, Route: accountant/bills/invoice/4]
+in APPPATH\Views\auth\accountant\invoice.php on line 49.
+ 1 APPPATH\Views\auth\accountant\invoice.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "patient_name"', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\invoice.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\invoice.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/accountant/invoice', [], true)
+ 5 APPPATH\Controllers\AccountantController.php(143): view('auth/accountant/invoice', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountantController->createInvoice('4')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountantController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 16:01:42 --> ErrorException: Undefined array key "patient_name"
+[Method: GET, Route: accountant/bills/invoice/4]
+in APPPATH\Views\auth\accountant\invoice.php on line 49.
+ 1 APPPATH\Views\auth\accountant\invoice.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "patient_name"', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\invoice.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\invoice.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/accountant/invoice', [], true)
+ 5 APPPATH\Controllers\AccountantController.php(143): view('auth/accountant/invoice', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountantController->createInvoice('4')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountantController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 16:01:42 --> ErrorException: Undefined array key "patient_name"
+[Method: GET, Route: accountant/bills/invoice/4]
+in APPPATH\Views\auth\accountant\invoice.php on line 49.
+ 1 APPPATH\Views\auth\accountant\invoice.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "patient_name"', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\invoice.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\invoice.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/accountant/invoice', [], true)
+ 5 APPPATH\Controllers\AccountantController.php(143): view('auth/accountant/invoice', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountantController->createInvoice('4')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountantController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 16:03:37 --> ErrorException: Undefined property: CodeIgniter\View\View::$paymentModel
+[Method: GET, Route: accountant/bills/invoice/4]
+in APPPATH\Views\auth\accountant\invoice.php on line 56.
+ 1 APPPATH\Views\auth\accountant\invoice.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$paymentModel', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\invoice.php', 56)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\invoice.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/accountant/invoice', [], true)
+ 5 APPPATH\Controllers\AccountantController.php(143): view('auth/accountant/invoice', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountantController->createInvoice('4')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountantController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 16:03:37 --> ErrorException: Undefined property: CodeIgniter\View\View::$paymentModel
+[Method: GET, Route: accountant/bills/invoice/4]
+in APPPATH\Views\auth\accountant\invoice.php on line 56.
+ 1 APPPATH\Views\auth\accountant\invoice.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$paymentModel', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\invoice.php', 56)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\invoice.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/accountant/invoice', [], true)
+ 5 APPPATH\Controllers\AccountantController.php(143): view('auth/accountant/invoice', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountantController->createInvoice('4')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountantController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 16:03:42 --> ErrorException: Undefined property: CodeIgniter\View\View::$paymentModel
+[Method: GET, Route: accountant/bills/invoice/6]
+in APPPATH\Views\auth\accountant\invoice.php on line 56.
+ 1 APPPATH\Views\auth\accountant\invoice.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$paymentModel', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\invoice.php', 56)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\invoice.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/accountant/invoice', [], true)
+ 5 APPPATH\Controllers\AccountantController.php(143): view('auth/accountant/invoice', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountantController->createInvoice('6')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountantController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 16:20:26 --> ErrorException: Undefined array key "patient_name"
+[Method: GET, Route: accountant/bills/payment/7]
+in APPPATH\Views\auth\accountant\payment_form.php on line 8.
+ 1 APPPATH\Views\auth\accountant\payment_form.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "patient_name"', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\payment_form.php', 8)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\payment_form.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/accountant/payment_form', [], true)
+ 5 APPPATH\Controllers\AccountantController.php(156): view('auth/accountant/payment_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountantController->recordPayment('7')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountantController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 16:20:34 --> ErrorException: Undefined array key "patient_name"
+[Method: GET, Route: accountant/bills/payment/7]
+in APPPATH\Views\auth\accountant\payment_form.php on line 8.
+ 1 APPPATH\Views\auth\accountant\payment_form.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "patient_name"', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\payment_form.php', 8)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\payment_form.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/accountant/payment_form', [], true)
+ 5 APPPATH\Controllers\AccountantController.php(156): view('auth/accountant/payment_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountantController->recordPayment('7')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountantController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 16:21:52 --> ErrorException: Undefined property: CodeIgniter\View\View::$paymentModel
+[Method: GET, Route: accountant/bills/payment/7]
+in APPPATH\Views\auth\accountant\payment_form.php on line 91.
+ 1 APPPATH\Views\auth\accountant\payment_form.php(91): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$paymentModel', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\payment_form.php', 91)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\payment_form.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/accountant/payment_form', [], true)
+ 5 APPPATH\Controllers\AccountantController.php(156): view('auth/accountant/payment_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountantController->recordPayment('7')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountantController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 16:21:53 --> ErrorException: Undefined property: CodeIgniter\View\View::$paymentModel
+[Method: GET, Route: accountant/bills/payment/7]
+in APPPATH\Views\auth\accountant\payment_form.php on line 91.
+ 1 APPPATH\Views\auth\accountant\payment_form.php(91): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$paymentModel', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\payment_form.php', 91)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\payment_form.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/accountant/payment_form', [], true)
+ 5 APPPATH\Controllers\AccountantController.php(156): view('auth/accountant/payment_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountantController->recordPayment('7')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountantController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 16:22:18 --> ErrorException: Undefined property: CodeIgniter\View\View::$paymentModel
+[Method: GET, Route: accountant/bills/payment/7]
+in APPPATH\Views\auth\accountant\payment_form.php on line 91.
+ 1 APPPATH\Views\auth\accountant\payment_form.php(91): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$paymentModel', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\payment_form.php', 91)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\payment_form.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/accountant/payment_form', [], true)
+ 5 APPPATH\Controllers\AccountantController.php(156): view('auth/accountant/payment_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountantController->recordPayment('7')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountantController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 16:23:18 --> ErrorException: Undefined property: CodeIgniter\View\View::$paymentModel
+[Method: GET, Route: accountant/bills/payment/7]
+in APPPATH\Views\auth\accountant\payment_form.php on line 91.
+ 1 APPPATH\Views\auth\accountant\payment_form.php(91): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$paymentModel', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\payment_form.php', 91)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\payment_form.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/accountant/payment_form', [], true)
+ 5 APPPATH\Controllers\AccountantController.php(158): view('auth/accountant/payment_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountantController->recordPayment('7')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountantController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-13 16:23:25 --> ErrorException: Undefined property: CodeIgniter\View\View::$paymentModel
+[Method: GET, Route: accountant/bills/payment/7]
+in APPPATH\Views\auth\accountant\payment_form.php on line 91.
+ 1 APPPATH\Views\auth\accountant\payment_form.php(91): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$paymentModel', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\payment_form.php', 91)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\accountant\\payment_form.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/accountant/payment_form', [], true)
+ 5 APPPATH\Controllers\AccountantController.php(158): view('auth/accountant/payment_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AccountantController->recordPayment('7')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AccountantController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')

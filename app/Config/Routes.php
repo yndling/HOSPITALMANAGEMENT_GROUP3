@@ -126,9 +126,19 @@ $routes->group('pharmacy', ['filter' => 'auth'], function($routes) {
 // ACCOUNTANT ROUTES
 $routes->group('accountant', ['filter' => 'auth'], function($routes) {
     $routes->get('/', 'AccountantController::index');
-    $routes->get('bills', 'AccountantController::bills');
+    $routes->get('billing', 'AccountantController::billing');
+    $routes->get('manage-bills', 'AccountantController::manageBills');
     $routes->get('reports', 'AccountantController::reports');
-    $routes->get('payments', 'AccountantController::payments');
+
+    // Bill Management
+    $routes->get('bills/create', 'AccountantController::createBill');
+    $routes->post('bills/store', 'AccountantController::storeBill');
+    $routes->get('bills/edit/(:num)', 'AccountantController::editBill/$1');
+    $routes->post('bills/update/(:num)', 'AccountantController::updateBill/$1');
+    $routes->get('bills/delete/(:num)', 'AccountantController::deleteBill/$1');
+    $routes->get('bills/invoice/(:num)', 'AccountantController::createInvoice/$1');
+    $routes->get('bills/payment/(:num)', 'AccountantController::recordPayment/$1');
+    $routes->post('payments/store', 'AccountantController::storePayment');
 });
 
 // IT STAFF ROUTES

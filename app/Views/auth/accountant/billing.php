@@ -4,8 +4,8 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
-            <h1>Billing Management</h1>
-            <p class="lead">Manage patient bills, invoices, and payments.</p>
+            <h1>Billing Overview</h1>
+            <p class="lead">Overview of all bills, payments, and financial status.</p>
 
             <?php if (session()->getFlashdata('success')): ?>
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -21,25 +21,77 @@
                 </div>
             <?php endif; ?>
 
-            <?php if (session()->getFlashdata('errors')): ?>
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <ul class="mb-0">
-                        <?php foreach (session()->getFlashdata('errors') as $error): ?>
-                            <li><?= esc($error) ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <!-- Statistics Cards -->
+            <div class="row mt-4">
+                <div class="col-md-3 mb-4">
+                    <div class="card bg-primary text-white">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h5 class="card-title">Total Bills</h5>
+                                    <h2 class="mb-0"><?= $totalBills ?? 0 ?></h2>
+                                </div>
+                                <div class="align-self-center">
+                                    <i class="bi bi-receipt" style="font-size: 2rem;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            <?php endif; ?>
+                <div class="col-md-3 mb-4">
+                    <div class="card bg-warning text-white">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h5 class="card-title">Pending Payments</h5>
+                                    <h2 class="mb-0"><?= $pendingPayments ?? 0 ?></h2>
+                                </div>
+                                <div class="align-self-center">
+                                    <i class="bi bi-cash-stack" style="font-size: 2rem;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card bg-success text-white">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h5 class="card-title">Total Revenue</h5>
+                                    <h2 class="mb-0">₱<?= number_format($totalRevenue ?? 0, 2) ?></h2>
+                                </div>
+                                <div class="align-self-center">
+                                    <i class="bi bi-graph-up" style="font-size: 2rem;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card bg-info text-white">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h5 class="card-title">Paid Bills</h5>
+                                    <h2 class="mb-0"><?= ($totalBills ?? 0) - ($pendingPayments ?? 0) ?></h2>
+                                </div>
+                                <div class="align-self-center">
+                                    <i class="bi bi-check-circle" style="font-size: 2rem;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Recent Bills Table -->
             <div class="card mt-4">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0">Bills List (Total: <?= $total ?? 0 ?>)</h5>
-                    <div>
-                        <a href="<?= base_url('accountant/bills/create') ?>" class="btn btn-primary">
-                            <i class="bi bi-plus-circle"></i> Create New Bill
-                        </a>
-                    </div>
+                    <h5 class="mb-0">Recent Bills</h5>
+                    <a href="<?= base_url('accountant/manage-bills') ?>" class="btn btn-primary">
+                        <i class="bi bi-plus-circle"></i> Manage All Bills
+                    </a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -57,7 +109,7 @@
                             </thead>
                             <tbody>
                                 <?php if (!empty($bills)): ?>
-                                    <?php foreach ($bills as $bill): ?>
+                                    <?php foreach (array_slice($bills, 0, 10) as $bill): ?>
                                         <tr>
                                             <td><?= esc($bill['id']) ?></td>
                                             <td>
@@ -103,9 +155,6 @@
                                                             <i class="bi bi-cash"></i>
                                                         </a>
                                                     <?php endif; ?>
-                                                    <button onclick="confirmDelete(<?= $bill['id'] ?>)" class="btn btn-sm btn-outline-danger" title="Delete">
-                                                        <i class="bi bi-trash"></i>
-                                                    </button>
                                                 </div>
                                             </td>
                                         </tr>
@@ -123,13 +172,4 @@
         </div>
     </div>
 </div>
-
-<script>
-function confirmDelete(id) {
-    if (confirm('Are you sure you want to delete this bill? This action cannot be undone.')) {
-        window.location.href = '<?= base_url('accountant/bills/delete/') ?>' + id;
-    }
-}
-</script>
-
 <?= $this->endSection() ?>
