@@ -43,13 +43,14 @@
 <nav class="sidebar d-flex flex-column">
     <?php if ($session->get('role') === 'admin'): ?>
         <div class="logo">LOGO NAME</div>
-        <a href="/dashboard" class="nav-link <?= (uri_string() == 'dashboard') ? 'active' : '' ?>">Dashboard</a>
+        <a href="/admin/dashboard" class="nav-link <?= (uri_string() == 'admin/dashboard') ? 'active' : '' ?>">Dashboard</a>
         <a href="/admin/patients" class="nav-link <?= (uri_string() == 'admin/patients') ? 'active' : '' ?>">Patients</a>
         <a href="/admin/appointments" class="nav-link <?= (uri_string() == 'admin/appointments') ? 'active' : '' ?>">Appointments</a>
         <a href="/admin/billing" class="nav-link <?= (uri_string() == 'admin/billing') ? 'active' : '' ?>">Billing</a>
+        <a href="/admin/bills" class="nav-link <?= (uri_string() == 'admin/bills') ? 'active' : '' ?>">Manage Bills</a>
         <a href="/admin/pharmacy" class="nav-link <?= (uri_string() == 'admin/pharmacy') ? 'active' : '' ?>">Pharmacy</a>
         <a href="/admin/reports" class="nav-link <?= (uri_string() == 'admin/reports') ? 'active' : '' ?>">Reports</a>
-        <a href="/admin/users" class="nav-link <?= (uri_string() == 'admin/users') ? 'active' : '' ?>">Users</a>
+        <a href="/admin/staff" class="nav-link <?= (uri_string() == 'admin/staff') ? 'active' : '' ?>">Staff</a>
         <a href="/admin/settings" class="nav-link <?= (uri_string() == 'admin/settings') ? 'active' : '' ?>">Settings</a>
     <?php elseif ($session->get('role') === 'doctor'): ?>
         <div class="logo">LOGO NAME</div>

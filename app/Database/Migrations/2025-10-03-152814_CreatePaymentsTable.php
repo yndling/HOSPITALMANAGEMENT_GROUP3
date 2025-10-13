@@ -31,6 +31,12 @@ class CreatePaymentsTable extends Migration
                 'null'    => true,
                 'default' => null,
             ],
+            'method' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '50',
+                'null'       => true,
+                'default'    => 'Cash',
+            ],
             'created_at' => [
                 'type'    => 'DATETIME',
                 'null'    => true,

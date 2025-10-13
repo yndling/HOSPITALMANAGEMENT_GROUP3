@@ -31,6 +31,10 @@ class CreateBillsTable extends Migration
                 'constraint' => ['paid', 'unpaid', 'pending'],
                 'default'    => 'unpaid',
             ],
+            'due_date' => [
+                'type' => 'DATE',
+                'null' => true,
+            ],
             'created_at' => [
                 'type'    => 'DATETIME',
                 'null'    => true,

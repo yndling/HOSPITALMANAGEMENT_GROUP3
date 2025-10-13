@@ -82,7 +82,7 @@ class Filters extends BaseFilters
             'before' => [
                 'doctor/*',
                 'nurse/*',
-                'reception/*',
+                'receptionist/*',
                 'lab/*',
                 'pharmacy/*',
                 'accounting/*',
