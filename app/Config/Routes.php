@@ -68,9 +68,30 @@ $routes->group('admin', ['filter' => 'auth'], function($routes) {
 
 // DOCTOR ROUTES
 $routes->group('doctor', ['filter' => 'auth'], function($routes) {
+    $routes->get('/', 'DoctorController::index');
     $routes->get('dashboard', 'DoctorController::dashboard');
+
+    // Patient Management
     $routes->get('patients', 'DoctorController::patients');
+    $routes->get('patients/create', 'DoctorController::createPatient');
+    $routes->post('patients/store', 'DoctorController::storePatient');
+    $routes->get('patients/edit/(:num)', 'DoctorController::editPatient/$1');
+    $routes->post('patients/update/(:num)', 'DoctorController::updatePatient/$1');
+    $routes->get('patients/delete/(:num)', 'DoctorController::deletePatient/$1');
+    $routes->get('patients/view/(:num)', 'DoctorController::viewPatient/$1');
+    $routes->get('patients/search', 'DoctorController::searchPatients');
+
+    // Appointment Management
     $routes->get('appointments', 'DoctorController::appointments');
+    $routes->get('appointments/create', 'DoctorController::createAppointment');
+    $routes->post('appointments/store', 'DoctorController::storeAppointment');
+    $routes->get('appointments/edit/(:num)', 'DoctorController::editAppointment/$1');
+    $routes->post('appointments/update/(:num)', 'DoctorController::updateAppointment/$1');
+    $routes->get('appointments/delete/(:num)', 'DoctorController::deleteAppointment/$1');
+    $routes->post('appointments/status/(:num)', 'DoctorController::updateAppointmentStatus/$1');
+    $routes->get('appointments/view/(:num)', 'DoctorController::viewAppointment/$1');
+    $routes->get('appointments/search', 'DoctorController::searchAppointments');
+
     $routes->get('prescriptions', 'DoctorController::prescriptions');
     $routes->get('lab', 'DoctorController::lab');
 });

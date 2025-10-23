@@ -1,0 +1,65 @@
+CRITICAL - 2025-10-21 07:57:47 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/doctor/appointments.php"
+[Method: GET, Route: doctor/appointments]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/doctor/appointments.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/doctor/appointments', [], true)
+ 3 APPPATH\Controllers\DoctorController.php(31): view('auth/doctor/appointments')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->appointments()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-21 08:01:30 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/doctor/patient_view.php"
+[Method: GET, Route: doctor/patients/view/7]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/doctor/patient_view.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/doctor/patient_view', [], true)
+ 3 APPPATH\Controllers\DoctorController.php(144): view('auth/doctor/patient_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->viewPatient('7')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-21 08:01:35 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/doctor/patient_view.php"
+[Method: GET, Route: doctor/patients/view/7]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/doctor/patient_view.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/doctor/patient_view', [], true)
+ 3 APPPATH\Controllers\DoctorController.php(144): view('auth/doctor/patient_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->viewPatient('7')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-21 08:01:36 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/doctor/patient_view.php"
+[Method: GET, Route: doctor/patients/view/7]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/doctor/patient_view.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/doctor/patient_view', [], true)
+ 3 APPPATH\Controllers\DoctorController.php(144): view('auth/doctor/patient_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->viewPatient('7')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-21 08:06:18 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/doctor/appointment_view.php"
+[Method: GET, Route: doctor/appointments/view/9]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/doctor/appointment_view.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/doctor/appointment_view', [], true)
+ 3 APPPATH\Controllers\DoctorController.php(290): view('auth/doctor/appointment_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->viewAppointment('9')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
