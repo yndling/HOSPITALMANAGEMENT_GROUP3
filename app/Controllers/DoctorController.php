@@ -5,11 +5,17 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\PatientModel;
 use App\Models\AppointmentModel;
+use App\Models\PrescriptionModel;
+use App\Models\PrescriptionItemModel;
+use App\Models\MedicineModel;
 
 class DoctorController extends BaseController
 {
     protected $patientModel;
     protected $appointmentModel;
+    protected $prescriptionModel;
+    protected $prescriptionItemModel;
+    protected $medicineModel;
     protected $session;
 
     public function initController(\CodeIgniter\HTTP\RequestInterface $request, \CodeIgniter\HTTP\ResponseInterface $response, \Psr\Log\LoggerInterface $logger)
@@ -23,6 +29,9 @@ class DoctorController extends BaseController
 
         $this->patientModel = new PatientModel();
         $this->appointmentModel = new AppointmentModel();
+        $this->prescriptionModel = new PrescriptionModel();
+        $this->prescriptionItemModel = new PrescriptionItemModel();
+        $this->medicineModel = new MedicineModel();
     }
 
     public function index()
@@ -303,11 +312,304 @@ class DoctorController extends BaseController
 
     public function prescriptions()
     {
-        return view('auth/doctor/prescriptions');
+        // Get staff_id for this doctor
+        $staffModel = new \App\Models\StaffModel();
+        $staff = $staffModel->where('email', session()->get('email'))->first();
+        
+        if (!$staff) {
+            $data['prescriptions'] = [];
+            return view('auth/doctor/prescriptions', $data);
+        }
+        
+        $prescriptions = $this->prescriptionModel
+            ->select('prescriptions.*, patients.name as patient_name')
+            ->join('patients', 'patients.id = prescriptions.patient_id')
+            ->where('prescriptions.doctor_id', $staff['id'])
+            ->findAll();
+        
+        $data['prescriptions'] = $prescriptions;
+        return view('auth/doctor/prescriptions', $data);
+    }
+
+    public function createPrescription()
+    {
+        $data['patients'] = $this->patientModel->getPatients(1000);
+        $data['appointments'] = $this->appointmentModel->getAppointments();
+        $data['medicines'] = $this->medicineModel->where('status', 'active')->findAll();
+        return view('auth/doctor/prescription_form', $data);
+    }
+
+    public function storePrescription()
+    {
+        // Get the staff_id for this user
+        $staffModel = new \App\Models\StaffModel();
+        $email = session()->get('email');
+        log_message('info', 'Doctor email: ' . $email);
+        
+        $staff = $staffModel->where('email', $email)->first();
+        
+        if (!$staff) {
+            log_message('error', 'Staff not found for email: ' . $email);
+            $this->session->setFlashdata('error', 'Doctor profile not found. Please ensure your staff record exists in the database.');
+            return redirect()->back()->withInput();
+        }
+        
+        log_message('info', 'Found staff ID: ' . $staff['id']);
+        
+        $data = [
+            'patient_id' => $this->request->getPost('patient_id'),
+            'doctor_id' => $staff['id'],
+            'appointment_id' => $this->request->getPost('appointment_id') ?: null,
+            'prescription_date' => date('Y-m-d H:i:s'),
+            'diagnosis' => $this->request->getPost('diagnosis'),
+            'notes' => $this->request->getPost('notes'),
+            'status' => 'pending'
+        ];
+
+        log_message('info', 'Prescription data: ' . json_encode($data));
+        
+        if ($prescriptionId = $this->prescriptionModel->insert($data)) {
+            log_message('info', 'Prescription created with ID: ' . $prescriptionId);
+            // Add prescription items
+            $medicines = $this->request->getPost('medicine_id');
+            $quantities = $this->request->getPost('quantity');
+            $dosages = $this->request->getPost('dosage');
+            $frequencies = $this->request->getPost('frequency');
+            $durations = $this->request->getPost('duration');
+            $instructions = $this->request->getPost('instructions');
+
+            if ($medicines) {
+                foreach ($medicines as $key => $medicineId) {
+                    $medicine = $this->medicineModel->find($medicineId);
+                    $quantity = $quantities[$key];
+                    $unitPrice = $medicine['selling_price'];
+                    $totalPrice = $unitPrice * $quantity;
+
+                    $itemData = [
+                        'prescription_id' => $prescriptionId,
+                        'medicine_id' => $medicineId,
+                        'quantity' => $quantity,
+                        'dosage' => $dosages[$key],
+                        'frequency' => $frequencies[$key],
+                        'duration' => $durations[$key],
+                        'instructions' => $instructions[$key] ?? '',
+                        'unit_price' => $unitPrice,
+                        'total_price' => $totalPrice,
+                        'status' => 'pending'
+                    ];
+
+                    $this->prescriptionItemModel->insert($itemData);
+                }
+            }
+
+            $this->session->setFlashdata('success', 'Prescription created successfully!');
+            return redirect()->to('/doctor/prescriptions');
+        } else {
+            log_message('error', 'Failed to create prescription. Errors: ' . json_encode($this->prescriptionModel->errors()));
+            log_message('error', 'Model errors: ' . print_r($this->prescriptionModel->errors(), true));
+            $errors = $this->prescriptionModel->errors();
+            $errorMessage = is_array($errors) ? implode(', ', $errors) : 'Unknown error occurred';
+            $this->session->setFlashdata('error', 'Failed to create prescription: ' . $errorMessage);
+            return redirect()->back()->withInput();
+        }
+    }
+
+    public function viewPrescription($id)
+    {
+        $prescription = $this->prescriptionModel
+            ->select('prescriptions.*, patients.name as patient_name, patients.age, patients.gender')
+            ->join('patients', 'patients.id = prescriptions.patient_id')
+            ->find($id);
+
+        if (!$prescription) {
+            $this->session->setFlashdata('error', 'Prescription not found');
+            return redirect()->to('/doctor/prescriptions');
+        }
+
+        $items = $this->prescriptionItemModel
+            ->select('prescription_items.*, medicines.name as medicine_name')
+            ->join('medicines', 'medicines.id = prescription_items.medicine_id')
+            ->where('prescription_items.prescription_id', $id)
+            ->findAll();
+
+        $data['prescription'] = $prescription;
+        $data['items'] = $items;
+        
+        return view('auth/doctor/prescription_view', $data);
+    }
+
+    public function editPrescription($id)
+    {
+        // Get staff_id for this doctor
+        $staffModel = new \App\Models\StaffModel();
+        $staff = $staffModel->where('email', session()->get('email'))->first();
+        
+        if (!$staff) {
+            $this->session->setFlashdata('error', 'Doctor profile not found. Please contact administrator.');
+            return redirect()->to('/doctor/prescriptions');
+        }
+        
+        $prescription = $this->prescriptionModel->find($id);
+        
+        if (!$prescription || $prescription['doctor_id'] != $staff['id']) {
+            $this->session->setFlashdata('error', 'Prescription not found or access denied');
+            return redirect()->to('/doctor/prescriptions');
+        }
+
+        $items = $this->prescriptionItemModel
+            ->select('prescription_items.*, medicines.name as medicine_name')
+            ->join('medicines', 'medicines.id = prescription_items.medicine_id')
+            ->where('prescription_items.prescription_id', $id)
+            ->findAll();
+
+        $data['prescription'] = $prescription;
+        $data['items'] = $items;
+        $data['patients'] = $this->patientModel->getPatients(1000);
+        $data['appointments'] = $this->appointmentModel->getAppointments();
+        $data['medicines'] = $this->medicineModel->where('status', 'active')->findAll();
+        
+        return view('auth/doctor/prescription_form', $data);
+    }
+
+    public function updatePrescription($id)
+    {
+        // Get staff_id for this doctor
+        $staffModel = new \App\Models\StaffModel();
+        $staff = $staffModel->where('email', session()->get('email'))->first();
+        
+        if (!$staff) {
+            $this->session->setFlashdata('error', 'Doctor profile not found. Please contact administrator.');
+            return redirect()->to('/doctor/prescriptions');
+        }
+        
+        $prescription = $this->prescriptionModel->find($id);
+        
+        if (!$prescription || $prescription['doctor_id'] != $staff['id']) {
+            $this->session->setFlashdata('error', 'Prescription not found or access denied');
+            return redirect()->to('/doctor/prescriptions');
+        }
+
+        $data = [
+            'patient_id' => $this->request->getPost('patient_id'),
+            'appointment_id' => $this->request->getPost('appointment_id') ?: null,
+            'diagnosis' => $this->request->getPost('diagnosis'),
+            'notes' => $this->request->getPost('notes')
+        ];
+
+        if ($this->prescriptionModel->update($id, $data)) {
+            // Update items if provided
+            $itemIds = $this->request->getPost('item_id');
+            if ($itemIds) {
+                foreach ($itemIds as $key => $itemId) {
+                    if ($itemId) {
+                        $updateData = [
+                            'quantity' => $this->request->getPost('quantity')[$key],
+                            'dosage' => $this->request->getPost('dosage')[$key],
+                            'frequency' => $this->request->getPost('frequency')[$key],
+                            'duration' => $this->request->getPost('duration')[$key],
+                            'instructions' => $this->request->getPost('instructions')[$key] ?? ''
+                        ];
+                        $this->prescriptionItemModel->update($itemId, $updateData);
+                    }
+                }
+            }
+
+            $this->session->setFlashdata('success', 'Prescription updated successfully!');
+            return redirect()->to('/doctor/prescriptions');
+        } else {
+            $this->session->setFlashdata('errors', $this->prescriptionModel->errors());
+            return redirect()->back()->withInput();
+        }
+    }
+
+    public function deletePrescription($id)
+    {
+        // Get staff_id for this doctor
+        $staffModel = new \App\Models\StaffModel();
+        $staff = $staffModel->where('email', session()->get('email'))->first();
+        
+        if (!$staff) {
+            $this->session->setFlashdata('error', 'Doctor profile not found. Please contact administrator.');
+            return redirect()->to('/doctor/prescriptions');
+        }
+        
+        $prescription = $this->prescriptionModel->find($id);
+        
+        if (!$prescription || $prescription['doctor_id'] != $staff['id']) {
+            $this->session->setFlashdata('error', 'Prescription not found or access denied');
+            return redirect()->to('/doctor/prescriptions');
+        }
+
+        // Delete prescription items first
+        $this->prescriptionItemModel->where('prescription_id', $id)->delete();
+        // Delete prescription
+        $this->prescriptionModel->delete($id);
+        
+        $this->session->setFlashdata('success', 'Prescription deleted successfully!');
+        return redirect()->to('/doctor/prescriptions');
     }
 
     public function lab()
     {
-        return view('auth/doctor/lab');
+        $userRole = session()->get('role');
+        $labRequestModel = new \App\Models\LabRequestModel();
+
+        if ($userRole === 'lab_technician' || $userRole === 'laboratory_staff') {
+            // Lab staff see all requests
+            $labSupplyModel = new \App\Models\LabSupplyModel();
+            $labResultModel = new \App\Models\LabResultModel();
+
+            // Get all requests (simple query since lab_requests table only has patient and test as varchar)
+            $data['requests'] = $labRequestModel
+                ->orderBy('created_at', 'DESC')
+                ->findAll();
+            
+            $data['supplies'] = $labSupplyModel->findAll();
+            $data['results'] = $labResultModel->findAll();
+        } else {
+            // For doctors, show all requests (the table doesn't have doctor_id or patient_id foreign keys)
+            $data['requests'] = $labRequestModel
+                ->orderBy('created_at', 'DESC')
+                ->findAll();
+            // Add empty arrays for supplies and results since doctors don't use them
+            $data['supplies'] = [];
+            $data['results'] = [];
+        }
+
+        return view('auth/doctor/lab', $data);
+    }
+
+    public function createLabRequest()
+    {
+        $data['patients'] = $this->patientModel->getPatients(1000);
+        return view('auth/doctor/lab_request_form', $data);
+    }
+
+    public function storeLabRequest()
+    {
+        $labRequestModel = new \App\Models\LabRequestModel();
+
+        // Get patient name
+        $patientId = $this->request->getPost('patient_id');
+        $patient = $this->patientModel->find($patientId);
+        $patientName = $patient ? $patient['name'] : 'Unknown Patient';
+
+        // Get test type
+        $testType = $this->request->getPost('test_type') ?: 'General Test';
+
+        // The lab_requests table uses simple varchar fields
+        $data = [
+            'patient' => $patientName,
+            'test' => $testType,
+            'status' => 'pending'
+        ];
+
+        if ($labRequestModel->insert($data)) {
+            $this->session->setFlashdata('success', 'Lab test request submitted successfully!');
+            return redirect()->to('/doctor/lab');
+        } else {
+            $this->session->setFlashdata('error', 'Failed to submit lab test request');
+            return redirect()->back()->withInput();
+        }
     }
 }

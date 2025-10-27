@@ -13,7 +13,11 @@ class LabResultModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
 
-    protected $allowedFields = ['patient', 'test', 'result'];
+    protected $allowedFields = [
+        'patient',
+        'test',
+        'result'
+    ];
 
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';

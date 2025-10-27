@@ -4,13 +4,50 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
-            <h1>Nurse Patient Management</h1>
-            <p class="lead">Monitor and update patient vitals and tasks.</p>
-            
+            <h1>Patient Management</h1>
+            <p class="lead">Monitor and update patient vitals and nursing tasks.</p>
+
+            <?php if (session()->getFlashdata('success')): ?>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <?= session()->getFlashdata('success') ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            <?php endif; ?>
+
+            <?php if (session()->getFlashdata('error')): ?>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <?= session()->getFlashdata('error') ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            <?php endif; ?>
+
+            <?php if (session()->getFlashdata('errors')): ?>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <ul class="mb-0">
+                        <?php foreach (session()->getFlashdata('errors') as $error): ?>
+                            <li><?= esc($error) ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            <?php endif; ?>
+
             <div class="card mt-4">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0">Patient Vitals & Tasks</h5>
-                    <a href="#" class="btn btn-primary">Add New Task</a>
+                    <h5 class="mb-0">Patients List (Total: <?= $total ?? 0 ?>)</h5>
+                    <div>
+                        <form action="<?= base_url('nurse/patients/search') ?>" method="get" class="d-inline-block me-2">
+                            <div class="input-group">
+                                <input type="text" name="keyword" class="form-control" placeholder="Search by name or contact" value="<?= esc($keyword ?? '') ?>">
+                                <button class="btn btn-outline-secondary" type="submit">
+                                    <i class="bi bi-search"></i> Search
+                                </button>
+                            </div>
+                        </form>
+                        <a href="#" class="btn btn-primary">
+                            <i class="bi bi-plus-circle"></i> Add New Task
+                        </a>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -18,66 +55,64 @@
                             <thead class="table-dark">
                                 <tr>
                                     <th>ID</th>
-                                    <th>Patient Name</th>
-                                    <th>Vitals</th>
-                                    <th>Task</th>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                    <th>Gender</th>
+                                    <th>Contact</th>
                                     <th>Room</th>
-                                    <th>Status</th>
+                                    <th>Vitals Status</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>John Doe</td>
-                                    <td>BP: 120/80, HR: 72</td>
-                                    <td>Check Vitals</td>
-                                    <td>101</td>
-                                    <td><span class="badge bg-success">Completed</span></td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-outline-primary">View</a>
-                                        <a href="#" class="btn btn-sm btn-outline-warning">Update</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Jane Smith</td>
-                                    <td>BP: 130/85, HR: 80</td>
-                                    <td>Administer Medication</td>
-                                    <td>102</td>
-                                    <td><span class="badge bg-warning">Pending</span></td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-outline-primary">View</a>
-                                        <a href="#" class="btn btn-sm btn-outline-warning">Update</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Bob Johnson</td>
-                                    <td>BP: 110/70, HR: 68</td>
-                                    <td>Change Dressing</td>
-                                    <td>103</td>
-                                    <td><span class="badge bg-info">In Progress</span></td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-outline-primary">View</a>
-                                        <a href="#" class="btn btn-sm btn-outline-warning">Update</a>
-                                    </td>
-                                </tr>
-                                <!-- Add more dummy rows as needed -->
+                                <?php if (!empty($patients)): ?>
+                                    <?php foreach ($patients as $patient): ?>
+                                        <tr>
+                                            <td><?= esc($patient['id']) ?></td>
+                                            <td><?= esc($patient['name']) ?></td>
+                                            <td><?= esc($patient['age'] ?? 'N/A') ?></td>
+                                            <td><?= esc($patient['gender']) ?></td>
+                                            <td><?= esc($patient['contact'] ?? 'N/A') ?></td>
+                                            <td>
+                                                <span class="badge bg-secondary">101</span>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-success">Normal</span>
+                                            </td>
+                                            <td>
+                                                <a href="<?= base_url('nurse/patients/view/' . $patient['id']) ?>" class="btn btn-sm btn-outline-primary" title="View Details">
+                                                    <i class="bi bi-eye"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-sm btn-outline-warning" title="Update Vitals">
+                                                    <i class="bi bi-pencil"></i>
+                                                </a>
+                                                <button onclick="confirmUpdate(<?= $patient['id'] ?>)" class="btn btn-sm btn-outline-success" title="Mark Complete">
+                                                    <i class="bi bi-check-circle"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="8" class="text-center">No patients found. Please check with reception for patient assignments.</td>
+                                    </tr>
+                                <?php endif; ?>
                             </tbody>
                         </table>
                     </div>
-                    <nav aria-label="Patients pagination">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                        </ul>
-                    </nav>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+function confirmUpdate(id) {
+    if (confirm('Are you sure you want to mark this task as complete?')) {
+        // Add your update logic here
+        alert('Task marked as complete for patient ID: ' + id);
+    }
+}
+</script>
+
 <?= $this->endSection() ?>

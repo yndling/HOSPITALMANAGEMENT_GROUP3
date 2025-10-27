@@ -1,10 +1,6 @@
-- [x] Add patient management methods to AdminController (patients, createPatient, storePatient, editPatient, updatePatient, deletePatient, viewPatient, searchPatients)
-- [x] Add appointment management methods to AdminController (appointments, createAppointment, storeAppointment, editAppointment, updateAppointment, deleteAppointment, updateAppointmentStatus, viewAppointment, searchAppointments)
-- [x] Create app/Views/auth/admin/patients.php (copy from receptionist, change URLs to admin)
-- [x] Create app/Views/auth/admin/patient_form.php (copy from receptionist, change URLs to admin)
-- [x] Create app/Views/auth/admin/patient_view.php (copy from receptionist, change URLs to admin)
-- [x] Create app/Views/auth/admin/appointments.php (copy from receptionist, change URLs to admin)
-- [x] Create app/Views/auth/admin/appointment_form.php (copy from receptionist, change URLs to admin)
-- [x] Create app/Views/auth/admin/appointment_view.php (copy from receptionist, change URLs to admin)
-- [x] Update app/Views/templates/header.php to add patients and appointments links for admin role
-- [x] Update app/Views/auth/admin/billing.php to change receptionist patient links to admin
+# TODO: Add View Details Function for Lab Results
+
+## Tasks
+- [x] Add `viewResult($id)` method in LabController to fetch result details as JSON
+- [x] Add route `/lab/results/view/(:num)` in Routes.php
+- [x] Update `viewResultDetails` JavaScript function in results.php to use AJAX for server-side data fetching

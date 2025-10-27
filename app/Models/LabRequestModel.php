@@ -13,7 +13,15 @@ class LabRequestModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
 
-    protected $allowedFields = ['patient', 'test', 'status'];
+    protected $allowedFields = [
+        'patient',
+        'test',
+        'status',
+        'patient_id',
+        'test_type',
+        'doctor_id',
+        'notes'
+    ];
 
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';

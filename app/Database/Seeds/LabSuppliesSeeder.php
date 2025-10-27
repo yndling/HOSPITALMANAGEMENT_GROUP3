@@ -1,0 +1,118 @@
+<?php
+
+namespace App\Database\Seeds;
+
+use CodeIgniter\Database\Seeder;
+
+class LabSuppliesSeeder extends Seeder
+{
+    public function run()
+    {
+        $data = [
+            [
+                'name' => 'Blood Collection Tubes',
+                'category' => 'Blood Collection',
+                'type' => 'consumable',
+                'manufacturer' => 'LabTech',
+                'batch_number' => 'LT2024001',
+                'expiry_date' => '2026-12-31',
+                'quantity' => 1000,
+                'unit' => 'pieces',
+                'unit_price' => 0.50,
+                'min_stock_level' => 100,
+                'supplier' => 'Lab Supplies Inc',
+                'location' => 'Cabinet A1',
+                'storage_conditions' => 'Room temperature',
+                'status' => 'active',
+                'created_at' => date('Y-m-d H:i:s'),
+            ],
+            [
+                'name' => 'Glucose Test Strips',
+                'category' => 'Diagnostic',
+                'type' => 'consumable',
+                'manufacturer' => 'MediTest',
+                'batch_number' => 'MT2024002',
+                'expiry_date' => '2026-06-30',
+                'quantity' => 500,
+                'unit' => 'strips',
+                'unit_price' => 0.80,
+                'min_stock_level' => 50,
+                'supplier' => 'Medical Diagnostics',
+                'location' => 'Cabinet B1',
+                'storage_conditions' => 'Refrigerated',
+                'status' => 'active',
+                'created_at' => date('Y-m-d H:i:s'),
+            ],
+            [
+                'name' => 'Microscope Slides',
+                'category' => 'Microscopy',
+                'type' => 'consumable',
+                'manufacturer' => 'SlideMaster',
+                'batch_number' => 'SM2024003',
+                'expiry_date' => null,
+                'quantity' => 2000,
+                'unit' => 'pieces',
+                'unit_price' => 0.10,
+                'min_stock_level' => 200,
+                'supplier' => 'Lab Supplies Inc',
+                'location' => 'Cabinet C1',
+                'storage_conditions' => 'Room temperature',
+                'status' => 'active',
+                'created_at' => date('Y-m-d H:i:s'),
+            ],
+            [
+                'name' => 'Hemoglobin Analyzer',
+                'category' => 'Hematology',
+                'type' => 'equipment',
+                'manufacturer' => 'HemaTech',
+                'batch_number' => 'HT2024004',
+                'expiry_date' => null,
+                'quantity' => 2,
+                'unit' => 'units',
+                'unit_price' => 5000.00,
+                'min_stock_level' => 1,
+                'supplier' => 'Medical Equipment Ltd',
+                'location' => 'Lab Room 1',
+                'storage_conditions' => 'Climate controlled',
+                'status' => 'active',
+                'created_at' => date('Y-m-d H:i:s'),
+            ],
+            [
+                'name' => 'Urine Analysis Strips',
+                'category' => 'Urinalysis',
+                'type' => 'consumable',
+                'manufacturer' => 'UroTest',
+                'batch_number' => 'UT2024005',
+                'expiry_date' => '2026-08-15',
+                'quantity' => 300,
+                'unit' => 'strips',
+                'unit_price' => 1.50,
+                'min_stock_level' => 30,
+                'supplier' => 'Medical Diagnostics',
+                'location' => 'Cabinet B2',
+                'storage_conditions' => 'Room temperature',
+                'status' => 'active',
+                'created_at' => date('Y-m-d H:i:s'),
+            ],
+            [
+                'name' => 'Centrifuge Tubes',
+                'category' => 'Centrifugation',
+                'type' => 'consumable',
+                'manufacturer' => 'SpinTech',
+                'batch_number' => 'ST2024006',
+                'expiry_date' => null,
+                'quantity' => 500,
+                'unit' => 'pieces',
+                'unit_price' => 0.75,
+                'min_stock_level' => 50,
+                'supplier' => 'Lab Supplies Inc',
+                'location' => 'Cabinet D1',
+                'storage_conditions' => 'Room temperature',
+                'status' => 'active',
+                'created_at' => date('Y-m-d H:i:s'),
+            ],
+        ];
+
+        $this->db->table('lab_supplies')->insertBatch($data);
+    }
+}

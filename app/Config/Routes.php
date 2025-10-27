@@ -93,15 +93,50 @@ $routes->group('doctor', ['filter' => 'auth'], function($routes) {
     $routes->get('appointments/search', 'DoctorController::searchAppointments');
 
     $routes->get('prescriptions', 'DoctorController::prescriptions');
+    $routes->get('prescriptions/create', 'DoctorController::createPrescription');
+    $routes->post('prescriptions/store', 'DoctorController::storePrescription');
+    $routes->get('prescriptions/view/(:num)', 'DoctorController::viewPrescription/$1');
+    $routes->get('prescriptions/edit/(:num)', 'DoctorController::editPrescription/$1');
+    $routes->post('prescriptions/update/(:num)', 'DoctorController::updatePrescription/$1');
+    $routes->get('prescriptions/delete/(:num)', 'DoctorController::deletePrescription/$1');
+    
     $routes->get('lab', 'DoctorController::lab');
+    $routes->get('lab/create', 'DoctorController::createLabRequest');
+    $routes->post('lab/store', 'DoctorController::storeLabRequest');
+
+    // Lab staff routes (when accessing /doctor/lab)
+    $routes->get('lab/supplies', 'LabController::supplies');
+    $routes->get('lab/supplies/create', 'LabController::addSupply');
+    $routes->post('lab/supplies/store', 'LabController::storeSupply');
+    $routes->get('lab/supplies/edit/(:num)', 'LabController::editSupply/$1');
+    $routes->post('lab/supplies/update/(:num)', 'LabController::updateSupply/$1');
+    $routes->get('lab/supplies/delete/(:num)', 'LabController::deleteSupply/$1');
+    $routes->get('lab/requests', 'LabController::requests');
+    $routes->get('lab/requests/view/(:num)', 'LabController::viewRequest/$1');
+    $routes->post('lab/requests/status/(:num)', 'LabController::updateRequestStatus/$1');
+    $routes->get('lab/results', 'LabController::results');
+    $routes->get('lab/results/add/(:num)', 'LabController::addResult/$1');
+    $routes->post('lab/results/store', 'LabController::storeResult');
 });
 
 // NURSE ROUTES
 $routes->group('nurse', ['filter' => 'auth'], function($routes) {
     $routes->get('/', 'NurseController::index');
+    
+    // Patient Management
     $routes->get('patients', 'NurseController::patients');
+    $routes->get('patients/view/(:num)', 'NurseController::viewPatient/$1');
+    $routes->get('patients/search', 'NurseController::searchPatients');
+    
+    // Appointment Management
     $routes->get('appointments', 'NurseController::appointments');
+    $routes->get('appointments/view/(:num)', 'NurseController::viewAppointment/$1');
+    $routes->post('appointments/status/(:num)', 'NurseController::updateAppointmentStatus/$1');
+    $routes->get('appointments/search', 'NurseController::searchAppointments');
+    
+    // Medication Management
     $routes->get('medications', 'NurseController::medications');
+    $routes->get('medications/view/(:num)', 'NurseController::viewMedication/$1');
 });
 
 // RECEPTIONIST ROUTES
@@ -133,15 +168,33 @@ $routes->group('receptionist', ['filter' => 'auth'], function($routes) {
 // LAB ROUTES
 $routes->group('lab', ['filter' => 'auth'], function($routes) {
     $routes->get('/', 'LabController::index');
+    $routes->get('supplies', 'LabController::supplies');
+    $routes->get('supplies/create', 'LabController::addSupply');
+    $routes->post('supplies/store', 'LabController::storeSupply');
+    $routes->get('supplies/edit/(:num)', 'LabController::editSupply/$1');
+    $routes->post('supplies/update/(:num)', 'LabController::updateSupply/$1');
+    $routes->get('supplies/delete/(:num)', 'LabController::deleteSupply/$1');
     $routes->get('requests', 'LabController::requests');
+    $routes->get('requests/view/(:num)', 'LabController::viewRequest/$1');
+    $routes->post('requests/status/(:num)', 'LabController::updateRequestStatus/$1');
     $routes->get('results', 'LabController::results');
+    $routes->get('results/view/(:num)', 'LabController::viewResult/$1');
+    $routes->get('results/add/(:num)', 'LabController::addResult/$1');
+    $routes->post('results/store', 'LabController::storeResult');
 });
 
 // PHARMACY ROUTES
 $routes->group('pharmacy', ['filter' => 'auth'], function($routes) {
     $routes->get('/', 'PharmacyController::index');
+    $routes->get('dashboard', 'PharmacyController::dashboard');
     $routes->get('medicines', 'PharmacyController::medicines');
+    $routes->get('medicines/create', 'PharmacyController::addMedicine');
+    $routes->post('medicines/store', 'PharmacyController::storeMedicine');
+    $routes->get('medicines/edit/(:num)', 'PharmacyController::editMedicine/$1');
+    $routes->post('medicines/update/(:num)', 'PharmacyController::updateMedicine/$1');
+    $routes->get('medicines/delete/(:num)', 'PharmacyController::deleteMedicine/$1');
     $routes->get('prescriptions', 'PharmacyController::prescriptions');
+    $routes->get('prescriptions/dispense/(:num)', 'PharmacyController::dispensePrescription/$1');
 });
 
 // ACCOUNTANT ROUTES

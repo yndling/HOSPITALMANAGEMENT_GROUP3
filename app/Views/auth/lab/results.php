@@ -4,79 +4,132 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
-            <h1>Lab Test Results</h1>
-            <p class="lead">View and manage lab test results.</p>
-            
-            <div class="card mt-4">
-                <div class="card-header d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0">Completed Results</h5>
-                    <a href="#" class="btn btn-primary">Generate Report</a>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Laboratory Test Results</h3>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-striped table-hover">
-                            <thead class="table-dark">
+                        <table class="table table-bordered table-striped">
+                            <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Patient Name</th>
-                                    <th>Test Type</th>
-                                    <th>Date Completed</th>
-                                    <th>Status</th>
+                                    <th>Patient</th>
+                                    <th>Test Name</th>
+                                    <th>Result</th>
+                                    <th>Created Date</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php foreach ($results as $result): ?>
                                 <tr>
-                                    <td>1</td>
-                                    <td>John Doe</td>
-                                    <td>Blood Test</td>
-                                    <td>2024-01-10</td>
-                                    <td><span class="badge bg-success">Normal</span></td>
+                                    <td><?= $result['id'] ?></td>
+                                    <td><?= esc($result['patient']) ?></td>
+                                    <td><?= esc($result['test']) ?></td>
                                     <td>
-                                        <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
-                                        <a href="#" class="btn btn-sm btn-outline-info">Download PDF</a>
-                                        <a href="#" class="btn btn-sm btn-outline-warning">Edit</a>
+                                        <span class="font-weight-bold">
+                                            <?= esc($result['result']) ?>
+                                        </span>
+                                    </td>
+                                    <td><?= date('Y-m-d H:i', strtotime($result['created_at'])) ?></td>
+                                    <td>
+                                        <button class="btn btn-info btn-sm" onclick="viewResultDetails(<?= $result['id'] ?>)">
+                                            <i class="bi bi-eye"></i> View Details
+                                        </button>
+                                        <button class="btn btn-primary btn-sm" onclick="printResult(<?= $result['id'] ?>)">
+                                            <i class="bi bi-printer"></i> Print
+                                        </button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Jane Smith</td>
-                                    <td>Urine Analysis</td>
-                                    <td>2024-01-12</td>
-                                    <td><span class="badge bg-danger">Abnormal</span></td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
-                                        <a href="#" class="btn btn-sm btn-outline-info">Download PDF</a>
-                                        <a href="#" class="btn btn-sm btn-outline-warning">Edit</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Bob Johnson</td>
-                                    <td>X-Ray</td>
-                                    <td>2024-01-14</td>
-                                    <td><span class="badge bg-info">Pending Review</span></td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
-                                        <a href="#" class="btn btn-sm btn-outline-info">Download PDF</a>
-                                        <a href="#" class="btn btn-sm btn-outline-warning">Edit</a>
-                                    </td>
-                                </tr>
-                                <!-- Add more dummy rows as needed -->
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
-                    <nav aria-label="Results pagination">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                        </ul>
-                    </nav>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Result Details Modal -->
+<div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="resultModalLabel">Test Result Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="resultDetails">
+                <!-- Details will be loaded here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="printResultModal()">Print Result</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function viewResultDetails(resultId) {
+    // Fetch result details from server
+    $.ajax({
+        url: `/lab/results/view/${resultId}`,
+        type: 'GET',
+        success: function(data) {
+            var details = `
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Patient:</h6>
+                        <p>${data.patient}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Test:</h6>
+                        <p>${data.test}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <h6>Result:</h6>
+                        <p class="font-weight-bold">${data.result}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Created Date:</h6>
+                        <p>${new Date(data.created_at).toLocaleString()}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Result ID:</h6>
+                        <p>${data.id}</p>
+                    </div>
+                </div>
+            `;
+
+            $('#resultDetails').html(details);
+            $('#resultModal').modal('show');
+        },
+        error: function(xhr, status, error) {
+            alert('Error loading result details: ' + error);
+        }
+    });
+}
+
+function printResult(resultId) {
+    // This would typically open a print dialog or generate a PDF
+    window.print();
+}
+
+function printResultModal() {
+    // Print the modal content
+    var printContent = document.getElementById('resultDetails').innerHTML;
+    var originalContent = document.body.innerHTML;
+    document.body.innerHTML = printContent;
+    window.print();
+    document.body.innerHTML = originalContent;
+}
+</script>
 <?= $this->endSection() ?>

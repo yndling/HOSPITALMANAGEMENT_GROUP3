@@ -8,6 +8,9 @@ class StaffSeeder extends Seeder
 {
     public function run()
     {
+        // Truncate table to avoid duplicates
+        $this->db->table('staff')->truncate();
+
         $data = [
             [
                 'name'           => 'Dr. John Smith',
