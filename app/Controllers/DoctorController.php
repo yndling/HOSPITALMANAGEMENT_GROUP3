@@ -312,20 +312,24 @@ class DoctorController extends BaseController
 
     public function prescriptions()
     {
-        // Get staff_id for this doctor
-        $staffModel = new \App\Models\StaffModel();
-        $staff = $staffModel->where('email', session()->get('email'))->first();
+        // Get the logged-in user's ID from the session
+        $userId = session()->get('id');
         
-        if (!$staff) {
+        if (!$userId) {
             $data['prescriptions'] = [];
             return view('auth/doctor/prescriptions', $data);
         }
         
+        // Get prescriptions for the current doctor
         $prescriptions = $this->prescriptionModel
             ->select('prescriptions.*, patients.name as patient_name')
             ->join('patients', 'patients.id = prescriptions.patient_id')
-            ->where('prescriptions.doctor_id', $staff['id'])
+            ->where('prescriptions.doctor_id', $userId)
+            ->orderBy('prescriptions.prescription_date', 'DESC')
             ->findAll();
+        
+        // Debug: Log the number of prescriptions found
+        log_message('debug', 'Found ' . count($prescriptions) . ' prescriptions for doctor ID: ' . $userId);
         
         $data['prescriptions'] = $prescriptions;
         return view('auth/doctor/prescriptions', $data);

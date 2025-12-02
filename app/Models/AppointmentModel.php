@@ -93,7 +93,8 @@ class AppointmentModel extends Model
     {
         return $this->select('appointments.*, patients.name as patient_name, patients.contact, patients.age, patients.gender')
                     ->join('patients', 'patients.id = appointments.patient_id')
-                    ->find($id);
+                    ->where('appointments.id', $id)
+                    ->first();
     }
 
     /**

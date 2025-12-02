@@ -371,12 +371,16 @@ class AdminController extends BaseController
      */
     public function editPatient($id)
     {
-        $data['patient'] = $this->patientModel->getPatient($id);
+        $patient = $this->patientModel->find($id);
 
-        if (!$data['patient']) {
+        if (!$patient) {
             $this->session->setFlashdata('error', 'Patient not found');
             return redirect()->to('/admin/patients');
         }
+
+        $data = [
+            'patient' => $patient
+        ];
 
         return view('auth/admin/patient_form', $data);
     }
@@ -394,13 +398,28 @@ class AdminController extends BaseController
             'contact' => $this->request->getPost('contact')
         ];
 
-        if ($this->patientModel->updatePatient($id, $data)) {
-            $this->session->setFlashdata('success', 'Patient updated successfully!');
+        // First check if patient exists
+        $patient = $this->patientModel->find($id);
+        if (!$patient) {
+            $this->session->setFlashdata('error', 'Patient not found');
             return redirect()->to('/admin/patients');
+        }
+
+        // Validate the data
+        if ($this->patientModel->validate($data)) {
+            // Update the patient
+            if ($this->patientModel->update($id, $data)) {
+                $this->session->setFlashdata('success', 'Patient updated successfully!');
+                return redirect()->to('/admin/patients');
+            } else {
+                $this->session->setFlashdata('error', 'Failed to update patient. Please try again.');
+            }
         } else {
             $this->session->setFlashdata('errors', $this->patientModel->errors());
-            return redirect()->back()->withInput();
         }
+
+        // If we get here, there was an error
+        return redirect()->back()->withInput();
     }
 
     /**

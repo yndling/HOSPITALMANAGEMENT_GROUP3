@@ -17,7 +17,15 @@ class PatientModel extends Model
         'age',
         'gender',
         'address',
-        'contact'
+        'contact',
+        'blood_pressure',
+        'temperature',
+        'pulse',
+        'respiratory_rate',
+        'oxygen_level',
+        'weight',
+        'height',
+        'notes'
     ];
 
     // Dates
@@ -29,11 +37,19 @@ class PatientModel extends Model
 
     // Validation
     protected $validationRules = [
-        'name'    => 'required|min_length[3]|max_length[100]',
-        'age'     => 'permit_empty|integer|greater_than[0]|less_than[150]',
-        'gender'  => 'required|in_list[Male,Female,Other]',
-        'address' => 'permit_empty|max_length[255]',
-        'contact' => 'permit_empty|max_length[20]'
+        'name'              => 'required|min_length[3]|max_length[100]',
+        'age'               => 'permit_empty|integer|greater_than[0]|less_than[150]',
+        'gender'            => 'required|in_list[Male,Female,Other]',
+        'address'           => 'permit_empty|max_length[255]',
+        'contact'           => 'permit_empty|max_length[20]',
+        'blood_pressure'    => 'permit_empty|string|max_length[20]',
+        'temperature'       => 'permit_empty|decimal',
+        'pulse'             => 'permit_empty|integer|greater_than[0]',
+        'respiratory_rate'  => 'permit_empty|integer|greater_than[0]',
+        'oxygen_level'      => 'permit_empty|integer|greater_than[0]|less_than_equal_to[100]',
+        'weight'            => 'permit_empty|decimal',
+        'height'            => 'permit_empty|decimal',
+        'notes'             => 'permit_empty|string|max_length[1000]'
     ];
 
     protected $validationMessages = [

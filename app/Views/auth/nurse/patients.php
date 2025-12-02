@@ -83,10 +83,10 @@
                                                 <a href="<?= base_url('nurse/patients/view/' . $patient['id']) ?>" class="btn btn-sm btn-outline-primary" title="View Details">
                                                     <i class="bi bi-eye"></i>
                                                 </a>
-                                                <a href="#" class="btn btn-sm btn-outline-warning" title="Update Vitals">
+                                                <a href="<?= base_url('nurse/patients/vitals/' . $patient['id']) ?>" class="btn btn-sm btn-outline-warning" title="Update Vitals">
                                                     <i class="bi bi-pencil"></i>
                                                 </a>
-                                                <button onclick="confirmUpdate(<?= $patient['id'] ?>)" class="btn btn-sm btn-outline-success" title="Mark Complete">
+                                                <button onclick="completeTask(<?= $patient['id'] ?>)" class="btn btn-sm btn-outline-success" title="Mark Complete">
                                                     <i class="bi bi-check-circle"></i>
                                                 </button>
                                             </td>
@@ -107,10 +107,29 @@
 </div>
 
 <script>
-function confirmUpdate(id) {
+function completeTask(patientId) {
     if (confirm('Are you sure you want to mark this task as complete?')) {
-        // Add your update logic here
-        alert('Task marked as complete for patient ID: ' + id);
+        fetch(`/nurse/patients/complete-task/${patientId}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest',
+                'X-CSRF-TOKEN': '<?= csrf_hash() ?>'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                alert('Task marked as complete');
+                location.reload();
+            } else {
+                alert('Error: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while updating the task');
+        });
     }
 }
 </script>

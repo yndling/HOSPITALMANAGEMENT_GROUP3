@@ -1,69 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hospital Management System</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
     <style>
         body {
-            display: flex;
+            background-color: #f8f9fa;
+        }
+        .sidebar {
             min-height: 100vh;
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f4f8;
-            color: #333;
+            background-color: #2c3e50;
+            color: white;
         }
-        .content {
-            flex-grow: 1;
-            padding: 2rem 3rem;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            margin: 1rem;
+        .sidebar .nav-link {
+            color: #bdc3c7;
+            margin: 0.25rem 0;
+            padding: 0.5rem 1rem;
         }
-        .chart-container {
-            max-width: 900px;
-            margin: 1rem auto 0 auto;
+        .sidebar .nav-link:hover {
+            background-color: #34495e;
+            color: white;
         }
-        
-        /* High contrast status badges */
-        .badge {
-            border: 1px solid rgba(0,0,0,0.2);
-        }
-        .badge-warning {
-            background-color: #ffc107 !important;
-            color: #000 !important;
-            border-color: #ffb300;
-        }
-        .badge-primary {
-            background-color: #0d6efd !important;
-            color: #fff !important;
-            border-color: #0a58ca;
-        }
-        .badge-success {
-            background-color: #198754 !important;
-            color: #fff !important;
-            border-color: #146c43;
-        }
-        .badge-secondary {
-            background-color: #6c757d !important;
-            color: #fff !important;
-            border-color: #5c636a;
+        .sidebar .nav-link.active {
+            background-color: #1abc9c;
+            color: white;
         }
     </style>
 </head>
 <body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <?= view('templates/header') ?>
+            
+            <!-- Main Content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+                <?php if (session()->getFlashdata('success')): ?>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <?= session()->getFlashdata('success') ?>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                <?php endif; ?>
+                
+                <?php if (session()->getFlashdata('error')): ?>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <?= session()->getFlashdata('error') ?>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                <?php endif; ?>
+                
+                <?= $this->renderSection('content') ?>
+            </main>
+        </div>
+    </div>
 
-<?= view('templates/header') ?>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- jQuery (required for some Bootstrap components) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<main class="content">
-    <?= $this->renderSection('content') ?>
-</main>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <?= $this->renderSection('scripts') ?>
 </body>
 </html>

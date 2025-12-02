@@ -56,9 +56,15 @@ $routes->group('admin', ['filter' => 'auth'], function($routes) {
     $routes->get('patients', 'AdminController::patients');
     $routes->get('patients/create', 'AdminController::createPatient');
     $routes->post('patients/store', 'AdminController::storePatient');
+    $routes->get('patients/view/(:num)', 'AdminController::viewPatient/$1');
+    $routes->get('patients/edit/(:num)', 'AdminController::editPatient/$1');
+    $routes->post('patients/update/(:num)', 'AdminController::updatePatient/$1');
     $routes->get('appointments', 'AdminController::appointments');
     $routes->get('appointments/create', 'AdminController::createAppointment');
     $routes->post('appointments/store', 'AdminController::storeAppointment');
+    $routes->get('appointments/view/(:num)', 'AdminController::viewAppointment/$1');
+    $routes->get('appointments/edit/(:num)', 'AdminController::editAppointment/$1');
+    $routes->post('appointments/update/(:num)', 'AdminController::updateAppointment/$1');
     $routes->get('billing', 'AdminController::billing');
     $routes->get('pharmacy', 'AdminController::pharmacy');
     $routes->get('reports', 'AdminController::reports');
@@ -122,21 +128,43 @@ $routes->group('doctor', ['filter' => 'auth'], function($routes) {
 // NURSE ROUTES
 $routes->group('nurse', ['filter' => 'auth'], function($routes) {
     $routes->get('/', 'NurseController::index');
-    
-    // Patient Management
-    $routes->get('patients', 'NurseController::patients');
-    $routes->get('patients/view/(:num)', 'NurseController::viewPatient/$1');
-    $routes->get('patients/search', 'NurseController::searchPatients');
-    
-    // Appointment Management
-    $routes->get('appointments', 'NurseController::appointments');
-    $routes->get('appointments/view/(:num)', 'NurseController::viewAppointment/$1');
-    $routes->post('appointments/status/(:num)', 'NurseController::updateAppointmentStatus/$1');
-    $routes->get('appointments/search', 'NurseController::searchAppointments');
+    $routes->get('dashboard', 'NurseController::dashboard');
     
     // Medication Management
-    $routes->get('medications', 'NurseController::medications');
-    $routes->get('medications/view/(:num)', 'NurseController::viewMedication/$1');
+    $routes->post('medication/update-status', 'NurseController::updateMedicationStatus');
+    
+    // Patient Management
+    $routes->group('patients', function($routes) {
+        $routes->get('/', 'NurseController::patients');
+        $routes->get('create', 'NurseController::createPatient');
+        $routes->post('store', 'NurseController::storePatient');
+        $routes->get('edit/(:num)', 'NurseController::editPatient/$1');
+        $routes->post('update/(:num)', 'NurseController::updatePatient/$1');
+        $routes->get('view/(:num)', 'NurseController::viewPatient/$1');
+        // Move complete-task before vitals to avoid route conflicts
+        $routes->post('complete-task/(:num)', 'NurseController::completeTask/$1');
+        $routes->get('vitals/(:num)', 'NurseController::updateVitals/$1');
+        $routes->post('vitals/(:num)/save', 'NurseController::saveVitals/$1');
+        $routes->get('search', 'NurseController::searchPatients');
+    });
+    
+    // Appointment Management
+    $routes->group('appointments', function($routes) {
+        $routes->get('/', 'NurseController::appointments');
+        $routes->get('create', 'NurseController::createAppointment');
+        $routes->post('store', 'NurseController::storeAppointment');
+        $routes->get('edit/(:num)', 'NurseController::editAppointment/$1');
+        $routes->post('update/(:num)', 'NurseController::updateAppointment/$1');
+        $routes->get('view/(:num)', 'NurseController::viewAppointment/$1');
+        $routes->post('status/(:num)', 'NurseController::updateAppointmentStatus/$1');
+        $routes->get('search', 'NurseController::searchAppointments');
+    });
+    
+    // Medication Management
+    $routes->group('medications', function($routes) {
+        $routes->get('/', 'NurseController::medications');
+        $routes->get('view/(:num)', 'NurseController::viewMedication/$1');
+    });
 });
 
 // RECEPTIONIST ROUTES
