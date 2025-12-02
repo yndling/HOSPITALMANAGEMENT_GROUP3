@@ -186,4 +186,26 @@ class AppointmentModel extends Model
                     ->orderBy('appointments.date', 'DESC')
                     ->findAll();
     }
+
+    /**
+     * Get count of appointments for a specific month and year
+     * 
+     * @param int $month Month (1-12)
+     * @param int $year Year (e.g., 2023)
+     * @return int Count of appointments for the specified month and year
+     */
+    public function getMonthlyAppointments($month, $year)
+    {
+        // Ensure month is 2 digits
+        $month = str_pad($month, 2, '0', STR_PAD_LEFT);
+        
+        // Format the date range for the query
+        $startDate = "{$year}-{$month}-01";
+        $endDate = date('Y-m-t', strtotime($startDate)); // Last day of the month
+        
+        // Query to get count of appointments for the specified month
+        return $this->where('DATE(date) >=', $startDate)
+                   ->where('DATE(date) <=', $endDate)
+                   ->countAllResults();
+    }
 }

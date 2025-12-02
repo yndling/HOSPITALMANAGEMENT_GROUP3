@@ -76,53 +76,121 @@
     </script>
 <?php elseif ($role === 'doctor'): ?>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <h1>Doctor Dashboard</h1>
-                <p class="lead">Welcome back, Doctor! Here's your overview.</p>
-                
-                <div class="row mb-4">
-                    <div class="col-md-3">
-                        <div class="card text-white bg-primary">
-                            <div class="card-body text-center">
-                                <h5>Total Patients</h5>
-                                <h3><?= isset($totalPatients) ? esc($totalPatients) : '0' ?></h3>
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Doctor Dashboard</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+                <div class="btn-group me-2">
+                    <a href="/doctor/appointments/create" class="btn btn-sm btn-outline-primary">
+                        <i class="fas fa-plus"></i> New Appointment
+                    </a>
+                    <a href="/doctor/patients/create" class="btn btn-sm btn-outline-secondary">
+                        <i class="fas fa-user-plus"></i> Add Patient
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="row mb-4">
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                    Total Patients</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?= esc($totalPatients) ?></div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-user-injured fa-2x text-gray-300"></i>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="card text-white bg-success">
-                            <div class="card-body text-center">
-                                <h5>Upcoming Appointments</h5>
-                                <h3><?= isset($upcomingAppointments) ? esc($upcomingAppointments) : '0' ?></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card text-white bg-warning">
-                            <div class="card-body text-center">
-                                <h5>Pending Prescriptions</h5>
-                                <h3><?= isset($pendingPrescriptions) ? esc($pendingPrescriptions) : '0' ?></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card text-white bg-info">
-                            <div class="card-body text-center">
-                                <h5>Lab Tests in Progress</h5>
-                                <h3><?= isset($labTestsInProgress) ? esc($labTestsInProgress) : '0' ?></h3>
-                            </div>
-                        </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-primary stretched-link" href="/doctor/patients">View Details</a>
+                        <div class="small text-primary"><i class="fas fa-arrow-right"></i></div>
                     </div>
                 </div>
-                
-                <div class="card mt-4">
-                    <div class="card-header">
-                        <h5 class="mb-0">Recent Activities</h5>
-                    </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
                     <div class="card-body">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Checked patient John Doe at 10:00 AM</li>
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                    Upcoming Appointments</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?= esc($upcomingAppointments) ?></div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-calendar-check fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-success stretched-link" href="/doctor/appointments">View Appointments</a>
+                        <div class="small text-success"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-warning shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                    Pending Prescriptions</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?= esc($pendingPrescriptions) ?></div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-prescription fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-warning stretched-link" href="/doctor/prescriptions">View Prescriptions</a>
+                        <div class="small text-warning"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-info shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                    Today's Appointments</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?= count($todayAppointments) ?></div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-calendar-day fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-info stretched-link" href="/doctor/appointments?date=<?= date('Y-m-d') ?>">View Today's Schedule</a>
+                        <div class="small text-info"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Today's Appointments -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Today's Appointments (<?= date('F j, Y') ?>)</h6>
+                    <div class="dropdown no-arrow">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="/doctor/appointments/create"><i class="fas fa-plus fa-sm fa-fw mr-2 text-gray-400"></i> New Appointment</a></li>
+                            <li><a class="dropdown-item" href="/doctor/appointments"><i class="fas fa-calendar fa-sm fa-fw mr-2 text-gray-400"></i> View All</a></li>
                             <li class="list-group-item">Prescribed medication for Jane Smith at 11:30 AM</li>
                             <li class="list-group-item">Reviewed lab results for Bob Johnson at 2:00 PM</li>
                             <li class="list-group-item">Scheduled follow-up for Alice Brown at 3:30 PM</li>

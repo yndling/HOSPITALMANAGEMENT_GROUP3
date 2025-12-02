@@ -22,7 +22,7 @@
                                     <th>Category</th>
                                     <th>Stock Quantity</th>
                                     <th>Expiry Date</th>
-                                    <th>Price</th>
+                                    <th class="text-end">Price (₱)</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -33,7 +33,7 @@
                                     <td>Pain Relief</td>
                                     <td>500</td>
                                     <td>2025-06-30</td>
-                                    <td>$5.00</td>
+                                    <td class="text-end">₱5.00</td>
                                     <td>
                                         <a href="#" class="btn btn-sm btn-outline-primary">View</a>
                                         <a href="#" class="btn btn-sm btn-outline-warning">Edit</a>
@@ -46,7 +46,7 @@
                                     <td>Antibiotic</td>
                                     <td>200</td>
                                     <td>2024-12-15</td>
-                                    <td>$12.50</td>
+                                    <td class="text-end">₱12.50</td>
                                     <td>
                                         <a href="#" class="btn btn-sm btn-outline-primary">View</a>
                                         <a href="#" class="btn btn-sm btn-outline-warning">Edit</a>
@@ -59,7 +59,7 @@
                                     <td>Diabetes</td>
                                     <td>100</td>
                                     <td>2025-03-20</td>
-                                    <td>$25.00</td>
+                                    <td class="text-end">₱25.00</td>
                                     <td>
                                         <a href="#" class="btn btn-sm btn-outline-primary">View</a>
                                         <a href="#" class="btn btn-sm btn-outline-warning">Edit</a>

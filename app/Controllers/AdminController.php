@@ -659,7 +659,83 @@ class AdminController extends BaseController
 
     public function reports()
     {
-        return view('auth/admin/reports');
+        // Load necessary models
+        $appointmentModel = new \App\Models\AppointmentModel();
+        $patientModel = new \App\Models\PatientModel();
+        $billModel = new \App\Models\BillModel();
+        $paymentModel = new \App\Models\PaymentModel();
+
+        // Get current month and year
+        $currentMonth = date('m');
+        $currentYear = date('Y');
+
+        // Get monthly revenue (last 6 months)
+        $monthlyRevenue = [];
+        $monthlyAppointments = [];
+        $months = [];
+        
+        for ($i = 5; $i >= 0; $i--) {
+            $month = date('m', strtotime("-$i months"));
+            $year = date('Y', strtotime("-$i months"));
+            $months[] = date('M Y', strtotime("$year-$month-01"));
+            
+            // Get revenue for the month
+            $monthlyRevenue[] = (float)$billModel->getMonthlyRevenue($month, $year) ?? 0;
+            
+            // Get appointment count for the month
+            $monthlyAppointments[] = (int)$appointmentModel->getMonthlyAppointments($month, $year) ?? 0;
+        }
+
+        // Get recent bills with patient names
+        $recentBills = $billModel->select('bills.*, patients.name as patient_name')
+                               ->join('patients', 'patients.id = bills.patient_id')
+                               ->orderBy('bills.created_at', 'DESC')
+                               ->findAll(5);
+
+        // Get recent appointments with patient names
+        $recentAppointments = $appointmentModel->select('appointments.*, patients.name as patient_name')
+                                             ->join('patients', 'patients.id = appointments.patient_id')
+                                             ->orderBy('appointments.date', 'DESC')
+                                             ->findAll(5);
+
+        // Get total amount of pending bills
+        $pendingBillsAmount = $billModel->selectSum('amount')
+                                      ->where('status', 'pending')
+                                      ->first()['amount'] ?? 0;
+
+        $data = [
+            'monthlyRevenue' => $monthlyRevenue,
+            'monthlyAppointments' => $monthlyAppointments,
+            'months' => $months,
+            'totalRevenue' => $billModel->getTotalRevenue(),
+            'totalAppointments' => $appointmentModel->countAllResults(),
+            'totalPatients' => $patientModel->countAllResults(),
+            'pendingBills' => $pendingBillsAmount,
+            'recentBills' => $recentBills,
+            'recentAppointments' => $recentAppointments
+        ];
+
+        return view('auth/admin/reports', $data);
+    }
+    
+    public function generateReport($type = 'pdf')
+    {
+        // Add report generation logic here
+        // This is a placeholder - implement based on your requirements
+        
+        $data = []; // Add data for the report
+        
+        if ($type === 'pdf') {
+            $dompdf = new \Dompdf\Dompdf();
+            $html = view('reports/pdf_template', $data);
+            $dompdf->loadHtml($html);
+            $dompdf->setPaper('A4', 'landscape');
+            $dompdf->render();
+            $dompdf->stream("report_" . date('Y-m-d') . ".pdf");
+        } else {
+            // Handle other report types (e.g., Excel, CSV)
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Report type not supported']);
+        }
     }
 
     public function users()

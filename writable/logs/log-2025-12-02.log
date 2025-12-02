@@ -644,3 +644,732 @@ in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
  9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-02 09:55:30 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\BillModel::getMonthlyRevenue
+[Method: GET, Route: admin/reports]
+in SYSTEMPATH\Model.php on line 927.
+ 1 APPPATH\Controllers\AdminController.php(683): CodeIgniter\Model->__call('getMonthlyRevenue', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->reports()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-02 09:56:46 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\BillModel::getMonthlyRevenue
+[Method: GET, Route: admin/reports]
+in SYSTEMPATH\Model.php on line 927.
+ 1 APPPATH\Controllers\AdminController.php(683): CodeIgniter\Model->__call('getMonthlyRevenue', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->reports()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-02 09:58:02 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\AppointmentModel::getMonthlyAppointments
+[Method: GET, Route: admin/reports]
+in SYSTEMPATH\Model.php on line 927.
+ 1 APPPATH\Controllers\AdminController.php(686): CodeIgniter\Model->__call('getMonthlyAppointments', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->reports()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-02 09:58:02 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\AppointmentModel::getMonthlyAppointments
+[Method: GET, Route: admin/reports]
+in SYSTEMPATH\Model.php on line 927.
+ 1 APPPATH\Controllers\AdminController.php(686): CodeIgniter\Model->__call('getMonthlyAppointments', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->reports()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-02 09:58:09 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\AppointmentModel::getMonthlyAppointments
+[Method: GET, Route: admin/reports]
+in SYSTEMPATH\Model.php on line 927.
+ 1 APPPATH\Controllers\AdminController.php(686): CodeIgniter\Model->__call('getMonthlyAppointments', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->reports()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+ERROR - 2025-12-02 09:58:58 --> mysqli_sql_exception: Unknown column 'status' in 'where clause' in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Controllers\AdminController.php(695): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(933): App\Controllers\AdminController->reports()
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-12-02 09:58:59 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'status' in 'where clause'
+[Method: GET, Route: admin/reports]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `status` = :status:', [...], false)
+ 2 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 3 APPPATH\Controllers\AdminController.php(695): CodeIgniter\Model->countAllResults()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->reports()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-02 09:58:59 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'status' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `status` = \'active\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `status` = \'active\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `status` = :status:', [...], false)
+ 4 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 5 APPPATH\Controllers\AdminController.php(695): CodeIgniter\Model->countAllResults()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->reports()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-02 09:58:59 --> [Caused by] mysqli_sql_exception: Unknown column 'status' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `status` = \'active\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `status` = \'active\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `status` = \'active\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `status` = :status:', [...], false)
+ 5 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Controllers\AdminController.php(695): CodeIgniter\Model->countAllResults()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->reports()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+ERROR - 2025-12-02 09:58:59 --> mysqli_sql_exception: Unknown column 'status' in 'where clause' in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Controllers\AdminController.php(695): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(933): App\Controllers\AdminController->reports()
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-12-02 09:58:59 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'status' in 'where clause'
+[Method: GET, Route: admin/reports]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `status` = :status:', [...], false)
+ 2 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 3 APPPATH\Controllers\AdminController.php(695): CodeIgniter\Model->countAllResults()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->reports()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-02 09:58:59 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'status' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `status` = \'active\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `status` = \'active\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `status` = :status:', [...], false)
+ 4 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 5 APPPATH\Controllers\AdminController.php(695): CodeIgniter\Model->countAllResults()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->reports()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-02 09:58:59 --> [Caused by] mysqli_sql_exception: Unknown column 'status' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `status` = \'active\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `status` = \'active\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `status` = \'active\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `status` = :status:', [...], false)
+ 5 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Controllers\AdminController.php(695): CodeIgniter\Model->countAllResults()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->reports()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+ERROR - 2025-12-02 10:09:54 --> mysqli_sql_exception: Unknown column 'doctor_id' in 'where clause' in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Controllers\DoctorController.php(47): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-12-02 10:09:54 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'doctor_id' in 'where clause'
+[Method: GET, Route: doctor/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = :doctor_id:', [...], false)
+ 2 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 3 APPPATH\Controllers\DoctorController.php(47): CodeIgniter\Model->countAllResults()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-02 10:09:54 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'doctor_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = \'16\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = \'16\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = :doctor_id:', [...], false)
+ 4 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 5 APPPATH\Controllers\DoctorController.php(47): CodeIgniter\Model->countAllResults()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-02 10:09:54 --> [Caused by] mysqli_sql_exception: Unknown column 'doctor_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = \'16\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = \'16\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = \'16\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = :doctor_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Controllers\DoctorController.php(47): CodeIgniter\Model->countAllResults()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+ERROR - 2025-12-02 10:09:54 --> mysqli_sql_exception: Unknown column 'doctor_id' in 'where clause' in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Controllers\DoctorController.php(47): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-12-02 10:09:54 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'doctor_id' in 'where clause'
+[Method: GET, Route: doctor/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = :doctor_id:', [...], false)
+ 2 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 3 APPPATH\Controllers\DoctorController.php(47): CodeIgniter\Model->countAllResults()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-02 10:09:54 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'doctor_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = \'16\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = \'16\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = :doctor_id:', [...], false)
+ 4 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 5 APPPATH\Controllers\DoctorController.php(47): CodeIgniter\Model->countAllResults()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-02 10:09:54 --> [Caused by] mysqli_sql_exception: Unknown column 'doctor_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = \'16\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = \'16\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = \'16\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = :doctor_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Controllers\DoctorController.php(47): CodeIgniter\Model->countAllResults()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+ERROR - 2025-12-02 10:10:38 --> mysqli_sql_exception: Unknown column 'doctor_id' in 'where clause' in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Controllers\DoctorController.php(47): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-12-02 10:10:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'doctor_id' in 'where clause'
+[Method: GET, Route: doctor/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = :doctor_id:', [...], false)
+ 2 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 3 APPPATH\Controllers\DoctorController.php(47): CodeIgniter\Model->countAllResults()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-02 10:10:38 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'doctor_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = \'16\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = \'16\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = :doctor_id:', [...], false)
+ 4 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 5 APPPATH\Controllers\DoctorController.php(47): CodeIgniter\Model->countAllResults()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-02 10:10:38 --> [Caused by] mysqli_sql_exception: Unknown column 'doctor_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = \'16\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = \'16\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = \'16\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = :doctor_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Controllers\DoctorController.php(47): CodeIgniter\Model->countAllResults()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+ERROR - 2025-12-02 10:10:39 --> mysqli_sql_exception: Unknown column 'doctor_id' in 'where clause' in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Controllers\DoctorController.php(47): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-12-02 10:10:39 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'doctor_id' in 'where clause'
+[Method: GET, Route: doctor/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = :doctor_id:', [...], false)
+ 2 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 3 APPPATH\Controllers\DoctorController.php(47): CodeIgniter\Model->countAllResults()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-02 10:10:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'doctor_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = \'16\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = \'16\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = :doctor_id:', [...], false)
+ 4 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 5 APPPATH\Controllers\DoctorController.php(47): CodeIgniter\Model->countAllResults()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-02 10:10:39 --> [Caused by] mysqli_sql_exception: Unknown column 'doctor_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = \'16\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = \'16\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = \'16\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `patients`
+WHERE `doctor_id` = :doctor_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Controllers\DoctorController.php(47): CodeIgniter\Model->countAllResults()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+ERROR - 2025-12-02 10:12:00 --> mysqli_sql_exception: Unknown column 'doctor_id' in 'where clause' in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(DI...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(DI...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(DI...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(DI...', Array, false)
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Model.php(925): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Controllers\DoctorController.php(50): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-12-02 10:12:00 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'doctor_id' in 'where clause'
+[Method: GET, Route: doctor/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(DISTINCT patient_id) as total_patients
+FROM `appointments`
+WHERE `doctor_id` = :doctor_id:', [...], false)
+ 2 SYSTEMPATH\Model.php(925): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\DoctorController.php(50): CodeIgniter\Model->__call('get', [])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-02 10:12:00 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'doctor_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(DISTINCT patient_id) as total_patients
+FROM `appointments`
+WHERE `doctor_id` = \'16\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(DISTINCT patient_id) as total_patients
+FROM `appointments`
+WHERE `doctor_id` = \'16\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(DISTINCT patient_id) as total_patients
+FROM `appointments`
+WHERE `doctor_id` = :doctor_id:', [...], false)
+ 4 SYSTEMPATH\Model.php(925): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\DoctorController.php(50): CodeIgniter\Model->__call('get', [])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-02 10:12:00 --> [Caused by] mysqli_sql_exception: Unknown column 'doctor_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(DISTINCT patient_id) as total_patients
+FROM `appointments`
+WHERE `doctor_id` = \'16\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(DISTINCT patient_id) as total_patients
+FROM `appointments`
+WHERE `doctor_id` = \'16\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(DISTINCT patient_id) as total_patients
+FROM `appointments`
+WHERE `doctor_id` = \'16\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(DISTINCT patient_id) as total_patients
+FROM `appointments`
+WHERE `doctor_id` = :doctor_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(925): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\DoctorController.php(50): CodeIgniter\Model->__call('get', [])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+ERROR - 2025-12-02 10:12:01 --> mysqli_sql_exception: Unknown column 'doctor_id' in 'where clause' in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(DI...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(DI...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(DI...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(DI...', Array, false)
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Model.php(925): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Controllers\DoctorController.php(50): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-12-02 10:12:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'doctor_id' in 'where clause'
+[Method: GET, Route: doctor/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(DISTINCT patient_id) as total_patients
+FROM `appointments`
+WHERE `doctor_id` = :doctor_id:', [...], false)
+ 2 SYSTEMPATH\Model.php(925): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\DoctorController.php(50): CodeIgniter\Model->__call('get', [])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-02 10:12:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'doctor_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(DISTINCT patient_id) as total_patients
+FROM `appointments`
+WHERE `doctor_id` = \'16\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(DISTINCT patient_id) as total_patients
+FROM `appointments`
+WHERE `doctor_id` = \'16\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(DISTINCT patient_id) as total_patients
+FROM `appointments`
+WHERE `doctor_id` = :doctor_id:', [...], false)
+ 4 SYSTEMPATH\Model.php(925): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\DoctorController.php(50): CodeIgniter\Model->__call('get', [])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-02 10:12:01 --> [Caused by] mysqli_sql_exception: Unknown column 'doctor_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(DISTINCT patient_id) as total_patients
+FROM `appointments`
+WHERE `doctor_id` = \'16\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(DISTINCT patient_id) as total_patients
+FROM `appointments`
+WHERE `doctor_id` = \'16\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(DISTINCT patient_id) as total_patients
+FROM `appointments`
+WHERE `doctor_id` = \'16\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(DISTINCT patient_id) as total_patients
+FROM `appointments`
+WHERE `doctor_id` = :doctor_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(925): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\DoctorController.php(50): CodeIgniter\Model->__call('get', [])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+ERROR - 2025-12-02 10:12:51 --> mysqli_sql_exception: Unknown column 'doctor' in 'where clause' in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Controllers\DoctorController.php(68): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-12-02 10:12:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'doctor' in 'where clause'
+[Method: GET, Route: doctor/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `prescriptions`
+WHERE `doctor` = :doctor:
+AND `status` = :status:', [...], false)
+ 2 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 3 APPPATH\Controllers\DoctorController.php(68): CodeIgniter\Model->countAllResults()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-02 10:12:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'doctor' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `prescriptions`
+WHERE `doctor` = \'doc ko \'
+AND `status` = \'pending\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `prescriptions`
+WHERE `doctor` = \'doc ko \'
+AND `status` = \'pending\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `prescriptions`
+WHERE `doctor` = :doctor:
+AND `status` = :status:', [...], false)
+ 4 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 5 APPPATH\Controllers\DoctorController.php(68): CodeIgniter\Model->countAllResults()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-02 10:12:51 --> [Caused by] mysqli_sql_exception: Unknown column 'doctor' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `prescriptions`
+WHERE `doctor` = \'doc ko \'
+AND `status` = \'pending\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `prescriptions`
+WHERE `doctor` = \'doc ko \'
+AND `status` = \'pending\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `prescriptions`
+WHERE `doctor` = \'doc ko \'
+AND `status` = \'pending\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `prescriptions`
+WHERE `doctor` = :doctor:
+AND `status` = :status:', [...], false)
+ 5 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Controllers\DoctorController.php(68): CodeIgniter\Model->countAllResults()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->dashboard()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')

@@ -177,4 +177,30 @@ class BillModel extends Model
                     ->orderBy('bills.created_at', 'DESC')
                     ->findAll();
     }
+
+    /**
+     * Get monthly revenue for a specific month and year
+     * 
+     * @param int $month Month (1-12)
+     * @param int $year Year (e.g., 2023)
+     * @return float Total revenue for the specified month and year
+     */
+    public function getMonthlyRevenue($month, $year)
+    {
+        // Ensure month is 2 digits
+        $month = str_pad($month, 2, '0', STR_PAD_LEFT);
+        
+        // Format the date range for the query
+        $startDate = "{$year}-{$month}-01";
+        $endDate = date('Y-m-t', strtotime($startDate)); // Last day of the month
+        
+        // Query to get sum of paid bills for the specified month
+        $result = $this->selectSum('amount')
+                      ->where('status', 'paid')
+                      ->where('DATE(created_at) >=', $startDate)
+                      ->where('DATE(created_at) <=', $endDate)
+                      ->first();
+        
+        return (float)($result['amount'] ?? 0);
+    }
 }

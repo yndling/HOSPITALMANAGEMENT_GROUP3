@@ -59,12 +59,14 @@ $routes->group('admin', ['filter' => 'auth'], function($routes) {
     $routes->get('patients/view/(:num)', 'AdminController::viewPatient/$1');
     $routes->get('patients/edit/(:num)', 'AdminController::editPatient/$1');
     $routes->post('patients/update/(:num)', 'AdminController::updatePatient/$1');
+    $routes->get('patients/delete/(:num)', 'AdminController::deletePatient/$1');
     $routes->get('appointments', 'AdminController::appointments');
     $routes->get('appointments/create', 'AdminController::createAppointment');
     $routes->post('appointments/store', 'AdminController::storeAppointment');
     $routes->get('appointments/view/(:num)', 'AdminController::viewAppointment/$1');
     $routes->get('appointments/edit/(:num)', 'AdminController::editAppointment/$1');
     $routes->post('appointments/update/(:num)', 'AdminController::updateAppointment/$1');
+    $routes->get('appointments/delete/(:num)', 'AdminController::deleteAppointment/$1');
     $routes->get('billing', 'AdminController::billing');
     $routes->get('pharmacy', 'AdminController::pharmacy');
     $routes->get('reports', 'AdminController::reports');

@@ -41,7 +41,54 @@ class DoctorController extends BaseController
 
     public function dashboard()
     {
-        return view('auth/dashboard');
+        $userId = $this->session->get('id');
+
+        // Get doctor's name to use for filtering appointments
+        $doctorName = $this->session->get('name');
+
+        // Get staff ID for prescriptions (prescriptions table uses doctor_id foreign key to staff.id)
+        $staffModel = new \App\Models\StaffModel();
+        $staff = $staffModel->where('email', $this->session->get('email'))->first();
+        $doctorStaffId = $staff ? $staff['id'] : null;
+
+        // Get total unique patients for the doctor by checking appointments
+        $totalPatients = $this->appointmentModel
+            ->select('COUNT(DISTINCT patient_id) as total_patients')
+            ->where('doctor', $doctorName)
+            ->get()
+            ->getRow()
+            ->total_patients ?? 0;
+
+        // Get upcoming appointments (today and future)
+        $upcomingAppointments = $this->appointmentModel
+            ->where('doctor', $doctorName)
+            ->where('date >=', date('Y-m-d'))
+            ->where('status', 'scheduled')
+            ->countAllResults();
+
+        // Get pending prescriptions
+        $pendingPrescriptions = $doctorStaffId ? $this->prescriptionModel
+            ->where('doctor_id', $doctorStaffId)
+            ->where('status', 'pending')
+            ->countAllResults() : 0;
+
+        // Get today's appointments
+        $todayAppointments = $this->appointmentModel
+            ->where('doctor', $doctorName)
+            ->where('date', date('Y-m-d'))
+            ->whereIn('status', ['scheduled', 'in-progress'])
+            ->orderBy('time', 'ASC')
+            ->findAll();
+        
+        $data = [
+            'totalPatients' => $totalPatients,
+            'upcomingAppointments' => $upcomingAppointments,
+            'pendingPrescriptions' => $pendingPrescriptions,
+            'todayAppointments' => $todayAppointments,
+            'title' => 'Doctor Dashboard'
+        ];
+        
+        return view('auth/dashboard', $data);
     }
 
     // ==================== PATIENT MANAGEMENT ====================
