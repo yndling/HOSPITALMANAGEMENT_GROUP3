@@ -44,13 +44,47 @@ class AdminController extends BaseController
 
     public function dashboard()
     {
-        $data['totalStaff'] = $this->staffModel->getTotalStaff();
-        $data['totalPatients'] = $this->patientModel->getTotalPatients();
-        $data['totalBills'] = $this->billModel->getTotalBills();
-        $data['pendingPayments'] = $this->billModel->getPendingPaymentsCount();
-        $data['totalRevenue'] = $this->billModel->getTotalRevenue();
+        // Get current date for filtering
+        $today = date('Y-m-d');
+        
+        // Calculate total revenue (sum of all paid bills)
+        $totalRevenue = $this->billModel->selectSum('amount', 'total_amount')
+            ->where('status', 'paid')
+            ->get()
+            ->getRow()
+            ->total_amount ?? 0;
 
-        return view('auth/dashboard', $data);
+        // Get pending appointments count
+        $pendingAppointments = $this->appointmentModel
+            ->where('status', 'pending')
+            ->countAllResults();
+
+        // Get recent patients (last 5 registered)
+        $recentPatients = $this->patientModel
+            ->select('patients.*')
+            ->orderBy('created_at', 'DESC')
+            ->limit(5)
+            ->find();
+
+        // Prepare data for the view
+        $data = [
+            'totalPatients' => $this->patientModel->countAllResults(),
+            'todayAppointments' => $this->appointmentModel
+                ->where('date', $today)
+                ->countAllResults(),
+            'pendingAppointments' => $pendingAppointments,
+            'totalRevenue' => $totalRevenue,
+            'recentPatients' => $recentPatients,
+            'recentAppointments' => $this->appointmentModel
+                ->select('appointments.*, patients.name as patient_name')
+                ->join('patients', 'patients.id = appointments.patient_id')
+                ->orderBy('appointments.date', 'DESC')
+                ->orderBy('appointments.time', 'DESC')
+                ->limit(5)
+                ->find()
+        ];
+
+        return view('auth/admin/dashboard', $data);
     }
 
     // ==================== STAFF MANAGEMENT ====================

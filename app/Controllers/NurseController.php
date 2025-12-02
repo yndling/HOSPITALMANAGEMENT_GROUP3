@@ -215,8 +215,8 @@ class NurseController extends BaseController
 
     public function viewPatient($id)
     {
-        $data['patient'] = $this->patientModel->getPatient($id);
-        $data['appointments'] = $this->appointmentModel->getAppointmentsByPatient($id);
+        $data['patient'] = $this->patientModel->find($id);
+        $data['appointments'] = $this->appointmentModel->where('patient_id', $id)->findAll();
 
         if (!$data['patient']) {
             $this->session->setFlashdata('error', 'Patient not found');
@@ -662,65 +662,4 @@ class NurseController extends BaseController
             ->findAll();
     }
 
-    /**
-     * Search medications by patient name, prescription ID, or status
-     */
-    public function searchMedications()
-    {
-        $search = $this->request->getGet('search');
-        $status = $this->request->getGet('status');
-        
-        $builder = $this->prescriptionModel
-            ->select('prescriptions.*, patients.name as patient_name, patients.age')
-            ->join('patients', 'patients.id = prescriptions.patient_id')
-            ->orderBy('prescriptions.prescription_date', 'DESC');
-        
-        if (!empty($search)) {
-            $builder->groupStart()
-                ->like('patients.name', $search)
-                ->orLike('prescriptions.id', $search)
-                ->orLike('prescriptions.prescription_number', $search)
-                ->groupEnd();
-        }
-        
-        if (!empty($status) && $status !== 'all') {
-            $builder->where('prescriptions.status', $status);
-        }
-        
-        $data['prescriptions'] = $builder->findAll();
-        $data['search'] = $search;
-        $data['status'] = $status;
-        
-        return view('auth/nurse/medications', $data);
-    }
-    
-    
-    /**
-     * Show form to administer medication
-     */
-    public function administerMedication($id)
-    {
-        $prescription = $this->prescriptionModel
-            ->select('prescriptions.*, patients.name as patient_name')
-            ->join('patients', 'patients.id = prescriptions.patient_id')
-            ->find($id);
-            
-        if (!$prescription) {
-            $this->session->setFlashdata('error', 'Prescription not found');
-            return redirect()->to('/nurse/medications');
-        }
-        
-        // Get prescription items with medicine details
-        $prescriptionItemModel = new \App\Models\PrescriptionItemModel();
-        $items = $prescriptionItemModel
-            ->select('prescription_items.*, medicines.name as medicine_name, medicines.strength')
-            ->join('medicines', 'medicines.id = prescription_items.medicine_id')
-            ->where('prescription_items.prescription_id', $id)
-            ->findAll();
-        
-        $data['prescription'] = $prescription;
-        $data['items'] = $items;
-        
-        return view('auth/nurse/administer_medication', $data);
-    }
 }
