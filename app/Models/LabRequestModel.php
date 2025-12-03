@@ -20,7 +20,8 @@ class LabRequestModel extends Model
         'patient_id',
         'test_type',
         'doctor_id',
-        'notes'
+        'notes',
+        'appointment_id'
     ];
 
     protected $useTimestamps = true;

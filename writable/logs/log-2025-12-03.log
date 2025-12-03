@@ -1,0 +1,1467 @@
+CRITICAL - 2025-12-03 14:02:44 --> CodeIgniter\Cache\Exceptions\CacheException: Cache unable to write to "C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\writable\cache/".
+[Method: GET, Route: /]
+in SYSTEMPATH\Cache\Handlers\FileHandler.php on line 66.
+ 1 SYSTEMPATH\Cache\Handlers\FileHandler.php(66): CodeIgniter\Cache\Exceptions\CacheException::forUnableToWrite('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\writable\\cache/')
+ 2 SYSTEMPATH\Cache\CacheFactory.php(67): CodeIgniter\Cache\Handlers\FileHandler->__construct(Object(Config\Cache))
+ 3 SYSTEMPATH\Config\Services.php(129): CodeIgniter\Cache\CacheFactory::getHandler(Object(Config\Cache))
+ 4 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::cache(Object(Config\Cache), false)
+ 5 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('cache', [...])
+ 6 SYSTEMPATH\Config\Services.php(124): CodeIgniter\Config\BaseService::getSharedInstance('cache', null)
+ 7 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::cache()
+ 8 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('cache', [])
+ 9 SYSTEMPATH\Config\Services.php(454): CodeIgniter\Config\BaseService::get('cache')
+10 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::responsecache(Object(Config\Cache), null, false)
+11 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('responsecache', [...])
+12 SYSTEMPATH\Config\Services.php(450): CodeIgniter\Config\BaseService::getSharedInstance('responsecache', null, null)
+13 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::responsecache()
+14 SYSTEMPATH\CodeIgniter.php(178): CodeIgniter\Config\BaseService::__callStatic('responsecache', [])
+15 SYSTEMPATH\Config\Services.php(164): CodeIgniter\CodeIgniter->__construct(Object(Config\App))
+16 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::codeigniter(Object(Config\App), false)
+17 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('codeigniter', [...])
+18 SYSTEMPATH\Config\Services.php(159): CodeIgniter\Config\BaseService::getSharedInstance('codeigniter', null)
+19 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::codeigniter()
+20 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('codeigniter', [])
+21 SYSTEMPATH\Common.php(995): CodeIgniter\Config\BaseService::get('codeigniter')
+22 SYSTEMPATH\Boot.php(349): service('codeigniter')
+23 SYSTEMPATH\Boot.php(130): CodeIgniter\Boot::initializeCodeIgniter()
+24 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2025-12-03 13:03:39 --> mysqli_sql_exception: Table 'hmsdb.patients' doesn't exist in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('SHOW COLUMNS FR...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SHOW COLUMNS FR...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SHOW COLUMNS FR...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(1606): CodeIgniter\Database\BaseConnection->query('SHOW COLUMNS FR...')
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Database\Migrations\20231202000000_AddVitalsToPatients.php(12): CodeIgniter\Database\BaseConnection->getFieldNames('patients')
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MigrationRunner.php(876): App\Database\Migrations\AddVitalsToPatients->up()
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-12-03 13:04:33 --> mysqli_sql_exception: Table 'appointments' already exists in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `a...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `a...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `a...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `a...')
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Database\Migrations\2025-09-11-135520_CreateAppointmentsTable.php(47): CodeIgniter\Database\Forge->createTable('appointments')
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreateAppointmentsTable->up()
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-12-03 13:06:59 --> mysqli_sql_exception: Table 'appointments' already exists in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `a...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `a...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `a...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `a...')
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Database\Migrations\2025-09-11-135520_CreateAppointmentsTable.php(47): CodeIgniter\Database\Forge->createTable('appointments')
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreateAppointmentsTable->up()
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-12-03 13:09:12 --> TypeError: CodeIgniter\CLI\InputOutput::input(): Return value must be of type string, bool returned
+[Method: CLI, Route: db:table]
+in SYSTEMPATH\CLI\InputOutput.php on line 46.
+ 1 SYSTEMPATH\CLI\CLI.php(260): CodeIgniter\CLI\InputOutput->input()
+ 2 SYSTEMPATH\CLI\CLI.php(298): CodeIgniter\CLI\CLI::prompt('
+Which table do you want to see?', [...], [...])
+ 3 SYSTEMPATH\Commands\Database\ShowTableInfo.php(145): CodeIgniter\CLI\CLI::promptByKey([], [...], 'required')
+ 4 SYSTEMPATH\CLI\Commands.php(74): CodeIgniter\Commands\Database\ShowTableInfo->run([...])
+ 5 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:table', [...])
+ 6 SYSTEMPATH\Boot.php(388): CodeIgniter\CLI\Console->run()
+ 7 SYSTEMPATH\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 8 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2025-12-03 13:09:22 --> mysqli_sql_exception: Table 'appointments' already exists in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `a...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `a...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `a...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `a...')
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Database\Migrations\2025-09-11-135520_CreateAppointmentsTable.php(47): CodeIgniter\Database\Forge->createTable('appointments')
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreateAppointmentsTable->up()
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-12-03 13:11:24 --> mysqli_sql_exception: Table 'appointments' already exists in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `a...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `a...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `a...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `a...')
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Database\Migrations\2025-09-11-135520_CreateAppointmentsTable.php(47): CodeIgniter\Database\Forge->createTable('appointments')
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreateAppointmentsTable->up()
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-12-03 13:13:49 --> mysqli_sql_exception: Table 'hmsdb.users' doesn't exist in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('erin@gmail.com', 'users.email', Array)
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('erin@gmail.com', 'users.email', Array, NULL, 'email')
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'erin@gmail.com', Array, Array, 'email')
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(933): App\Controllers\AuthController->store()
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+CRITICAL - 2025-12-03 13:13:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('erin@gmail.com', 'users.email', [...])
+ 4 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('erin@gmail.com', 'users.email', [...], null, 'email')
+ 5 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'erin@gmail.com', [...], [...], 'email')
+ 6 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 13:13:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('erin@gmail.com', 'users.email', [...])
+ 6 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('erin@gmail.com', 'users.email', [...], null, 'email')
+ 7 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'erin@gmail.com', [...], [...], 'email')
+ 8 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 13:13:49 --> [Caused by] mysqli_sql_exception: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('erin@gmail.com', 'users.email', [...])
+ 7 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('erin@gmail.com', 'users.email', [...], null, 'email')
+ 8 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'erin@gmail.com', [...], [...], 'email')
+ 9 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+ERROR - 2025-12-03 13:14:56 --> mysqli_sql_exception: Table 'appointments' already exists in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `a...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `a...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `a...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `a...')
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Database\Migrations\2025-09-11-135520_CreateAppointmentsTable.php(47): CodeIgniter\Database\Forge->createTable('appointments')
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreateAppointmentsTable->up()
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-12-03 13:16:29 --> mysqli_sql_exception: Can't create table `hmsdb`.`appointments` (errno: 150 "Foreign key constraint is incorrectly formed") in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `a...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `a...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `a...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `a...')
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Database\Migrations\2025-09-11-135520_CreateAppointmentsTable.php(47): CodeIgniter\Database\Forge->createTable('appointments')
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreateAppointmentsTable->up()
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-12-03 13:18:42 --> mysqli_sql_exception: Table 'hmsdb.users' doesn't exist in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('erin@gmail.com', 'users.email', Array)
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('erin@gmail.com', 'users.email', Array, NULL, 'email')
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'erin@gmail.com', Array, Array, 'email')
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(933): App\Controllers\AuthController->store()
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+CRITICAL - 2025-12-03 13:18:42 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('erin@gmail.com', 'users.email', [...])
+ 4 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('erin@gmail.com', 'users.email', [...], null, 'email')
+ 5 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'erin@gmail.com', [...], [...], 'email')
+ 6 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 13:18:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('erin@gmail.com', 'users.email', [...])
+ 6 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('erin@gmail.com', 'users.email', [...], null, 'email')
+ 7 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'erin@gmail.com', [...], [...], 'email')
+ 8 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 13:18:42 --> [Caused by] mysqli_sql_exception: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('erin@gmail.com', 'users.email', [...])
+ 7 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('erin@gmail.com', 'users.email', [...], null, 'email')
+ 8 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'erin@gmail.com', [...], [...], 'email')
+ 9 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+ERROR - 2025-12-03 13:22:08 --> mysqli_sql_exception: Table 'hmsdb.users' doesn't exist in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('erin@gmail.com', 'users.email', Array)
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('erin@gmail.com', 'users.email', Array, NULL, 'email')
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'erin@gmail.com', Array, Array, 'email')
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(933): App\Controllers\AuthController->store()
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+CRITICAL - 2025-12-03 13:22:08 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('erin@gmail.com', 'users.email', [...])
+ 4 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('erin@gmail.com', 'users.email', [...], null, 'email')
+ 5 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'erin@gmail.com', [...], [...], 'email')
+ 6 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 13:22:08 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('erin@gmail.com', 'users.email', [...])
+ 6 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('erin@gmail.com', 'users.email', [...], null, 'email')
+ 7 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'erin@gmail.com', [...], [...], 'email')
+ 8 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 13:22:08 --> [Caused by] mysqli_sql_exception: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('erin@gmail.com', 'users.email', [...])
+ 7 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('erin@gmail.com', 'users.email', [...], null, 'email')
+ 8 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'erin@gmail.com', [...], [...], 'email')
+ 9 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+ERROR - 2025-12-03 13:24:03 --> mysqli_sql_exception: Table 'hmsdb.users' doesn't exist in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('erin@gmail.com', 'users.email', Array)
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('erin@gmail.com', 'users.email', Array, NULL, 'email')
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'erin@gmail.com', Array, Array, 'email')
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(933): App\Controllers\AuthController->store()
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+CRITICAL - 2025-12-03 13:24:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('erin@gmail.com', 'users.email', [...])
+ 4 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('erin@gmail.com', 'users.email', [...], null, 'email')
+ 5 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'erin@gmail.com', [...], [...], 'email')
+ 6 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 13:24:03 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('erin@gmail.com', 'users.email', [...])
+ 6 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('erin@gmail.com', 'users.email', [...], null, 'email')
+ 7 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'erin@gmail.com', [...], [...], 'email')
+ 8 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 13:24:03 --> [Caused by] mysqli_sql_exception: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('erin@gmail.com', 'users.email', [...])
+ 7 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('erin@gmail.com', 'users.email', [...], null, 'email')
+ 8 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'erin@gmail.com', [...], [...], 'email')
+ 9 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+ERROR - 2025-12-03 13:25:30 --> mysqli_sql_exception: Table 'hmsdb.users' doesn't exist in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('erin@gmail.com', 'users.email', Array)
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('erin@gmail.com', 'users.email', Array, NULL, 'email')
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'erin@gmail.com', Array, Array, 'email')
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(933): App\Controllers\AuthController->store()
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+CRITICAL - 2025-12-03 13:25:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('erin@gmail.com', 'users.email', [...])
+ 4 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('erin@gmail.com', 'users.email', [...], null, 'email')
+ 5 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'erin@gmail.com', [...], [...], 'email')
+ 6 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 13:25:30 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('erin@gmail.com', 'users.email', [...])
+ 6 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('erin@gmail.com', 'users.email', [...], null, 'email')
+ 7 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'erin@gmail.com', [...], [...], 'email')
+ 8 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 13:25:30 --> [Caused by] mysqli_sql_exception: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('erin@gmail.com', 'users.email', [...])
+ 7 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('erin@gmail.com', 'users.email', [...], null, 'email')
+ 8 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'erin@gmail.com', [...], [...], 'email')
+ 9 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+ERROR - 2025-12-03 13:30:19 --> mysqli_sql_exception: Table 'hmsdb.users' doesn't exist in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('erin@gmail.com', 'users.email', Array)
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('erin@gmail.com', 'users.email', Array, NULL, 'email')
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'erin@gmail.com', Array, Array, 'email')
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(933): App\Controllers\AuthController->store()
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+CRITICAL - 2025-12-03 13:30:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('erin@gmail.com', 'users.email', [...])
+ 4 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('erin@gmail.com', 'users.email', [...], null, 'email')
+ 5 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'erin@gmail.com', [...], [...], 'email')
+ 6 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 13:30:19 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('erin@gmail.com', 'users.email', [...])
+ 6 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('erin@gmail.com', 'users.email', [...], null, 'email')
+ 7 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'erin@gmail.com', [...], [...], 'email')
+ 8 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 13:30:19 --> [Caused by] mysqli_sql_exception: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'erin@gmail.com\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('erin@gmail.com', 'users.email', [...])
+ 7 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('erin@gmail.com', 'users.email', [...], null, 'email')
+ 8 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'erin@gmail.com', [...], [...], 'email')
+ 9 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+ERROR - 2025-12-03 13:31:16 --> mysqli_sql_exception: Table 'hmsdb.users' doesn't exist in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', Array)
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', Array, NULL, 'email')
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', Array, Array, 'email')
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(933): App\Controllers\AuthController->store()
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+CRITICAL - 2025-12-03 13:31:16 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', [...])
+ 4 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', [...], null, 'email')
+ 5 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', [...], [...], 'email')
+ 6 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 13:31:16 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', [...])
+ 6 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', [...], null, 'email')
+ 7 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', [...], [...], 'email')
+ 8 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 13:31:16 --> [Caused by] mysqli_sql_exception: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', [...])
+ 7 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', [...], null, 'email')
+ 8 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', [...], [...], 'email')
+ 9 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+ERROR - 2025-12-03 13:34:47 --> mysqli_sql_exception: Table 'hmsdb.users' doesn't exist in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', Array)
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', Array, NULL, 'email')
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', Array, Array, 'email')
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(933): App\Controllers\AuthController->store()
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+CRITICAL - 2025-12-03 13:34:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', [...])
+ 4 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', [...], null, 'email')
+ 5 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', [...], [...], 'email')
+ 6 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 13:34:47 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', [...])
+ 6 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', [...], null, 'email')
+ 7 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', [...], [...], 'email')
+ 8 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 13:34:47 --> [Caused by] mysqli_sql_exception: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', [...])
+ 7 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', [...], null, 'email')
+ 8 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', [...], [...], 'email')
+ 9 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+ERROR - 2025-12-03 13:37:15 --> mysqli_sql_exception: Table 'hmsdb.users' doesn't exist in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', Array)
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', Array, NULL, 'email')
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', Array, Array, 'email')
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(933): App\Controllers\AuthController->store()
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+CRITICAL - 2025-12-03 13:37:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', [...])
+ 4 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', [...], null, 'email')
+ 5 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', [...], [...], 'email')
+ 6 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 13:37:15 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', [...])
+ 6 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', [...], null, 'email')
+ 7 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', [...], [...], 'email')
+ 8 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 13:37:15 --> [Caused by] mysqli_sql_exception: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', [...])
+ 7 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', [...], null, 'email')
+ 8 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', [...], [...], 'email')
+ 9 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+ERROR - 2025-12-03 13:37:39 --> mysqli_sql_exception: Table 'hmsdb.users' doesn't exist in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', Array)
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', Array, NULL, 'email')
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', Array, Array, 'email')
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(933): App\Controllers\AuthController->store()
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+CRITICAL - 2025-12-03 13:37:39 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', [...])
+ 4 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', [...], null, 'email')
+ 5 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', [...], [...], 'email')
+ 6 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 13:37:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', [...])
+ 6 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', [...], null, 'email')
+ 7 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', [...], [...], 'email')
+ 8 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 13:37:39 --> [Caused by] mysqli_sql_exception: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', [...])
+ 7 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', [...], null, 'email')
+ 8 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', [...], [...], 'email')
+ 9 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+ERROR - 2025-12-03 13:51:33 --> mysqli_sql_exception: Table 'hmsdb.users' doesn't exist in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', Array)
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', Array, NULL, 'email')
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', Array, Array, 'email')
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(933): App\Controllers\AuthController->store()
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+CRITICAL - 2025-12-03 13:51:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', [...])
+ 4 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', [...], null, 'email')
+ 5 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', [...], [...], 'email')
+ 6 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 13:51:33 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', [...])
+ 6 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', [...], null, 'email')
+ 7 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', [...], [...], 'email')
+ 8 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 13:51:33 --> [Caused by] mysqli_sql_exception: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', [...])
+ 7 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', [...], null, 'email')
+ 8 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', [...], [...], 'email')
+ 9 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+ERROR - 2025-12-03 14:09:38 --> mysqli_sql_exception: Table 'hmsdb.users' doesn't exist in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', Array)
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', Array, NULL, 'email')
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', Array, Array, 'email')
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(933): App\Controllers\AuthController->store()
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+CRITICAL - 2025-12-03 14:09:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', [...])
+ 4 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', [...], null, 'email')
+ 5 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', [...], [...], 'email')
+ 6 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 14:09:38 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', [...])
+ 6 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', [...], null, 'email')
+ 7 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', [...], [...], 'email')
+ 8 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 14:09:38 --> [Caused by] mysqli_sql_exception: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', [...])
+ 7 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', [...], null, 'email')
+ 8 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', [...], [...], 'email')
+ 9 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+ERROR - 2025-12-03 14:41:08 --> mysqli_sql_exception: Table 'hmsdb.users' doesn't exist in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', Array)
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', Array, NULL, 'email')
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', Array, Array, 'email')
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(933): App\Controllers\AuthController->store()
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+CRITICAL - 2025-12-03 14:41:08 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', [...])
+ 4 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', [...], null, 'email')
+ 5 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', [...], [...], 'email')
+ 6 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 14:41:08 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', [...])
+ 6 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', [...], null, 'email')
+ 7 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', [...], [...], 'email')
+ 8 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 14:41:08 --> [Caused by] mysqli_sql_exception: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'ella@gmail.com\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('ella@gmail.com', 'users.email', [...])
+ 7 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('ella@gmail.com', 'users.email', [...], null, 'email')
+ 8 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'ella@gmail.com', [...], [...], 'email')
+ 9 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+ERROR - 2025-12-03 14:42:31 --> mysqli_sql_exception: Table 'hmsdb.users' doesn't exist in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('aiak@gmail.com', 'users.email', Array)
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('aiak@gmail.com', 'users.email', Array, NULL, 'email')
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'aiak@gmail.com', Array, Array, 'email')
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(933): App\Controllers\AuthController->store()
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+CRITICAL - 2025-12-03 14:42:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+[Method: POST, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('aiak@gmail.com', 'users.email', [...])
+ 4 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('aiak@gmail.com', 'users.email', [...], null, 'email')
+ 5 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'aiak@gmail.com', [...], [...], 'email')
+ 6 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 14:42:31 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'aiak@gmail.com\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'aiak@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('aiak@gmail.com', 'users.email', [...])
+ 6 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('aiak@gmail.com', 'users.email', [...], null, 'email')
+ 7 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'aiak@gmail.com', [...], [...], 'email')
+ 8 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-12-03 14:42:31 --> [Caused by] mysqli_sql_exception: Table 'hmsdb.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1
+FROM `users`
+WHERE `email` = \'aiak@gmail.com\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'aiak@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'aiak@gmail.com\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('aiak@gmail.com', 'users.email', [...])
+ 7 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('aiak@gmail.com', 'users.email', [...], null, 'email')
+ 8 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'aiak@gmail.com', [...], [...], 'email')
+ 9 APPPATH\Controllers\AuthController.php(32): CodeIgniter\Validation\Validation->run()
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->store()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')

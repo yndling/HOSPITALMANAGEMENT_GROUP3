@@ -17,6 +17,7 @@
             <div class="row">
                 <!-- Patient Information -->
                 <div class="col-md-8">
+                    <?php if (isset($patient) && is_array($patient)): ?>
                     <div class="card mb-4">
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <h5 class="mb-0">Patient Information</h5>
@@ -25,24 +26,96 @@
                             </a>
                         </div>
                         <div class="card-body">
+                            <!-- Personal Information -->
+                            <h6 class="text-primary mb-3">Personal Information</h6>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <p><strong>Patient ID:</strong> <?= esc($patient['id']) ?></p>
-                                    <p><strong>Name:</strong> <?= esc($patient['name']) ?></p>
+                                    <p><strong>Patient ID:</strong> <?= esc($patient['patient_id'] ?? $patient['id']) ?></p>
+                                    <p><strong>Name:</strong> <?= esc($patient['first_name'] ?? '') ?> <?= esc($patient['middle_name'] ?? '') ?> <?= esc($patient['last_name'] ?? '') ?></p>
+                                    <p><strong>Date of Birth:</strong> <?= esc($patient['date_of_birth'] ?? 'N/A') ?></p>
                                     <p><strong>Age:</strong> <?= esc($patient['age'] ?? 'N/A') ?> years</p>
                                     <p><strong>Gender:</strong> <?= esc($patient['gender']) ?></p>
+                                    <p><strong>Blood Type:</strong> <?= esc($patient['blood_type'] ?? 'N/A') ?></p>
                                 </div>
                                 <div class="col-md-6">
-                                    <p><strong>Contact:</strong> <?= esc($patient['contact'] ?? 'N/A') ?></p>
-                                    <p><strong>Address:</strong> <?= esc($patient['address'] ?? 'N/A') ?></p>
+                                    <p><strong>Civil Status:</strong> <?= esc($patient['civil_status'] ?? 'N/A') ?></p>
+                                    <p><strong>Nationality:</strong> <?= esc($patient['nationality'] ?? 'N/A') ?></p>
+                                    <p><strong>Contact Number:</strong> <?= esc($patient['contact_number'] ?? 'N/A') ?></p>
+                                    <p><strong>Email Address:</strong> <?= esc($patient['email_address'] ?? 'N/A') ?></p>
+                                    <p><strong>Home Address:</strong> <?= esc($patient['home_address'] ?? 'N/A') ?></p>
+                                </div>
+                            </div>
+
+                            <!-- Emergency Contact Information -->
+                            <h6 class="text-primary mb-3 mt-4">Emergency Contact Information</h6>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><strong>Emergency Contact Name:</strong> <?= esc($patient['emergency_contact_name'] ?? 'N/A') ?></p>
+                                    <p><strong>Relationship:</strong> <?= esc($patient['emergency_relationship'] ?? 'N/A') ?></p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><strong>Contact Number:</strong> <?= esc($patient['emergency_contact_number'] ?? 'N/A') ?></p>
+                                    <p><strong>Address:</strong> <?= esc($patient['emergency_address'] ?? 'N/A') ?></p>
+                                </div>
+                            </div>
+
+                            <!-- Medical Information -->
+                            <h6 class="text-primary mb-3 mt-4">Medical Information</h6>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><strong>Medical History:</strong></p>
+                                    <div class="bg-light p-2 rounded"><?= nl2br(esc($patient['medical_history'] ?? 'N/A')) ?></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><strong>Current Medications:</strong></p>
+                                    <div class="bg-light p-2 rounded"><?= nl2br(esc($patient['current_medications'] ?? 'N/A')) ?></div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <p><strong>Allergies:</strong></p>
+                                    <div class="bg-light p-2 rounded"><?= nl2br(esc($patient['allergies'] ?? 'N/A')) ?></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><strong>Past Surgeries:</strong></p>
+                                    <div class="bg-light p-2 rounded"><?= nl2br(esc($patient['past_surgeries'] ?? 'N/A')) ?></div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <p><strong>Chronic Conditions:</strong></p>
+                                    <div class="bg-light p-2 rounded"><?= nl2br(esc($patient['chronic_conditions'] ?? 'N/A')) ?></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><strong>Family Medical History:</strong></p>
+                                    <div class="bg-light p-2 rounded"><?= nl2br(esc($patient['family_medical_history'] ?? 'N/A')) ?></div>
+                                </div>
+                            </div>
+
+                            <!-- Registration Info -->
+                            <div class="row mt-4">
+                                <div class="col-md-6">
                                     <p><strong>Registered:</strong> <?= date('M d, Y', strtotime($patient['created_at'])) ?></p>
+                                </div>
+                                <div class="col-md-6">
                                     <p><strong>Last Updated:</strong> <?= date('M d, Y', strtotime($patient['updated_at'])) ?></p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <?php else: ?>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="alert alert-danger">
+                                <h5>Error Loading Patient Data</h5>
+                                <p>Unable to load patient information. Please try again or contact support.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endif; ?>
 
                     <!-- Appointment History -->
+                    <?php if (isset($patient) && is_array($patient)): ?>
                     <div class="card">
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <h5 class="mb-0">Appointment History</h5>
@@ -51,7 +124,7 @@
                             </a>
                         </div>
                         <div class="card-body">
-                            <?php if (!empty($appointments)): ?>
+                            <?php if (isset($appointments) && is_array($appointments) && !empty($appointments)): ?>
                                 <div class="table-responsive">
                                     <table class="table table-striped table-hover">
                                         <thead class="table-dark">
@@ -107,10 +180,12 @@
                             <?php endif; ?>
                         </div>
                     </div>
+                    <?php endif; ?>
                 </div>
 
                 <!-- Quick Actions Sidebar -->
                 <div class="col-md-4">
+                    <?php if (isset($patient) && is_array($patient)): ?>
                     <div class="card">
                         <div class="card-header">
                             <h5 class="mb-0">Quick Actions</h5>
@@ -138,18 +213,30 @@
                         <div class="card-body">
                             <div class="row text-center">
                                 <div class="col-6">
-                                    <h4 class="text-primary"><?= count($appointments) ?></h4>
+                                    <h4 class="text-primary">
+                                        <?php
+                                        $appointmentCount = (isset($appointments) && is_array($appointments)) ? count($appointments) : 0;
+                                        echo $appointmentCount;
+                                        ?>
+                                    </h4>
                                     <small class="text-muted">Total Appointments</small>
                                 </div>
                                 <div class="col-6">
                                     <h4 class="text-success">
-                                        <?= count(array_filter($appointments, fn($a) => $a['status'] === 'Completed')) ?>
+                                        <?php
+                                        $completedCount = 0;
+                                        if (isset($appointments) && is_array($appointments)) {
+                                            $completedCount = count(array_filter($appointments, fn($a) => $a['status'] === 'Completed'));
+                                        }
+                                        echo $completedCount;
+                                        ?>
                                     </h4>
                                     <small class="text-muted">Completed</small>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

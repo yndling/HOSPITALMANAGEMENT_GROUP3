@@ -42,9 +42,13 @@ class AuthController extends BaseController
             'password_hash' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
         ];
 
-        $userModel->insert($data);
-
-        return redirect()->to('/login')->with('success', 'Registration successful. Please login.');
+        try {
+            $userModel->insert($data);
+            return redirect()->to('/login')->with('success', 'Registration successful. Please login.');
+        } catch (\Exception $e) {
+            log_message('error', 'Database error during user registration: ' . $e->getMessage());
+            return redirect()->back()->withInput()->with('error', 'Registration failed due to a database error. Please try again.');
+        }
     }
 
     public function authenticate()
@@ -56,36 +60,52 @@ class AuthController extends BaseController
         $password = $this->request->getPost('password');
         $role     = $this->request->getPost('role');
 
-    
         $normalizedRole = str_replace(' ', '_', strtolower($role));
 
-        $user = $userModel->where('email', $email)->first();
+        try {
+            $user = $userModel->where('email', $email)->first();
 
-        if (! $user) {
-            return redirect()->back()->with('error', 'Email not found');
+            if (! $user) {
+                return redirect()->back()->with('error', 'Email not found');
+            }
+
+            // Use password_verify to check hashed password
+            if (!password_verify($password, $user['password_hash'])) {
+                return redirect()->back()->with('error', 'Invalid password');
+            }
+
+            if ($normalizedRole !== strtolower($user['role'])) {
+                return redirect()->back()->with('error', 'Invalid role selected');
+            }
+
+            // Save to session
+            $session->set([
+                'id'         => $user['id'],
+                'name'       => $user['name'],
+                'email'      => $user['email'],
+                'role'       => $user['role'],
+                'isLoggedIn' => true,
+            ]);
+
+            // Redirect to role-specific dashboard
+            $roleRoutes = [
+                'admin' => '/admin/dashboard',
+                'doctor' => '/doctor/dashboard',
+                'nurse' => '/dashboard', // nurse uses the general dashboard
+                'receptionist' => '/dashboard', // receptionist uses the general dashboard
+                'laboratory_staff' => '/dashboard', // lab staff uses the general dashboard
+                'pharmacist' => '/dashboard', // pharmacist uses the general dashboard
+                'accountant' => '/dashboard', // accountant uses the general dashboard
+                'it_staff' => '/dashboard', // it staff uses the general dashboard
+                'itstaff' => '/dashboard', // it staff uses the general dashboard
+            ];
+
+            $redirectUrl = $roleRoutes[$user['role']] ?? '/dashboard';
+            return redirect()->to($redirectUrl);
+        } catch (\Exception $e) {
+            log_message('error', 'Database error during authentication: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Authentication failed due to a database error. Please try again.');
         }
-
-        // Use password_verify to check hashed password
-        if (!password_verify($password, $user['password_hash'])) {
-            return redirect()->back()->with('error', 'Invalid password');
-        }
-
-       
-        if ($normalizedRole !== strtolower($user['role'])) {
-            return redirect()->back()->with('error', 'Invalid role selected');
-        }
-
-        // Save to session
-        $session->set([
-            'id'         => $user['id'],
-            'name'       => $user['name'],
-            'email'      => $user['email'],
-            'role'       => $user['role'],
-            'isLoggedIn' => true,
-        ]);
-
-        // Redirect to unified dashboard
-        return redirect()->to('/dashboard');
     }
 
     public function logout()

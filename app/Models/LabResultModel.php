@@ -16,7 +16,8 @@ class LabResultModel extends Model
     protected $allowedFields = [
         'patient',
         'test',
-        'result'
+        'result',
+        'appointment_id'
     ];
 
     protected $useTimestamps = true;
