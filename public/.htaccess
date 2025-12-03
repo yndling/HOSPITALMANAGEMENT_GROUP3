@@ -1,0 +1,19 @@
+# Enable mod_rewrite
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /HOSPITALMANAGEMENT_GROUP3/public/
+
+    # Redirect Trailing Slashes if not a directory
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ /HOSPITALMANAGEMENT_GROUP3/public/$1 [L,R=301]
+
+    # Route all requests to index.php if the file/folder does not exist
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+# Deny access to .env file
+<FilesMatch "^\.env$">
+    Require all denied
+</FilesMatch>

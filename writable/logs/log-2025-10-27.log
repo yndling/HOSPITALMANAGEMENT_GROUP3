@@ -1,0 +1,274 @@
+ERROR - 2025-10-27 04:16:16 --> Staff not found for email: doctor123@gmail.com
+ERROR - 2025-10-27 04:21:38 --> mysqli_sql_exception: Unknown column 'lab_requests.doctor_id' in 'where clause' in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `lab_req...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lab_req...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lab_req...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `lab_req...', Array, false)
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Controllers\DoctorController.php(583): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(933): App\Controllers\DoctorController->lab()
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-10-27 04:21:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lab_requests.doctor_id' in 'where clause'
+[Method: GET, Route: doctor/lab]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `lab_requests`.*, `patients`.`name` as `patient_name`
+FROM `lab_requests`
+LEFT JOIN `patients` ON `patients`.`id` = `lab_requests`.`patient_id`
+WHERE `lab_requests`.`doctor_id` = :lab_requests.doctor_id:
+AND `lab_requests`.`deleted_at` IS NULL
+ORDER BY `lab_requests`.`created_at` DESC', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\DoctorController.php(583): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->lab()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-27 04:21:38 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lab_requests.doctor_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lab_requests`.*, `patients`.`name` as `patient_name`
+FROM `lab_requests`
+LEFT JOIN `patients` ON `patients`.`id` = `lab_requests`.`patient_id`
+WHERE `lab_requests`.`doctor_id` = \'9\'
+AND `lab_requests`.`deleted_at` IS NULL
+ORDER BY `lab_requests`.`created_at` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lab_requests`.*, `patients`.`name` as `patient_name`
+FROM `lab_requests`
+LEFT JOIN `patients` ON `patients`.`id` = `lab_requests`.`patient_id`
+WHERE `lab_requests`.`doctor_id` = \'9\'
+AND `lab_requests`.`deleted_at` IS NULL
+ORDER BY `lab_requests`.`created_at` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `lab_requests`.*, `patients`.`name` as `patient_name`
+FROM `lab_requests`
+LEFT JOIN `patients` ON `patients`.`id` = `lab_requests`.`patient_id`
+WHERE `lab_requests`.`doctor_id` = :lab_requests.doctor_id:
+AND `lab_requests`.`deleted_at` IS NULL
+ORDER BY `lab_requests`.`created_at` DESC', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\DoctorController.php(583): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->lab()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-27 04:21:38 --> [Caused by] mysqli_sql_exception: Unknown column 'lab_requests.doctor_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `lab_requests`.*, `patients`.`name` as `patient_name`
+FROM `lab_requests`
+LEFT JOIN `patients` ON `patients`.`id` = `lab_requests`.`patient_id`
+WHERE `lab_requests`.`doctor_id` = \'9\'
+AND `lab_requests`.`deleted_at` IS NULL
+ORDER BY `lab_requests`.`created_at` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lab_requests`.*, `patients`.`name` as `patient_name`
+FROM `lab_requests`
+LEFT JOIN `patients` ON `patients`.`id` = `lab_requests`.`patient_id`
+WHERE `lab_requests`.`doctor_id` = \'9\'
+AND `lab_requests`.`deleted_at` IS NULL
+ORDER BY `lab_requests`.`created_at` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lab_requests`.*, `patients`.`name` as `patient_name`
+FROM `lab_requests`
+LEFT JOIN `patients` ON `patients`.`id` = `lab_requests`.`patient_id`
+WHERE `lab_requests`.`doctor_id` = \'9\'
+AND `lab_requests`.`deleted_at` IS NULL
+ORDER BY `lab_requests`.`created_at` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `lab_requests`.*, `patients`.`name` as `patient_name`
+FROM `lab_requests`
+LEFT JOIN `patients` ON `patients`.`id` = `lab_requests`.`patient_id`
+WHERE `lab_requests`.`doctor_id` = :lab_requests.doctor_id:
+AND `lab_requests`.`deleted_at` IS NULL
+ORDER BY `lab_requests`.`created_at` DESC', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\DoctorController.php(583): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DoctorController->lab()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DoctorController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-27 04:25:38 --> ErrorException: Undefined array key "patient_id"
+[Method: GET, Route: lab/requests]
+in APPPATH\Views\auth\lab\requests.php on line 29.
+ 1 APPPATH\Views\auth\lab\requests.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "patient_id"', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\lab\\requests.php', 29)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\lab\\requests.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/lab/requests', [], true)
+ 5 APPPATH\Controllers\LabController.php(38): view('auth/lab/requests', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LabController->requests()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-27 04:26:59 --> ErrorException: Undefined array key "patient_id"
+[Method: GET, Route: lab/requests]
+in APPPATH\Views\auth\lab\requests.php on line 29.
+ 1 APPPATH\Views\auth\lab\requests.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "patient_id"', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\lab\\requests.php', 29)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\lab\\requests.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/lab/requests', [], true)
+ 5 APPPATH\Controllers\LabController.php(38): view('auth/lab/requests', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LabController->requests()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-27 04:27:00 --> ErrorException: Undefined array key "patient_id"
+[Method: GET, Route: lab/requests]
+in APPPATH\Views\auth\lab\requests.php on line 29.
+ 1 APPPATH\Views\auth\lab\requests.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "patient_id"', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\lab\\requests.php', 29)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\lab\\requests.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/lab/requests', [], true)
+ 5 APPPATH\Controllers\LabController.php(38): view('auth/lab/requests', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LabController->requests()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-27 04:30:42 --> ErrorException: Undefined array key "patient_id"
+[Method: GET, Route: lab/results/add/1]
+in APPPATH\Views\auth\lab\result_form.php on line 14.
+ 1 APPPATH\Views\auth\lab\result_form.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "patient_id"', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\lab\\result_form.php', 14)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\lab\\result_form.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/lab/result_form', [], true)
+ 5 APPPATH\Controllers\LabController.php(129): view('auth/lab/result_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LabController->addResult('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-27 04:38:53 --> ErrorException: Undefined array key "patient_id"
+[Method: GET, Route: lab/results/add/1]
+in APPPATH\Views\auth\lab\result_form.php on line 14.
+ 1 APPPATH\Views\auth\lab\result_form.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "patient_id"', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\lab\\result_form.php', 14)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\lab\\result_form.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/lab/result_form', [], true)
+ 5 APPPATH\Controllers\LabController.php(129): view('auth/lab/result_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LabController->addResult('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-27 05:05:07 --> ErrorException: Undefined array key "patient_id"
+[Method: GET, Route: lab/results/add/1]
+in APPPATH\Views\auth\lab\result_form.php on line 14.
+ 1 APPPATH\Views\auth\lab\result_form.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "patient_id"', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\lab\\result_form.php', 14)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\lab\\result_form.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/lab/result_form', [], true)
+ 5 APPPATH\Controllers\LabController.php(129): view('auth/lab/result_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LabController->addResult('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+ERROR - 2025-10-27 05:07:18 --> mysqli_sql_exception: Unknown column 'request_id' in 'field list' in C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `la...', 0)
+#1 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `la...')
+#2 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `la...')
+#3 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `la...', Array, false)
+#4 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\app\Controllers\LabController.php(157): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(933): App\Controllers\LabController->storeResult()
+#9 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+#10 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\HOSPITALMANAGEMENT_GROUP3\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-10-27 05:07:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'request_id' in 'field list'
+[Method: POST, Route: lab/results/store]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `lab_results` (`request_id`, `patient_id`, `test_name`, `result_value`, `unit`, `reference_range`, `interpretation`, `notes`, `status`, `created_at`, `updated_at`) VALUES (:request_id:, :patient_id:, :test_name:, :result_value:, :unit:, :reference_range:, :interpretation:, :notes:, :status:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\LabController.php(157): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LabController->storeResult()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-27 05:07:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'request_id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `lab_results` (`request_id`, `patient_id`, `test_name`, `result_value`, `unit`, `reference_range`, `interpretation`, `notes`, `status`, `created_at`, `updated_at`) VALUES (\'1\', \'Test Patient\', \'Complete Blood Count\', \'NONE\', \'MG\', \'70\', \'Normal\', \'NONE\', \'completed\', \'2025-10-27 05:07:18\', \'2025-10-27 05:07:18\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `lab_results` (`request_id`, `patient_id`, `test_name`, `result_value`, `unit`, `reference_range`, `interpretation`, `notes`, `status`, `created_at`, `updated_at`) VALUES (\'1\', \'Test Patient\', \'Complete Blood Count\', \'NONE\', \'MG\', \'70\', \'Normal\', \'NONE\', \'completed\', \'2025-10-27 05:07:18\', \'2025-10-27 05:07:18\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `lab_results` (`request_id`, `patient_id`, `test_name`, `result_value`, `unit`, `reference_range`, `interpretation`, `notes`, `status`, `created_at`, `updated_at`) VALUES (:request_id:, :patient_id:, :test_name:, :result_value:, :unit:, :reference_range:, :interpretation:, :notes:, :status:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\LabController.php(157): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LabController->storeResult()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-27 05:07:18 --> [Caused by] mysqli_sql_exception: Unknown column 'request_id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `lab_results` (`request_id`, `patient_id`, `test_name`, `result_value`, `unit`, `reference_range`, `interpretation`, `notes`, `status`, `created_at`, `updated_at`) VALUES (\'1\', \'Test Patient\', \'Complete Blood Count\', \'NONE\', \'MG\', \'70\', \'Normal\', \'NONE\', \'completed\', \'2025-10-27 05:07:18\', \'2025-10-27 05:07:18\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `lab_results` (`request_id`, `patient_id`, `test_name`, `result_value`, `unit`, `reference_range`, `interpretation`, `notes`, `status`, `created_at`, `updated_at`) VALUES (\'1\', \'Test Patient\', \'Complete Blood Count\', \'NONE\', \'MG\', \'70\', \'Normal\', \'NONE\', \'completed\', \'2025-10-27 05:07:18\', \'2025-10-27 05:07:18\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `lab_results` (`request_id`, `patient_id`, `test_name`, `result_value`, `unit`, `reference_range`, `interpretation`, `notes`, `status`, `created_at`, `updated_at`) VALUES (\'1\', \'Test Patient\', \'Complete Blood Count\', \'NONE\', \'MG\', \'70\', \'Normal\', \'NONE\', \'completed\', \'2025-10-27 05:07:18\', \'2025-10-27 05:07:18\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `lab_results` (`request_id`, `patient_id`, `test_name`, `result_value`, `unit`, `reference_range`, `interpretation`, `notes`, `status`, `created_at`, `updated_at`) VALUES (:request_id:, :patient_id:, :test_name:, :result_value:, :unit:, :reference_range:, :interpretation:, :notes:, :status:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\LabController.php(157): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LabController->storeResult()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
+CRITICAL - 2025-10-27 05:08:19 --> ErrorException: Undefined array key "patient_id"
+[Method: GET, Route: lab/results]
+in APPPATH\Views\auth\lab\results.php on line 30.
+ 1 APPPATH\Views\auth\lab\results.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "patient_id"', 'C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\lab\\results.php', 30)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\app\\Views\\auth\\lab\\results.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/lab/results', [], true)
+ 5 APPPATH\Controllers\LabController.php(45): view('auth/lab/results', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LabController->results()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LabController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\HOSPITALMANAGEMENT_GROUP3\\index.php')
