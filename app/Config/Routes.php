@@ -172,6 +172,7 @@ $routes->group('nurse', ['filter' => 'auth'], function($routes) {
 // RECEPTIONIST ROUTES
 $routes->group('receptionist', ['filter' => 'auth'], function($routes) {
     $routes->get('/', 'ReceptionistController::index');
+    $routes->get('dashboard', 'ReceptionistController::dashboard');
 
     // Patient Management
     $routes->get('patients', 'ReceptionistController::patients');
@@ -198,6 +199,7 @@ $routes->group('receptionist', ['filter' => 'auth'], function($routes) {
 // LAB ROUTES
 $routes->group('lab', ['filter' => 'auth'], function($routes) {
     $routes->get('/', 'LabController::index');
+    $routes->get('dashboard', 'LabController::dashboard');
     $routes->get('supplies', 'LabController::supplies');
     $routes->get('supplies/create', 'LabController::addSupply');
     $routes->post('supplies/store', 'LabController::storeSupply');
@@ -230,6 +232,7 @@ $routes->group('pharmacy', ['filter' => 'auth'], function($routes) {
 // ACCOUNTANT ROUTES
 $routes->group('accountant', ['filter' => 'auth'], function($routes) {
     $routes->get('/', 'AccountantController::index');
+    $routes->get('dashboard', 'AccountantController::dashboard');
     $routes->get('billing', 'AccountantController::billing');
     $routes->get('manage-bills', 'AccountantController::manageBills');
     $routes->get('reports', 'AccountantController::reports');
@@ -248,6 +251,7 @@ $routes->group('accountant', ['filter' => 'auth'], function($routes) {
 // IT STAFF ROUTES
 $routes->group('itstaff', ['filter' => 'auth'], function($routes) {
     $routes->get('/', 'ItStaffController::index');
+    $routes->get('dashboard', 'ItStaffController::dashboard');
     $routes->get('userAccounts', 'ItStaffController::userAccounts');
     $routes->get('logs', 'ItStaffController::logs');
     $routes->get('backups', 'ItStaffController::backups');

@@ -1,13 +1,16 @@
 <?php
 
 // Test script to verify patient creation with new fields
+// Bootstrap CodeIgniter manually for standalone script
 require_once 'vendor/autoload.php';
 
-use Config\Database;
-use App\Models\PatientModel;
+// Load essential CodeIgniter components
+require_once 'app/Config/Database.php';
+require_once 'app/Config/Services.php';
 
-$db = Database::connect();
-$patientModel = new PatientModel();
+// Initialize database connection
+$db = \Config\Database::connect();
+$patientModel = new \App\Models\PatientModel();
 
 // Test data for new patient
 $testData = [

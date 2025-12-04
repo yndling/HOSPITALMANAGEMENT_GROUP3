@@ -67,7 +67,7 @@
         <a href="/nurse/medications" class="nav-link <?= (uri_string() == 'nurse/medications') ? 'active' : '' ?>">Medications</a>
     <?php elseif ($session->get('role') === 'receptionist'): ?>
         <div class="logo">LOGO NAME</div>
-        <a href="/dashboard" class="nav-link <?= (uri_string() == 'dashboard') ? 'active' : '' ?>">Dashboard</a>
+        <a href="/receptionist/dashboard" class="nav-link <?= (uri_string() == 'receptionist/dashboard') ? 'active' : '' ?>">Dashboard</a>
         <a href="/receptionist/patients" class="nav-link <?= (uri_string() == 'receptionist/patients') ? 'active' : '' ?>">Patients</a>
         <a href="/receptionist/appointments" class="nav-link <?= (uri_string() == 'receptionist/appointments') ? 'active' : '' ?>">Appointments</a>
     <?php elseif ($session->get('role') === 'laboratory_staff'): ?>
@@ -77,7 +77,7 @@
         <a href="/lab/results" class="nav-link <?= (uri_string() == 'lab/results') ? 'active' : '' ?>">Results</a>
     <?php elseif ($session->get('role') === 'pharmacist'): ?>
         <div class="logo">LOGO NAME</div>
-        <a href="/dashboard" class="nav-link <?= (uri_string() == 'dashboard') ? 'active' : '' ?>">Dashboard</a>
+        <a href="/pharmacy/dashboard" class="nav-link <?= (uri_string() == 'pharmacy/dashboard') ? 'active' : '' ?>">Dashboard</a>
         <a href="/pharmacy/medicines" class="nav-link <?= (uri_string() == 'pharmacy/medicines') ? 'active' : '' ?>">Medicines</a>
         <a href="/pharmacy/prescriptions" class="nav-link <?= (uri_string() == 'pharmacy/prescriptions') ? 'active' : '' ?>">Prescriptions</a>
     <?php elseif ($session->get('role') === 'accountant'): ?>
@@ -87,7 +87,7 @@
         <a href="/accountant/reports" class="nav-link <?= (uri_string() == 'accountant/reports') ? 'active' : '' ?>">Reports</a>
     <?php elseif ($session->get('role') === 'it_staff' || $session->get('role') === 'itstaff'): ?>
         <div class="logo">LOGO NAME</div>
-        <a href="/dashboard" class="nav-link <?= (uri_string() == 'dashboard') ? 'active' : '' ?>">Dashboard</a>
+        <a href="/itstaff/dashboard" class="nav-link <?= (uri_string() == 'itstaff/dashboard') ? 'active' : '' ?>">Dashboard</a>
         <a href="/itstaff/userAccounts" class="nav-link <?= (uri_string() == 'itstaff/userAccounts') ? 'active' : '' ?>">User Accounts</a>
         <a href="/itstaff/logs" class="nav-link <?= (uri_string() == 'itstaff/logs') ? 'active' : '' ?>">Logs</a>
         <a href="/itstaff/backups" class="nav-link <?= (uri_string() == 'itstaff/backups') ? 'active' : '' ?>">Backups</a>

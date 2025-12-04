@@ -60,7 +60,8 @@ class AuthController extends BaseController
         $password = $this->request->getPost('password');
         $role     = $this->request->getPost('role');
 
-        $normalizedRole = str_replace(' ', '_', strtolower($role));
+        // Normalize input role
+        $normalizedInputRole = str_replace(' ', '_', strtolower($role));
 
         try {
             $user = $userModel->where('email', $email)->first();
@@ -69,21 +70,24 @@ class AuthController extends BaseController
                 return redirect()->back()->with('error', 'Email not found');
             }
 
-            // Use password_verify to check hashed password
+            // Check password
             if (!password_verify($password, $user['password_hash'])) {
                 return redirect()->back()->with('error', 'Invalid password');
             }
 
-            if ($normalizedRole !== strtolower($user['role'])) {
+            // Normalize user role from database
+            $normalizedUserRole = str_replace(' ', '_', strtolower($user['role']));
+
+            if ($normalizedInputRole !== $normalizedUserRole) {
                 return redirect()->back()->with('error', 'Invalid role selected');
             }
 
-            // Save to session
+            // Save session
             $session->set([
-                'id'         => $user['id'],
-                'name'       => $user['name'],
-                'email'      => $user['email'],
-                'role'       => $user['role'],
+                'id' => $user['id'],
+                'name' => $user['name'],
+                'email' => $user['email'],
+                'role' => $user['role'], // keep original for display
                 'isLoggedIn' => true,
             ]);
 
@@ -91,17 +95,18 @@ class AuthController extends BaseController
             $roleRoutes = [
                 'admin' => '/admin/dashboard',
                 'doctor' => '/doctor/dashboard',
-                'nurse' => '/dashboard', // nurse uses the general dashboard
-                'receptionist' => '/dashboard', // receptionist uses the general dashboard
-                'laboratory_staff' => '/dashboard', // lab staff uses the general dashboard
-                'pharmacist' => '/dashboard', // pharmacist uses the general dashboard
-                'accountant' => '/dashboard', // accountant uses the general dashboard
-                'it_staff' => '/dashboard', // it staff uses the general dashboard
-                'itstaff' => '/dashboard', // it staff uses the general dashboard
+                'nurse' => '/dashboard',
+                'receptionist' => '/dashboard',
+                'laboratory_staff' => '/dashboard',
+                'pharmacist' => '/dashboard',
+                'accountant' => '/dashboard',
+                'it_staff' => '/dashboard',
+                'itstaff' => '/dashboard',
             ];
 
-            $redirectUrl = $roleRoutes[$user['role']] ?? '/dashboard';
+            $redirectUrl = $roleRoutes[$normalizedUserRole] ?? '/dashboard';
             return redirect()->to($redirectUrl);
+
         } catch (\Exception $e) {
             log_message('error', 'Database error during authentication: ' . $e->getMessage());
             return redirect()->back()->with('error', 'Authentication failed due to a database error. Please try again.');
@@ -127,6 +132,7 @@ class AuthController extends BaseController
                     'upcomingAppointments' => 15,
                     'pendingPrescriptions' => 5,
                     'labTestsInProgress' => 3,
+                    'todayAppointments' => [],
                 ];
                 break;
             case 'pharmacist':
@@ -161,18 +167,20 @@ class AuthController extends BaseController
                 break;
             case 'receptionist':
                 $data = [
-                    // Add receptionist specific data here if needed
+                    'todaysPatients' => 24,
+                    'upcomingAppointments' => 8,
+                    'pendingTasks' => 5,
                 ];
                 break;
             case 'nurse':
                 $data = [
-                    // Add nurse specific data here if needed
+                    // Nurse dashboard data here
                 ];
                 break;
             case 'admin':
             default:
                 $data = [
-                    // Add admin specific data here if needed
+                    // Admin dashboard data here
                 ];
                 break;
         }

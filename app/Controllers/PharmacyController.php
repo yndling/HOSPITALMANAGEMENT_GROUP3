@@ -21,7 +21,7 @@ class PharmacyController extends BaseController
 
     public function index()
     {
-        return redirect()->to('/dashboard');
+        return redirect()->to('/pharmacy/dashboard');
     }
 
     public function dashboard()

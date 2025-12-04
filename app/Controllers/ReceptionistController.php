@@ -27,7 +27,17 @@ class ReceptionistController extends BaseController
 
     public function index()
     {
-        return redirect()->to('/receptionist/patients');
+        return redirect()->to('/receptionist/dashboard');
+    }
+
+    public function dashboard()
+    {
+        $data = [
+            'todaysPatients' => $this->patientModel->where('DATE(created_at)', date('Y-m-d'))->countAllResults(),
+            'upcomingAppointments' => $this->appointmentModel->where('date >=', date('Y-m-d'))->where('status', 'scheduled')->countAllResults(),
+            'pendingTasks' => 5, // This could be calculated based on actual pending tasks
+        ];
+        return view('auth/receptionist/dashboard', $data);
     }
 
     // ==================== PATIENT MANAGEMENT ====================

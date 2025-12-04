@@ -1,14 +1,18 @@
 <?php
 
+// Test script to verify patient update functionality
 // Bootstrap CodeIgniter
 require_once 'app/Config/Paths.php';
 $paths = new Config\Paths();
 require_once $paths->systemDirectory . '/Boot.php';
 CodeIgniter\Boot::bootWeb($paths);
 
-use App\Models\PatientModel;
+// Load config helper
+require_once $paths->systemDirectory . '/Helpers/config_helper.php';
 
-$patientModel = new PatientModel();
+// Initialize database connection
+$db = \Config\Database::connect();
+$patientModel = new \App\Models\PatientModel();
 
 // Get the test patient we created
 $patient = $patientModel->find(1);
@@ -22,7 +26,6 @@ echo "Testing patient update functionality...\n";
 
 // Update data
 $updateData = [
-    'id' => $patient['id'],
     'first_name' => 'Johnathan', // Changed from John
     'blood_type' => 'A+', // Changed from O+
     'allergies' => 'Penicillin, Sulfa drugs', // Updated allergies

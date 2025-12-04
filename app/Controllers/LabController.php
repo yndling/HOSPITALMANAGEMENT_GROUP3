@@ -21,7 +21,7 @@ class LabController extends BaseController
 
     public function index()
     {
-        return redirect()->to('/dashboard');
+        return redirect()->to('/lab/requests');
     }
 
     public function supplies()

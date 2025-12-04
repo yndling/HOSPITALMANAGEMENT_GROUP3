@@ -17,13 +17,17 @@ class PatientModel extends Model
         'first_name',
         'middle_name',
         'last_name',
+        'name', // For backward compatibility
         'date_of_birth',
         'age',
         'gender',
         'blood_type',
         'civil_status',
         'nationality',
+        'occupation',
+        'religion',
         'contact_number',
+        'contact', // For backward compatibility
         'email_address',
         'home_address',
         'emergency_contact_name',
@@ -43,6 +47,14 @@ class PatientModel extends Model
         'oxygen_level',
         'weight',
         'height',
+        'insurance_provider',
+        'insurance_number',
+        'patient_type',
+        'assigned_doctor',
+        'department',
+        'reason_for_visit',
+        'profile_photo',
+        'qr_code',
         'notes'
     ];
 
@@ -51,105 +63,11 @@ class PatientModel extends Model
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
+    protected $deletedField  = '';
 
     // Validation
-    protected $validationRules = [
-        'patient_id'                => 'permit_empty|is_unique[patients.patient_id]',
-        'first_name'                => 'required|min_length[1]|max_length[50]',
-        'middle_name'               => 'permit_empty|max_length[50]',
-        'last_name'                 => 'required|min_length[1]|max_length[50]',
-        'date_of_birth'             => 'permit_empty|valid_date[Y-m-d]',
-        'age'                       => 'permit_empty|integer|greater_than[0]|less_than[150]',
-        'gender'                    => 'required|in_list[Male,Female,Other]',
-        'blood_type'                => 'permit_empty|in_list[A+,A-,B+,B-,AB+,AB-,O+,O-]',
-        'civil_status'              => 'permit_empty|in_list[Single,Married,Divorced,Widowed]',
-        'nationality'               => 'permit_empty|max_length[50]',
-        'contact_number'            => 'permit_empty|max_length[20]',
-        'email_address'             => 'permit_empty|valid_email|max_length[100]',
-        'home_address'              => 'permit_empty|max_length[255]',
-        'emergency_contact_name'    => 'permit_empty|max_length[100]',
-        'emergency_relationship'    => 'permit_empty|max_length[50]',
-        'emergency_contact_number'  => 'permit_empty|max_length[20]',
-        'emergency_address'         => 'permit_empty|max_length[255]',
-        'medical_history'           => 'permit_empty|max_length[1000]',
-        'current_medications'       => 'permit_empty|max_length[1000]',
-        'allergies'                 => 'permit_empty|max_length[1000]',
-        'past_surgeries'            => 'permit_empty|max_length[1000]',
-        'chronic_conditions'        => 'permit_empty|max_length[1000]',
-        'family_medical_history'    => 'permit_empty|max_length[1000]',
-        'blood_pressure'            => 'permit_empty|string|max_length[20]',
-        'temperature'               => 'permit_empty|decimal',
-        'pulse'                     => 'permit_empty|integer|greater_than[0]',
-        'respiratory_rate'          => 'permit_empty|integer|greater_than[0]',
-        'oxygen_level'              => 'permit_empty|integer|greater_than[0]|less_than_equal_to[100]',
-        'weight'                    => 'permit_empty|decimal',
-        'height'                    => 'permit_empty|decimal',
-        'notes'                     => 'permit_empty|string|max_length[1000]'
-    ];
-
-    protected $validationMessages = [
-        'patient_id' => [
-            'is_unique' => 'Patient ID must be unique'
-        ],
-        'first_name' => [
-            'required'    => 'First name is required',
-            'min_length'  => 'First name must be at least 1 character long',
-            'max_length'  => 'First name cannot exceed 50 characters'
-        ],
-        'last_name' => [
-            'required'    => 'Last name is required',
-            'min_length'  => 'Last name must be at least 1 character long',
-            'max_length'  => 'Last name cannot exceed 50 characters'
-        ],
-        'date_of_birth' => [
-            'valid_date' => 'Please enter a valid date of birth'
-        ],
-        'age' => [
-            'integer'      => 'Age must be a valid number',
-            'greater_than' => 'Age must be greater than 0',
-            'less_than'    => 'Age must be less than 150'
-        ],
-        'gender' => [
-            'required' => 'Gender is required',
-            'in_list'  => 'Please select a valid gender option'
-        ],
-        'blood_type' => [
-            'in_list' => 'Please select a valid blood type'
-        ],
-        'civil_status' => [
-            'in_list' => 'Please select a valid civil status'
-        ],
-        'email_address' => [
-            'valid_email' => 'Please enter a valid email address',
-            'max_length'  => 'Email address cannot exceed 100 characters'
-        ],
-        'emergency_contact_name' => [
-            'max_length' => 'Emergency contact name cannot exceed 100 characters'
-        ],
-        'emergency_relationship' => [
-            'max_length' => 'Emergency relationship cannot exceed 50 characters'
-        ],
-        'medical_history' => [
-            'max_length' => 'Medical history cannot exceed 1000 characters'
-        ],
-        'current_medications' => [
-            'max_length' => 'Current medications cannot exceed 1000 characters'
-        ],
-        'allergies' => [
-            'max_length' => 'Allergies cannot exceed 1000 characters'
-        ],
-        'past_surgeries' => [
-            'max_length' => 'Past surgeries cannot exceed 1000 characters'
-        ],
-        'chronic_conditions' => [
-            'max_length' => 'Chronic conditions cannot exceed 1000 characters'
-        ],
-        'family_medical_history' => [
-            'max_length' => 'Family medical history cannot exceed 1000 characters'
-        ]
-    ];
-
+    protected $validationRules      = [];
+    protected $validationMessages   = [];
     protected $skipValidation       = false;
     protected $cleanValidationRules = true;
 
@@ -165,34 +83,70 @@ class PatientModel extends Model
     protected $afterDelete    = [];
 
     /**
-     * Get all patients with pagination
+     * Get patients with optional search and pagination
      */
-    public function getPatients($limit = 10, $offset = 0)
+    public function getPatients($search = null, $limit = null, $offset = null)
     {
-        return $this->findAll($limit, $offset);
+        $builder = $this->builder();
+
+        if ($search) {
+            $builder->groupStart()
+                    ->like('first_name', $search)
+                    ->orLike('last_name', $search)
+                    ->orLike('patient_id', $search)
+                    ->orLike('contact_number', $search)
+                    ->groupEnd();
+        }
+
+        if ($limit) {
+            $builder->limit($limit, $offset);
+        }
+
+        return $builder->get()->getResultArray();
     }
 
     /**
-     * Get patient by ID
+     * Get total number of patients
      */
-    public function getPatient($id)
+    public function getTotalPatients()
     {
-        return $this->find($id);
+        return $this->countAllResults();
     }
 
     /**
-     * Create new patient
+     * Create a new patient
      */
     public function createPatient($data)
     {
+        // Generate patient ID if not provided
+        if (!isset($data['patient_id']) || empty($data['patient_id'])) {
+            $data['patient_id'] = $this->generatePatientId();
+        }
+
+        // Create full name for backward compatibility
+        if (!isset($data['name']) || empty($data['name'])) {
+            $data['name'] = trim($data['first_name'] . ' ' . ($data['middle_name'] ?? '') . ' ' . $data['last_name']);
+        }
+
         return $this->insert($data);
     }
 
     /**
-     * Update patient
+     * Update patient information
      */
     public function updatePatient($id, $data)
     {
+        // Update full name if name components changed
+        if (isset($data['first_name']) || isset($data['middle_name']) || isset($data['last_name'])) {
+            $patient = $this->find($id);
+            if ($patient) {
+                $firstName = $data['first_name'] ?? $patient['first_name'];
+                $middleName = $data['middle_name'] ?? $patient['middle_name'];
+                $lastName = $data['last_name'] ?? $patient['last_name'];
+                $data['name'] = trim($firstName . ' ' . ($middleName ?? '') . ' ' . $lastName);
+            }
+        }
+
         return $this->update($id, $data);
     }
 
@@ -205,20 +159,74 @@ class PatientModel extends Model
     }
 
     /**
-     * Search patients by name or contact
+     * Get patient by ID
+     */
+    public function getPatient($id)
+    {
+        return $this->find($id);
+    }
+
+    /**
+     * Search patients
      */
     public function searchPatients($keyword)
     {
-        return $this->like('name', $keyword)
-                    ->orLike('contact', $keyword)
+        return $this->like('first_name', $keyword)
+                    ->orLike('last_name', $keyword)
+                    ->orLike('patient_id', $keyword)
+                    ->orLike('contact_number', $keyword)
                     ->findAll();
     }
 
     /**
-     * Get total patients count
+     * Generate unique patient ID
      */
-    public function getTotalPatients()
+    private function generatePatientId()
     {
-        return $this->countAll();
+        $year = date('Y');
+        $count = $this->where('YEAR(created_at)', $year)->countAllResults() + 1;
+        return 'P' . $year . str_pad($count, 4, '0', STR_PAD_LEFT);
+    }
+
+    /**
+     * Get patients by doctor
+     */
+    public function getPatientsByDoctor($doctorId)
+    {
+        return $this->where('assigned_doctor', $doctorId)->findAll();
+    }
+
+    /**
+     * Get patients by department
+     */
+    public function getPatientsByDepartment($department)
+    {
+        return $this->where('department', $department)->findAll();
+    }
+
+    /**
+     * Get recent patients
+     */
+    public function getRecentPatients($limit = 10)
+    {
+        return $this->orderBy('created_at', 'DESC')->limit($limit)->findAll();
+    }
+
+    /**
+     * Get patient statistics
+     */
+    public function getPatientStats()
+    {
+        $total = $this->countAllResults();
+        $male = $this->where('gender', 'Male')->countAllResults();
+        $female = $this->where('gender', 'Female')->countAllResults();
+        $today = $this->where('DATE(created_at)', date('Y-m-d'))->countAllResults();
+
+        return [
+            'total' => $total,
+            'male' => $male,
+            'female' => $female,
+            'today' => $today
+        ];
     }
 }
