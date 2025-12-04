@@ -117,11 +117,29 @@ class DoctorController extends BaseController
     public function storePatient()
     {
         $data = [
-            'name'    => $this->request->getPost('name'),
-            'age'     => $this->request->getPost('age'),
-            'gender'  => $this->request->getPost('gender'),
-            'address' => $this->request->getPost('address'),
-            'contact' => $this->request->getPost('contact')
+            'patient_id'                => $this->request->getPost('patient_id'),
+            'first_name'                => $this->request->getPost('first_name'),
+            'middle_name'               => $this->request->getPost('middle_name'),
+            'last_name'                 => $this->request->getPost('last_name'),
+            'date_of_birth'             => $this->request->getPost('date_of_birth'),
+            'age'                       => $this->request->getPost('age'),
+            'gender'                    => $this->request->getPost('gender'),
+            'blood_type'                => $this->request->getPost('blood_type'),
+            'civil_status'              => $this->request->getPost('civil_status'),
+            'nationality'               => $this->request->getPost('nationality'),
+            'contact_number'            => $this->request->getPost('contact_number'),
+            'email_address'             => $this->request->getPost('email_address'),
+            'home_address'              => $this->request->getPost('home_address'),
+            'emergency_contact_name'    => $this->request->getPost('emergency_contact_name'),
+            'emergency_relationship'    => $this->request->getPost('emergency_relationship'),
+            'emergency_contact_number'  => $this->request->getPost('emergency_contact_number'),
+            'emergency_address'         => $this->request->getPost('emergency_address'),
+            'medical_history'           => $this->request->getPost('medical_history'),
+            'current_medications'       => $this->request->getPost('current_medications'),
+            'allergies'                 => $this->request->getPost('allergies'),
+            'past_surgeries'            => $this->request->getPost('past_surgeries'),
+            'chronic_conditions'        => $this->request->getPost('chronic_conditions'),
+            'family_medical_history'    => $this->request->getPost('family_medical_history')
         ];
 
         if ($this->patientModel->createPatient($data)) {
@@ -154,11 +172,30 @@ class DoctorController extends BaseController
     public function updatePatient($id)
     {
         $data = [
-            'name'    => $this->request->getPost('name'),
-            'age'     => $this->request->getPost('age'),
-            'gender'  => $this->request->getPost('gender'),
-            'address' => $this->request->getPost('address'),
-            'contact' => $this->request->getPost('contact')
+            'id'                        => $id,
+            'patient_id'                => $this->request->getPost('patient_id'),
+            'first_name'                => $this->request->getPost('first_name'),
+            'middle_name'               => $this->request->getPost('middle_name'),
+            'last_name'                 => $this->request->getPost('last_name'),
+            'date_of_birth'             => $this->request->getPost('date_of_birth'),
+            'age'                       => $this->request->getPost('age'),
+            'gender'                    => $this->request->getPost('gender'),
+            'blood_type'                => $this->request->getPost('blood_type'),
+            'civil_status'              => $this->request->getPost('civil_status'),
+            'nationality'               => $this->request->getPost('nationality'),
+            'contact_number'            => $this->request->getPost('contact_number'),
+            'email_address'             => $this->request->getPost('email_address'),
+            'home_address'              => $this->request->getPost('home_address'),
+            'emergency_contact_name'    => $this->request->getPost('emergency_contact_name'),
+            'emergency_relationship'    => $this->request->getPost('emergency_relationship'),
+            'emergency_contact_number'  => $this->request->getPost('emergency_contact_number'),
+            'emergency_address'         => $this->request->getPost('emergency_address'),
+            'medical_history'           => $this->request->getPost('medical_history'),
+            'current_medications'       => $this->request->getPost('current_medications'),
+            'allergies'                 => $this->request->getPost('allergies'),
+            'past_surgeries'            => $this->request->getPost('past_surgeries'),
+            'chronic_conditions'        => $this->request->getPost('chronic_conditions'),
+            'family_medical_history'    => $this->request->getPost('family_medical_history')
         ];
 
         if ($this->patientModel->updatePatient($id, $data)) {
